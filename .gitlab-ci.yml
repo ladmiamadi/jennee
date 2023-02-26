@@ -1,0 +1,78 @@
+# image launch for all pipeline
+image: node:latest
+
+# keep it cached to avoid reloading it
+cache:
+  paths:
+    - node_modules/
+
+# different step of pipeline
+stages:
+  - build
+  - test
+  - deploy_staging
+  - deploy_production
+
+# lint & build stages
+build:
+  stage: build
+  script:
+    - echo "Build begin"
+    - npm install --silent
+    - npm run format
+    - npm run eslint:fix
+    - npm run build
+    - echo "Build complete"
+  only:
+    - staging
+  artifacts:
+    paths:
+      - build/
+
+tests:
+  stage: test
+  script:
+    - echo "ok"
+  only:
+    - merge_requests
+  allow_failure: false
+#    rules:
+#      - if: '$CI_MERGE_REQUEST_LABELS =~ /ready/'
+#       allow_failure: false
+
+deploy_staging:
+  stage: deploy_staging
+  dependencies:
+    - build
+  only:
+    - staging
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y
+    - apt-get install lftp -y
+  environment:
+    name: staging
+    url: https://stg.jenee.fr
+  script:
+    - echo "--- START DEPLOY ---"
+    - ls -la
+    - cp .htaccess build/
+    - cp .htpasswd build/
+    - lftp -e "set ftp:ssl-allow no; open -u  $FTP_USER,$FTP_PASS $FTP_HOST; mirror --reverse --verbose --delete build/ ./; bye"
+    - echo "--- END DEPLOY ---"
+
+# deploy production stage
+deploy_production:
+  stage: deploy_production
+  script:
+    - echo " ---- fetching && merge staging into production ----"
+    - git fetch
+    - git merge --no-ff staging
+    - echo "Deployment on production complete"
+  environment:
+    name: production
+    url: https://jenee.fr
+  only:
+    - production
+  when: manual
+
