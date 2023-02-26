@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BillsComponent = () => {
-    return <div></div>
+    return <div>BillsComponent</div>
 }
 
 export default BillsComponent

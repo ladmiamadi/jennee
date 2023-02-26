@@ -8,8 +8,8 @@ Jenne landing page front-end portal powered by React
 
 You have 3 branches :
 
-- **staging** : this branch is for development purpose and quality team testing. If you need to push your changes to staging environment, you need to perform a merge request on **_staging_** branch. The CI/CD pipelines will do the rest. Changes would be available at https://stg.jenne.fr
-- **production** : this branch is for production work. it will always contain the latest version validated and picked for production use by stakeholders. The changes should only come from a staging branch, validated by the quality test team. Production app is available at https://jeene.fr/
+- **staging** : this branch is for development purpose and quality team testing. If you need to push your changes to staging environment, you need to perform a merge request on **_staging_** branch. The CI/CD pipelines will do the rest. Changes would be available at https://app.stg.jenne.fr
+- **production** : this branch is for production work. it will always contain the latest version validated and picked for production use by stakeholders. The changes should only come from a staging branch, validated by the quality test team. Production app is available at https://app.jeene.fr/
 
 ### Workflow
 

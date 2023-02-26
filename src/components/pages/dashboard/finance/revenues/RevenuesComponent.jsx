@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RevenuesComponent = () => {
-    return <div></div>
+    return <div>RevenuesComponent</div>
 }
 
 export default RevenuesComponent

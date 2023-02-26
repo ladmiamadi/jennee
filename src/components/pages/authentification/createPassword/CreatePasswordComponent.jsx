@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CreatePasswordComponent = () => {
-    return <div></div>
+    return <div>CreatePasswordComponent</div>
 }
 
 export default CreatePasswordComponent

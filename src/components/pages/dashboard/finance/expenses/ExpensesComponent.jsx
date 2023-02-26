@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ExpensesComponent = () => {
-    return <div></div>
+    return <div>vExpensesComponent</div>
 }
 
 export default ExpensesComponent

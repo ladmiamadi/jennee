@@ -1,7 +1,8 @@
 import React from 'react'
+import CreatePasswordComponent from '@components/pages/authentification/createPassword/CreatePasswordComponent'
 
 const CreatePasswordContainer = () => {
-    return <div></div>
+    return <CreatePasswordComponent />
 }
 
 export default CreatePasswordContainer

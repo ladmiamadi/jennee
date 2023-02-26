@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PostsComponent = () => {
-    return <div></div>
+    return <div>PostsComponent</div>
 }
 
 export default PostsComponent

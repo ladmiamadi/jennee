@@ -8,7 +8,7 @@
     "url": "https://gitlab.com/jenee/app_web_pro/front_app_web_pro/"
   },
   "scripts": {
-    "start": "webpack serve --hot --config  ./webpack/webpack.dev.js",
+    "start": "webpack serve  --config  ./webpack/webpack.dev.js",
     "build": "webpack --config ./webpack/webpack.prod.js",
     "test": "cypress open --e2e",
     "test:ci": "cypress run --config '{\"e2e\": {\"excludeSpecPattern\": [\"cypress/e2e/all.cy.js\"]}}'",

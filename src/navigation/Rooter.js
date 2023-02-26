@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
 import Loader from '@components/common/loader/Loader'
+import { BrowserRouter } from 'react-router-dom'
 import Routes from '@navigation/Routes'
 
 const Rooter = () => {

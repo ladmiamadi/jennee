@@ -3,6 +3,7 @@ import React, { lazy } from 'react'
 // project import
 import MainLayout from '@components/layout/mainLayout'
 import { Navigate } from 'react-router-dom'
+import { ROUTES } from '@constants/routesConst'
 
 /*				ORGANIZATION				*/
 
@@ -33,67 +34,65 @@ const RevenuesContainer = lazy(() => import('@components/pages/dashboard/finance
 const ExpensesContainer = lazy(() => import('@components/pages/dashboard/finance/expenses/ExpensesContainer'))
 // render - dashboard / finance / bills
 const BillsContainer = lazy(() => import('@components/pages/dashboard/finance/bills/BillsContainer'))
-// render - not found
-const NotFound = lazy(() => import('@components/pages/notFound/notFoundComponent'))
+
 // ==============================|| MAIN ROUTING ||============================== //
-let isAuthenticated = true
+let isAuthenticated = false
 const MainRoutes = {
     path: '/dashboard',
-    element: isAuthenticated ? <MainLayout /> : <Navigate to="/login" replace />,
+    element: isAuthenticated ? <MainLayout /> : <Navigate to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH} replace />,
     children: [
         {
-            path: 'events',
+            path: ROUTES.DASHBOARD.EVENTS.PATH,
             element: <EventsContainer />
         },
         {
-            path: 'organization',
-            element: <OrganizationContainer />,
+            path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
             children: [
                 {
-                    path: 'posts',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
                     element: <PostsContainer />
                 },
                 {
-                    path: 'team',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
+
                     element: <TeamContainer />
                 },
                 {
-                    path: 'partnership',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PARTNERSHIP.PATH,
                     element: <PartnershipContainer />
                 },
                 {
-                    path: 'free-events',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.FREE_EVENTS.PATH,
                     element: <FreeEventsContainer />
                 },
                 {
-                    path: 'profil',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
                     element: <ProfilContainer />
                 },
                 {
-                    path: 'settings',
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.SETTINGS.PATH,
                     element: <SettingsContainer />
                 }
             ]
         },
         {
-            path: 'finance',
+            path: ROUTES.DASHBOARD.FINANCE.PATH,
             element: <FinanceContainer />,
             children: [
                 {
-                    path: 'revenue',
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
                     element: <RevenuesContainer />
                 },
                 {
-                    path: 'expenses',
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
                     element: <ExpensesContainer />
                 },
                 {
-                    path: 'bills',
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
                     element: <BillsContainer />
                 }
             ]
-        },
-        { path: '*', element: <NotFound /> }
+        }
     ]
 }
 

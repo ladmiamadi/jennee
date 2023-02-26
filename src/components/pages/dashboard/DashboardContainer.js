@@ -1,7 +1,8 @@
 import React from 'react'
+import DashboardComponent from '@components/pages/dashboard/DashboardComponent'
 
 const DashboardContainer = () => {
-    return <div></div>
+    return <DashboardComponent />
 }
 
 export default DashboardContainer

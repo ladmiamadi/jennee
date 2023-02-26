@@ -1,7 +1,8 @@
 import React from 'react'
+import BillsComponent from '@components/pages/dashboard/finance/bills/BillsComponent'
 
 const BillsContainer = () => {
-    return <div></div>
+    return <BillsComponent />
 }
 
 export default BillsContainer

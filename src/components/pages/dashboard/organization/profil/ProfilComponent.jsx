@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ProfilComponent = () => {
-    return <div></div>
+    return <div>ProfilComponent</div>
 }
 
 export default ProfilComponent

@@ -5,7 +5,7 @@ import React from 'react'
  * @returns { JSX.Element } SignUpComponent
  */
 const SignUpComponent = () => {
-    return <div>SignInComponent</div>
+    return <div>SignUpComponent</div>
 }
 
 export default SignUpComponent
