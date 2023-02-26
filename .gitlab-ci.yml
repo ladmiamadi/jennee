@@ -52,7 +52,7 @@ deploy_staging:
     - apt-get install lftp -y
   environment:
     name: staging
-    url: https://stg.jenee.fr
+    url: https://app.stg.jenee.fr
   script:
     - echo "--- START DEPLOY ---"
     - ls -la
@@ -71,7 +71,7 @@ deploy_production:
     - echo "Deployment on production complete"
   environment:
     name: production
-    url: https://jenee.fr
+    url: https://app.jenee.fr
   only:
     - production
   when: manual
