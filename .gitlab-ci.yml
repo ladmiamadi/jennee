@@ -19,7 +19,7 @@ build:
   script:
     - echo "Build begin"
     - npm install --silent
-    - npm run format
+    #- npm run format
     - npm run eslint:fix
     - npm run build
     - echo "Build complete"
@@ -52,13 +52,13 @@ deploy_staging:
     - apt-get install lftp -y
   environment:
     name: staging
-    url: https://app.stg.jenee.fr
+    url: https://stg-app.jenee.fr
   script:
     - echo "--- START DEPLOY ---"
     - ls -la
     - cp .htaccess build/
     - cp .htpasswd build/
-    - lftp -e "set ftp:ssl-allow no; open -u  $FTP_USER,$FTP_PASS $FTP_HOST; mirror --reverse --verbose --delete build/ ./; bye"
+    - lftp -e "set ftp:ssl-allow no; open -u  $FTP_USER,$FTP_PASS $FTP_HOST; mirror --reverse --verbose --delete build/ /stg-app; bye"
     - echo "--- END DEPLOY ---"
 
 # deploy production stage

@@ -36,7 +36,7 @@ const ExpensesContainer = lazy(() => import('@components/pages/dashboard/finance
 const BillsContainer = lazy(() => import('@components/pages/dashboard/finance/bills/BillsContainer'))
 
 // ==============================|| MAIN ROUTING ||============================== //
-let isAuthenticated = false
+let isAuthenticated = true
 const MainRoutes = {
     path: '/dashboard',
     element: isAuthenticated ? <MainLayout /> : <Navigate to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH} replace />,

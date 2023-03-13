@@ -29,6 +29,10 @@ const cssLoaderClassNameStyle = {
 		},
 	},
 }
+const svgr = {
+	test: /\.svg$/,
+	use: ['@svgr/webpack'],
+}
 
 const sassLoader = {
 	loader: 'sass-loader',
@@ -41,7 +45,7 @@ const sassLoader = {
 }
 
 const style = {
-	test: /\.(css|sass)$/,
+	test: /\.(css|sass|scss)$/,
 	use: ['style-loader', cssLoaderClassNameStyle, sassLoader],
 }
 
@@ -60,4 +64,4 @@ const autoprefixer = {
 		},
 	},
 }
-module.exports = [js, style, images]
+module.exports = [js, style, svgr, images]

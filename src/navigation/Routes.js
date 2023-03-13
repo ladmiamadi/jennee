@@ -8,6 +8,5 @@ import NotFoundComponent from '@components/pages/notFound/notFoundComponent'
 // ==============================|| ROUTING RENDER ||============================== //
 
 export default function Routes() {
-    let isAuthenticated = true
     return useRoutes([MainRoutes, LoginRoutes, { path: '*', element: <NotFoundComponent /> }])
 }

@@ -1,8 +1,7 @@
-@import "abstracts";
-@import "base";
-@import "components";
-@import "layout";
-@import "pages";
-@import "themes";
-@import "vendors";
-
+@import 'abstracts/index';
+@import 'base/index';
+@import 'components/index';
+@import 'layout/index';
+@import 'pages/index';
+@import 'themes/index';
+@import 'vendors/index';
