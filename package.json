@@ -75,6 +75,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.10.6",
 		"@emotion/styled": "^11.10.6",
+		"@mui/icons-material": "^5.11.11",
 		"@mui/material": "^5.11.10",
 		"@svgr/webpack": "^6.5.1",
 		"browserslist": "^4.21.5",

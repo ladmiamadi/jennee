@@ -30,6 +30,10 @@ export const ROUTES = {
             NAME: 'events',
             PATH: ''
         },
+        EVENTS_DETAILS: {
+            NAME: 'events-details',
+            PATH: 'events-details'
+        },
         ORGANIZATION: {
             NAME: 'organization',
             PATH: 'organization',
