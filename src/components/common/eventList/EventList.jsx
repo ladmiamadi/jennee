@@ -1,74 +1,27 @@
-import React from 'react'
-import { Grid, Box } from '@mui/material'
-import Card from '../card/Card'
-import { Link } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
+import { Grid } from '@mui/material'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Card from '../card/Card'
 
 const EventList = () => {
     return (
-        <Grid container className="event-list">
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
+        <Grid container>
+            <Grid item xs={2.4} className="event-list-wrap">
                 <Link to={ROUTES.DASHBOARD.EVENTS_DETAILS.PATH}>
                     <Card />
                 </Link>
             </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Link to={ROUTES.DASHBOARD.EVENTS_DETAILS.PATH}>
-                    <Card />
-                </Link>
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
+            <Grid item xs={2.4} className="event-list-wrap">
                 <Card />
             </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
+            <Grid item xs={2.4} className="event-list-wrap">
                 <Card />
             </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
+            <Grid item xs={2.4} className="event-list-wrap">
                 <Card />
             </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
-                <Card />
-            </Grid>
-            <Grid item xs={12} sm={6} md={2.4} className="event-list__wrap">
+            <Grid item xs={2.4} className="event-list-wrap">
                 <Card />
             </Grid>
         </Grid>
