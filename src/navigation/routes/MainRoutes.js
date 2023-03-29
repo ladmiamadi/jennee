@@ -1,7 +1,8 @@
 import React, { lazy } from 'react'
 
 // project import
-import MainLayout from '@components/layout/mainLayout'
+
+import MainLayout from '@components/layout/mainLayout/header/Header'
 import { Navigate } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
 

@@ -1,0 +1,14 @@
+@import '../../base/index.scss';
+
+.card__title {
+	font-size: 2px;
+	color: $blue;
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 4px;
+	&-step {
+		font-size: 20px;
+		height: 100%;
+		color: grey;
+	}
+}

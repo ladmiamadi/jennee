@@ -1,20 +1,20 @@
 import React, { lazy } from 'react'
 
 // project import
-import AuthLayout from '@components/layout/authLayout'
+//import AuthLayout from '@components/layout/authLayout'
 import { ROUTES } from '@constants/routesConst'
 
 // render - login
 const SignInContainer = lazy(() => import('@components/pages/authentification/signIn/SignInContainer'))
 const SignUpContainer = lazy(() => import('@components/pages/authentification/signUp/SignUpContainer'))
-const ForgottenPasswordContainer = lazy(() => import('@components/pages/authentification/forgottenPassword/ForgottenPasswordContainer'))
-const CreatePasswordContainer = lazy(() => import('@components/pages/authentification/createPassword/CreatePasswordContainer'))
+const PasswordForgotContainer = lazy(() => import('@components/pages/authentification/forgottenPassword/PasswordForgotContainer'))
+const NewMemberContainer = lazy(() => import('@components/pages/authentification/createPassword/NewMemberContainer'))
 
 // ==============================|| AUTH ROUTING ||============================== //
 
 const LoginRoutes = {
     path: ROUTES.ROOT.PATH,
-    element: <AuthLayout />,
+    // element: <AuthLayout />
     children: [
         {
             path: ROUTES.AUTHENTIFICATION.SIGN_IN.PATH,
@@ -26,11 +26,11 @@ const LoginRoutes = {
         },
         {
             path: ROUTES.AUTHENTIFICATION.FORGOTTEN_PASSWORD.PATH,
-            element: <ForgottenPasswordContainer />
+            element: <PasswordForgotContainer />
         },
         {
             path: ROUTES.AUTHENTIFICATION.CREATE_PASSWORD.PATH,
-            element: <CreatePasswordContainer />
+            element: <NewMemberContainer />
         }
     ]
 }

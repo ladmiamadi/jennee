@@ -1,7 +1,10 @@
-@import 'abstracts/index';
-@import 'base/index';
-@import 'components/index';
-@import 'layout/index';
-@import 'pages/index';
-@import 'themes/index';
-@import 'vendors/index';
+@import './pages/login/index.scss';
+@import './pages/register/index.scss';
+
+body,
+html {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+	overflow-x: hidden;
+}

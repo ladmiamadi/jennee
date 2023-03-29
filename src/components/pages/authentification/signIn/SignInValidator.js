@@ -1,0 +1,56 @@
+import PropTypes from 'prop-types'
+
+const SignInValidator = (formValue, error, setError, errortype, setErrortype) => {
+    const passwordRegex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[\w!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/
+    for (const field in formValue) {
+        if (formValue[field] === '') {
+            setError((prevError) => ({
+                ...prevError,
+                [field]: true
+            }))
+            setErrortype((prevErrortype) => ({
+                ...prevErrortype,
+                [field]: '*champ de texte requis'
+            }))
+        } else if (field === 'email' && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(formValue.email)) {
+            setError((prevError) => ({
+                ...prevError,
+                email: true
+            }))
+            setErrortype((prevErrortype) => ({
+                ...prevErrortype,
+                email: '*adresse email invalide'
+            }))
+        } else if (!passwordRegex.test(formValue.password)) {
+            // charactère spéciaux
+            setError((prevError) => ({
+                ...prevError,
+                password: true
+            }))
+            setErrortype((prevErrortype) => ({
+                ...prevErrortype,
+                password: '8 charactères avec un chiffre,Maj, Min et un charactère spécial'
+            }))
+        } else {
+            setError((prevError) => ({
+                ...prevError,
+                [field]: false
+            }))
+            setErrortype((prevErrortype) => ({
+                ...prevErrortype,
+                [field]: ''
+            }))
+        }
+    }
+}
+
+SignInValidator.propTypes = {
+    error: PropTypes.object,
+    setError: PropTypes.func,
+    errortype: PropTypes.object,
+    setErrortype: PropTypes.func,
+    formValue: PropTypes.object
+}
+
+export default SignInValidator

@@ -1,12 +1,45 @@
-import React from 'react'
-import SignInComponent from '@components/pages/authentification/signIn/SignInComponent'
-
+import { React, useState } from 'react'
+import SignInComponent from './SignInComponent'
+import { HandleChange } from '../../../../utils/HandleChange'
+import SignInValidator from './SignInValidator'
 /**
- * Container for SignIn which manage logic
- * @returns { JSX.Element } SignUpContainer
- */
+A container component that handles the state and functions for the SignInComponent
+@return {JSX.Element} Returns the SignInComponent with the props required to handle form data
+*/
+
 const SignInContainer = () => {
-    return <SignInComponent />
+    const [error, setError] = useState({
+        email: false,
+        password: false
+    })
+    const [errortype, setErrortype] = useState({
+        email: '',
+        password: ''
+    })
+    const [formValue, setFormValue] = useState({
+        email: '',
+        password: ''
+    })
+    /**Function to handle the form submission   
+    @param {Object} event - The event object from the form submission
+  */
+
+    const HandleSubmit = (event) => {
+        event.preventDefault()
+        SignInValidator(formValue, error, setError, errortype, setErrortype)
+    }
+    return (
+        <SignInComponent
+            handleChange={HandleChange}
+            formValue={formValue}
+            setFormValue={setFormValue}
+            HandleSubmit={HandleSubmit}
+            error={error}
+            setError={setError}
+            errortype={errortype}
+            setErrortype={setErrortype}
+        />
+    )
 }
 
 export default SignInContainer

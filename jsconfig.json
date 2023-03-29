@@ -15,6 +15,6 @@
 			"@hooks/*": ["src/hooks/*"]
 		}
 	},
-	"include": ["./node_modules/cypress", "cypress/**/*.js", "**/*.js","**/*.jsx"],
+	"include": ["./node_modules/cypress", "cypress/**/*.js", "**/*.js", "**/*.jsx"],
 	"exclude": ["node_modules", "dist"]
 }
