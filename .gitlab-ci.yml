@@ -27,7 +27,7 @@ build:
     - staging
   artifacts:
     paths:
-      - build/
+      - dist/
 
 tests:
   stage: test
@@ -43,7 +43,7 @@ tests:
 deploy_staging:
   stage: deploy_staging
   dependencies:
-    - build
+    - dist
   only:
     - staging
   before_script:
