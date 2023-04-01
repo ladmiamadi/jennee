@@ -1,6 +1,6 @@
-import { React, useState } from 'react'
+import React, { useState } from 'react'
 import PasswordForgotComponent from './PasswordForgotComponent.jsx'
-import { HandleChange } from '../../../../utils/HandleChange.js'
+import { HandleChange } from '@utils/HandleChange.js'
 import PasswordForgotCodeComponent from './PasswordForgotCodeComponent.jsx'
 import PasswordForgotValidator from './PasswordForgotValidator.js'
 import NewPasswordComponent from './NewPasswordComponent.jsx'

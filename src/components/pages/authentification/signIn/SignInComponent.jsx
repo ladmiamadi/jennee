@@ -18,7 +18,7 @@ import Layout from '../../../layout/shape/Layout'
   @param {Props} props - The props object containing the component's input data.
   @returns {JSX.Element} The Sign in component.
  */
-const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errortype, setErrortype }) => {
+const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errorType, setErrorType }) => {
     return (
         <>
             <Grid className="page">
@@ -47,8 +47,8 @@ const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, 
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
-                            setErrortype={setErrortype}
+                            errorType={errorType}
+                            setErrorType={setErrorType}
                         />
                         <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATION.FORGOTTEN_PASSWORD.PATH}>
                             Mot de passe oublié ?
@@ -72,8 +72,8 @@ SignInComponent.propTypes = {
     setFormValue: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object,
+    setErrorType: PropTypes.func
 }
 
 export default SignInComponent

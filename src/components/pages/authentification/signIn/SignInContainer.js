@@ -1,6 +1,6 @@
-import { React, useState } from 'react'
+import React, { useState } from 'react'
 import SignInComponent from './SignInComponent'
-import { HandleChange } from '../../../../utils/HandleChange'
+import { HandleChange } from '@utils/HandleChange'
 import SignInValidator from './SignInValidator'
 /**
 A container component that handles the state and functions for the SignInComponent
@@ -12,7 +12,7 @@ const SignInContainer = () => {
         email: false,
         password: false
     })
-    const [errortype, setErrortype] = useState({
+    const [errorType, setErrorType] = useState({
         email: '',
         password: ''
     })
@@ -20,13 +20,13 @@ const SignInContainer = () => {
         email: '',
         password: ''
     })
-    /**Function to handle the form submission   
+    /**Function to handle the form submission
     @param {Object} event - The event object from the form submission
   */
 
     const HandleSubmit = (event) => {
         event.preventDefault()
-        SignInValidator(formValue, error, setError, errortype, setErrortype)
+        SignInValidator(formValue, error, setError, errorType, setErrorType)
     }
     return (
         <SignInComponent
@@ -36,8 +36,8 @@ const SignInContainer = () => {
             HandleSubmit={HandleSubmit}
             error={error}
             setError={setError}
-            errortype={errortype}
-            setErrortype={setErrortype}
+            errorType={errorType}
+            setErrorType={setErrorType}
         />
     )
 }

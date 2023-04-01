@@ -1,3 +1,4 @@
+import React from 'react'
 import SignUpComponentStepOne from './SignUpComponentStepOne'
 import { HandleChange } from '../../../../utils/HandleChange'
 

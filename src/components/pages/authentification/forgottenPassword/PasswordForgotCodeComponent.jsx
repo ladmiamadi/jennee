@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '../../../layout/authLayout/header/logo'
-import '../../../../assets/styles/main.scss'
-import { ROUTES } from '../../../../constants/routesConst'
-import PasswordForgotCodeForm from '../../../common/form/PasswordForgotCodeForm'
+import Logo from '@components/layout/authLayout/header/logo'
+import '@styles/main.scss'
+import { ROUTES } from '@constants/routesConst'
+import PasswordForgotCodeForm from '@components/common/form/PasswordForgotCodeForm'
 import { Grid } from '@mui/material'
-import Footer from '../../../layout/authLayout/footer/Footer'
-import Layout from '../../../layout/shape/Layout'
+import Footer from '@components/layout/authLayout/footer/Footer'
+import Layout from '@components/layout/shape/Layout'
 /**
 Represents the PasswordForgotCodeComponent functional component.
 @param {object} props - The props object containing the following properties:
@@ -50,7 +50,7 @@ const PasswordForgotCodeComponent = ({ setFormValue, formValue, HandleSubmit, ha
                             errortype={errortype}
                             setErrortype={setErrortype}
                         />
-                        <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATIONFORGOTTEN_PASSWORD.PATH}>
+                        <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATION.FORGOTTEN_PASSWORD.PATH}>
                             Renvoyer le code
                         </Link>
                     </Grid>

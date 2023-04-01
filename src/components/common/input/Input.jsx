@@ -31,7 +31,7 @@ const Input = ({ classname, required, name, placeholder, value, type, onChange, 
 
 Input.propTypes = {
     classname: PropTypes.string,
-    onChange: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
     name: PropTypes.string,
     placeholder: PropTypes.string,
     type: PropTypes.string.isRequired,

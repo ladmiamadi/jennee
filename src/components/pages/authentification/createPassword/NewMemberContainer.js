@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React, { useState } from 'react'
 import NewMemberComponent from './NewMemberComponent'
 import { HandleChange } from '../../../../utils/HandleChange'
 import NewPasswordComponentMember from './NewPasswordComponentMember'
