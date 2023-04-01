@@ -42,8 +42,6 @@ tests:
 
 deploy_staging:
   stage: deploy_staging
-  dependencies:
-    - dist
   only:
     - staging
   before_script:
