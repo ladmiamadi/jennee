@@ -5,9 +5,11 @@ import React, { lazy } from 'react'
 import { ROUTES } from '@constants/routesConst'
 // render - login
 const SignInContainer = lazy(() => import('@components/pages/authentification/signIn/SignInContainer'))
-const SignUpContainer = lazy(() => import('@components/pages/authentification/signUp/SignUpContainer'))
-const PasswordForgotContainer = lazy(() => import('@components/pages/authentification/forgottenPassword/PasswordForgotContainer'))
-const NewMemberContainer = lazy(() => import('@components/pages/authentification/createPassword/NewMemberContainer'))
+const SignUpContainer = lazy(() => import('@components/pages/authentification/signUp/ComponentList/SignUpContainer'))
+const PasswordForgotContainer = lazy(() =>
+    import('@components/pages/authentification/forgottenPassword/NewPassword/PasswordForgotContainer')
+)
+const NewMemberContainer = lazy(() => import('@components/pages/authentification/createPassword/CreatePassword/NewMemberContainer'))
 
 // ==============================|| AUTH ROUTING ||============================== //
 

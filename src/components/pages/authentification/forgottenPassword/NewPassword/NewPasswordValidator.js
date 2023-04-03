@@ -1,10 +1,23 @@
 import PropTypes from 'prop-types'
+/**
+Represents the NewPasswordValidator function.
+@param {object} formData - An object containing the form data to be validated.
+@param {object} error - An object containing any errors in the form.
+@param {function} setError - A function to set the error state.
+@param {object} errortype - An object containing any errors in the form field types.
+@param {function} setErrorType - A function to set the errortype state.
+@returns {boolean} - A boolean value indicating whether the form data is valid or not.
 
-const SignInValidator = (formValue, error, setError, errortype, setErrorType) => {
+
+
+*/
+
+const NewPasswordValidator = (formData, error, setError, errortype, setErrorType) => {
+    let isValid = true
     const passwordRegex =
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[\w!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/
-    for (const field in formValue) {
-        if (formValue[field] === '') {
+    for (const field in formData) {
+        if (formData[field] === '') {
             setError((prevError) => ({
                 ...prevError,
                 [field]: true
@@ -13,16 +26,8 @@ const SignInValidator = (formValue, error, setError, errortype, setErrorType) =>
                 ...prevErrortype,
                 [field]: '*champ de texte requis'
             }))
-        } else if (field === 'email' && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(formValue.email)) {
-            setError((prevError) => ({
-                ...prevError,
-                email: true
-            }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
-                email: '*adresse email invalide'
-            }))
-        } else if (!passwordRegex.test(formValue.password)) {
+            isValid = false
+        } else if (!passwordRegex.test(formData[field])) {
             // charactère spéciaux
             setError((prevError) => ({
                 ...prevError,
@@ -32,6 +37,7 @@ const SignInValidator = (formValue, error, setError, errortype, setErrorType) =>
                 ...prevErrortype,
                 password: '8 charactères avec un chiffre,Maj, Min et un charactère spécial'
             }))
+            isValid = false
         } else {
             setError((prevError) => ({
                 ...prevError,
@@ -43,14 +49,16 @@ const SignInValidator = (formValue, error, setError, errortype, setErrorType) =>
             }))
         }
     }
+
+    return isValid
 }
 
-SignInValidator.propTypes = {
+NewPasswordValidator.propTypes = {
     error: PropTypes.object,
     setError: PropTypes.func,
     errortype: PropTypes.object,
     setErrorType: PropTypes.func,
-    formValue: PropTypes.object
+    formData: PropTypes.object
 }
 
-export default SignInValidator
+export default NewPasswordValidator
