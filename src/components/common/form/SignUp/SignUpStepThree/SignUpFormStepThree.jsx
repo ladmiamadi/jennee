@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../../assets/styles/pages/login/index.scss'
-import Input from '../../../input/Input'
-import { INPUT } from '../../../../../constants/inputConst'
-import Button from '../../../button/Button'
+import Input from '@common/input/Input'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 
 /**
 
@@ -16,24 +15,11 @@ SignUpFormStepThree component represents the third step of a sign-up form
 @param {Object} props.formValue - The object containing the form values.
 @param {Function} props.setFormValue - The function to set the form values.
 @param {Object} props.error - The object containing the form errors.
-@param {Function} props.setError - The function to set the form errors.
-@param {Object} props.errortype - The object containing the form error types.
-@param {Function} props.setErrortype - The function to set the form error types.
+@param {Object} props.errorType - The object containing the form error types.
 @returns {JSX.Element} - The SignUpFormStepThree component.
 */
 
-const SignUpFormStepThree = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const SignUpFormStepThree = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
     return (
         <>
             <form noValidate name={name} className={className} onSubmit={HandleSubmit}>
@@ -51,7 +37,7 @@ const SignUpFormStepThree = ({
                     onChange={handleChange}
                     placeholder="Nom du titulaire du compte"
                 />
-                {error.name_account_holder ? <label className="card__error">{errortype.name_account_holder}</label> : ''}
+                {error.name_account_holder ? <label className="card__error">{errorType.name_account_holder}</label> : ''}
                 <Input
                     className="card__form-bank"
                     required={true}
@@ -66,7 +52,7 @@ const SignUpFormStepThree = ({
                     onChange={handleChange}
                     placeholder="Code BIC"
                 />
-                {error.bic ? <label className="card__error">{errortype.bic}</label> : ''}
+                {error.bic ? <label className="card__error">{errorType.bic}</label> : ''}
                 <Input
                     className="card__form-rib"
                     required={true}
@@ -85,7 +71,7 @@ const SignUpFormStepThree = ({
                     <label
                         className="card__error
           ">
-                        {errortype.rib}
+                        {errorType.rib}
                     </label>
                 ) : (
                     ''
@@ -105,9 +91,7 @@ SignUpFormStepThree.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object
 }
 
 export default SignUpFormStepThree

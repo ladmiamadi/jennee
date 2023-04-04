@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../../assets/styles/pages/login/index.scss'
-import Input from '../../../input/Input.jsx'
-import { INPUT } from '../../../../../constants/inputConst'
-import Button from '../../../button/Button'
+import Input from '@common/input/Input.jsx'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 /**
  * A form for email validation.
  @param {object} props - The props object.
@@ -14,23 +13,10 @@ import Button from '../../../button/Button'
  @param {object} formValue - The current form values.
  @param {function} setFormValue - The function to set form values.
  @param {object} error - The current form errors.
- @param {function} setError - The function to set form errors.
- @param {object} errortype - The error messages for each form field.
- @param {function} setErrortype - The function to set error messages.
+ @param {object} errorType - The error messages for each form field.
  @returns {JSX.Element} - The EmailValidationForm component.
  */
-const EmailValidationForm = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const EmailValidationForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
     console.log(error)
     return (
         <>
@@ -49,7 +35,7 @@ const EmailValidationForm = ({
                     onChange={handleChange}
                     placeholder="Code à 6 chiffres"
                 />
-                {error.code ? <label className="card__error">{errortype.code}</label> : ''}
+                {error.code ? <label className="card__error">{errorType.code}</label> : ''}
 
                 <Button className="card__form-submit" name="Valider l’inscription"></Button>
             </form>
@@ -65,9 +51,7 @@ EmailValidationForm.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object
 }
 
 export default EmailValidationForm

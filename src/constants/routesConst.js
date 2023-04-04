@@ -3,6 +3,18 @@ export const ROUTES = {
         NAME: 'root',
         PATH: '/'
     },
+    CGU: {
+        NAME: 'CGU',
+        PATH: '/cgu'
+    },
+    CGV: {
+        NAME: 'cgv',
+        PATH: '/cgv'
+    },
+    PRIVACY_POLICY: {
+        NAME: 'privacy-policy',
+        PATH: '/privacy-policy'
+    },
     AUTHENTIFICATION: {
         SIGN_IN: {
             NAME: 'login',

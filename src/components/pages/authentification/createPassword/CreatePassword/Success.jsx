@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '../../../../layout/authLayout/header/logo'
-import '../../../../../assets/styles/main.scss'
-import { ROUTES } from '../../../../../constants/routesConst'
+import { ROUTES } from '@constants/routesConst'
 import { Grid } from '@mui/material'
-import Footer from '../../../../layout/authLayout/footer/Footer'
-import Layout from '../../../../layout/shape/Layout'
+import Layout from '@layout/shape/Layout'
 /**
  * A component that displays a success message after a user account has been created
  *
@@ -18,9 +15,6 @@ const Success = () => {
             <Grid className="page">
                 <Grid className="page__left">
                     <Grid className="card__succes">
-                        <Grid className="card__header">
-                            <Logo step="Nouveau Membre" />
-                        </Grid>
                         <Grid className="card__title">
                             <strong>Votre mot de passe a été mis à jour avec succès</strong>
                         </Grid>
@@ -30,7 +24,6 @@ const Success = () => {
                             Connectez-vous
                         </Link>
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">

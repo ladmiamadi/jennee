@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '../../../layout/authLayout/header/logo'
-import '../../../../assets/styles/main.scss'
-import { ROUTES } from '../../../../constants/routesConst'
-import SignInForm from '../../../common/form/SignIn/SignInForm'
+import Logo from '@layout/authLayout/header/logo'
+import { ROUTES } from '@constants/routesConst'
+import SignInForm from '@common/form/SignIn/SignInForm'
 import { Grid } from '@mui/material'
-import Footer from '../../../layout/authLayout/footer/Footer'
-import Layout from '../../../layout/shape/Layout'
+import Layout from '@layout/shape/Layout'
 /**
   The component for the sign in page.
   @typedef {Object} Props
@@ -54,7 +52,6 @@ const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, 
                             Mot de passe oublié ?
                         </Link>
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">

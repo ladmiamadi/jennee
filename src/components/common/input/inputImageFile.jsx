@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import '../../../assets/styles/pages/login/index.scss'
 import UploadIcon from '@mui/icons-material/Upload'
 
 /**

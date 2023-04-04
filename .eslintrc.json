@@ -44,7 +44,7 @@
 		// "react/prop-types": 0,
 		// "no-unused-vars": [2, { "ignoreRestSiblings": true }],
 		"no-unused-vars": [
-			0,
+			1,
 			{
 				"ignoreRestSiblings": true
 			}

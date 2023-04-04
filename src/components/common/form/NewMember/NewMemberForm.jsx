@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../assets/styles/pages/login/index.scss'
-import Input from '../../input/Input.jsx'
-import { INPUT } from '../../../../constants/inputConst'
-import Button from '../../button/Button'
+import Input from '@common/input/Input.jsx'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 
 /**
  * A React functional component for rendering a new member form.
@@ -15,24 +14,10 @@ import Button from '../../button/Button'
  @param {string} className - The CSS class(es) to be applied to the new member form.
  @param {string} name - The name of the new member form.
  @param {Object} error - An object containing error messages for the new member form fields.
- @param {function} setError - The function to be called when updating the error messages for the new member form fields.
- @param {Object} errortype - An object containing error types for the new member form fields.
- @param {function} setErrortype - The function to be called when updating the error types for the new member form fields.
  @returns {JSX.Element} - A new member form with a code input field and a submit button.
  */
 
-const NewMemberForm = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const NewMemberForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
     return (
         <>
             <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
@@ -64,10 +49,7 @@ NewMemberForm.propTypes = {
     handleChange: PropTypes.func,
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
-    error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    error: PropTypes.object
 }
 
 export default NewMemberForm

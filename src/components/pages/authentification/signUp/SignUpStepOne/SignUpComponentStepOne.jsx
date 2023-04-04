@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '../../../../layout/authLayout/header/logo'
-import '../../../../../assets/styles/main.scss'
-import { ROUTES } from '../../../../../constants/routesConst'
-import SignUpFormStepOne from '../../../../common/form/SignUp/SignUpStepOne/SignUpFormStepOne'
+import { ROUTES } from '@constants/routesConst'
+import SignUpFormStepOne from '@common/form/SignUp/SignUpStepOne/SignUpFormStepOne'
 import { Grid } from '@mui/material'
-import Footer from '../../../../layout/authLayout/footer/Footer'
-import Layout from '../../../../layout/shape/Layout'
+import Layout from '@layout/shape/Layout'
 
 /**
 A component for the firth step of the Sign Up process.
@@ -19,7 +16,7 @@ A component for the firth step of the Sign Up process.
 @param {Function} props.HorizontalLabelPositionBelowStepper - The stepper component to display the progress.
 @param {Object} props.error - The errors in the form.
 @param {Function} props.setError - The function to set form errors.
-@param {Object} props.errortype - The error types in the form.
+@param {Object} props.errorType - The error types in the form.
 @param {Function} props.setErrorType - The function to set error types in the form.
 @returns {JSX.Element} - The Sign Up Step One component.
 */
@@ -32,7 +29,7 @@ const SignUpComponentStepOne = ({
     HorizontalLabelPositionBelowStepper,
     error,
     setError,
-    errortype,
+    errorType,
     setErrorType
 }) => {
     return (
@@ -40,9 +37,6 @@ const SignUpComponentStepOne = ({
             <Grid className="page">
                 <Grid className="page__left">
                     <Grid name="card" className="card">
-                        <Grid className="card__header">
-                            <Logo step="Inscription" />
-                        </Grid>
                         <Grid className="card__title">
                             <strong>Informations personnelles</strong>
                             <HorizontalLabelPositionBelowStepper />
@@ -65,11 +59,10 @@ const SignUpComponentStepOne = ({
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrorType={setErrorType}
                         />
                     </Grid>
-                    <Footer />
                 </Grid>
                 <Grid className="page__right">
                     <Layout />
@@ -87,7 +80,7 @@ SignUpComponentStepOne.propTypes = {
     HorizontalLabelPositionBelowStepper: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func,
     page: PropTypes.number
 }

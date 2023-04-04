@@ -6,7 +6,6 @@ import '@styles/main.scss'
 import { ROUTES } from '@constants/routesConst'
 import PasswordForgotCodeForm from '@components/common/form/PasswordForgot/PasswordForgotCodeForm'
 import { Grid } from '@mui/material'
-import Footer from '@components/layout/authLayout/footer/Footer'
 import Layout from '@components/layout/shape/Layout'
 /**
 Represents the PasswordForgotCodeComponent functional component.
@@ -54,7 +53,6 @@ const PasswordForgotCodeComponent = ({ setFormValue, formValue, HandleSubmit, ha
                             Renvoyer le code
                         </Link>
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">

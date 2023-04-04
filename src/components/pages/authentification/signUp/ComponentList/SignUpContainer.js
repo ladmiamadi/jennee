@@ -37,7 +37,7 @@ const SignUpContainer = () => {
         banner: false,
         code: false
     })
-    const [errortype, setErrorType] = useState({
+    const [errorType, setErrorType] = useState({
         name: '',
         surname: '',
         school: '',
@@ -95,35 +95,35 @@ const SignUpContainer = () => {
         const formDataStepFive = { code }
         switch (page) {
             case 0:
-                if (ValidatorStepOne(formDataStepOne, error, setError, errortype, setErrorType)) {
+                if (ValidatorStepOne(formDataStepOne, error, setError, errorType, setErrorType)) {
                     setPage((page) => page + 1)
                 } else {
                     setPage((page) => page)
                 }
                 break
             case 1:
-                if (ValidatorStepTwo(formDataStepTwo, error, setError, errortype, setErrorType)) {
+                if (ValidatorStepTwo(formDataStepTwo, error, setError, errorType, setErrorType)) {
                     setPage((page) => page + 1)
                 } else {
                     setPage((page) => page)
                 }
                 break
             case 2:
-                if (ValidatorStepThree(formDataStepThree, error, setError, errortype, setErrorType)) {
+                if (ValidatorStepThree(formDataStepThree, error, setError, errorType, setErrorType)) {
                     setPage((page) => page + 1)
                 } else {
                     setPage((page) => page)
                 }
                 break
             case 3:
-                if (ValidatorStepFour(formDataStepFour, error, setError, errortype, setErrorType)) {
+                if (ValidatorStepFour(formDataStepFour, error, setError, errorType, setErrorType)) {
                     setPage((page) => page + 1)
                 } else {
                     setPage((page) => page)
                 }
                 break
             case 4:
-                if (EmailValidationValidator(formDataStepFive, error, setError, errortype, setErrorType)) {
+                if (EmailValidationValidator(formDataStepFive, error, setError, errorType, setErrorType)) {
                     setPage((page) => page + 1)
                 } else {
                     setPage((page) => page)
@@ -134,7 +134,7 @@ const SignUpContainer = () => {
         }
     }
 
-    const steps = ['Informations Personnelles', 'Organisation Etudiante', 'Informations Bancaires', 'Identité visuel']
+    const steps = ['Informations Personnelles', 'Organisation Étudiante', 'Informations Bancaires', 'Identité visuel']
 
     const HorizontalLabelPositionBelowStepper = () => {
         return (
@@ -159,7 +159,7 @@ const SignUpContainer = () => {
         HorizontalLabelPositionBelowStepper,
         error,
         setError,
-        errortype,
+        errorType,
         setErrorType
     })
     return <div>{SignupComponentList[page]}</div>

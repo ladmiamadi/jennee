@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../assets/styles/pages/login/index.scss'
-import Input from '../../input/Input.jsx'
-import { INPUT } from '../../../../constants/inputConst'
-import Button from '../../button/Button'
+import Input from '@common/input/Input.jsx'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 
 /**
  * A React functional component for rendering a new code for the Password Forgot Code Form
@@ -15,23 +14,9 @@ import Button from '../../button/Button'
  @param {string} className - The CSS class(es) to be applied to the new password code form.
  @param {string} name - The name of the new password form code.
  @param {Object} error - An object containing error messages for the new password form code fields.
- @param {function} setError - The function to be called when updating the error messages for the new password code form fields.
- @param {Object} errortype - An object containing error types for the new password form code fields.
- @param {function} setErrortype - The function to be called when updating the error types for the new password code form fields.
  @returns {JSX.Element} - A new password form with a code input field and a submit button.
  */
-const PasswordForgotCodeForm = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const PasswordForgotCodeForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
     return (
         <>
             <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
@@ -62,10 +47,7 @@ PasswordForgotCodeForm.propTypes = {
     handleChange: PropTypes.func,
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
-    error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    error: PropTypes.object
 }
 
 export default PasswordForgotCodeForm

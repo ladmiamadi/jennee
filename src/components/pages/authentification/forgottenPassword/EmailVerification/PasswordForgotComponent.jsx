@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Logo from '../../../../layout/authLayout/header/logo'
-import '../../../../../assets/styles/main.scss'
-import PasswordForgotForm from '../../../../common/form/PasswordForgot/PasswordForgotForm'
+import Logo from '@layout/authLayout/header/logo'
+import PasswordForgotForm from '@common/form/PasswordForgot/PasswordForgotForm'
 import { Grid } from '@mui/material'
-import Footer from '../../../../layout/authLayout/footer/Footer'
-import Layout from '../../../../layout/shape/Layout'
+import Layout from '@layout/shape/Layout'
 /**
 Represents the PasswordForgotComponent functional component.
 @param {object} props - The props object containing the following properties:
@@ -15,13 +13,12 @@ Represents the PasswordForgotComponent functional component.
 @param {function} handleChange - A function to handle the form field changes.
 @param {object} error - An object containing any errors in the form.
 @param {function} setError - A function to set the error state.
-@param {object} errortype - An object containing any errors in the form field types.
-@param {function} setErrorType - A function to set the errortype state.
+@param {object} errorType - An object containing any errors in the form field types.
+@param {function} setErrorType - A function to set the errorType state.
 @returns {JSX.Element} - A React JSX element that renders the PasswordForgotComponent.
 */
-const PasswordForgotComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errortype, setErrorType }) => {
+const PasswordForgotComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errorType, setErrorType }) => {
     return (
-        // card__header // card__footer
         <>
             <Grid className="page">
                 <Grid className="page__left">
@@ -45,11 +42,10 @@ const PasswordForgotComponent = ({ setFormValue, formValue, HandleSubmit, handle
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrorType={setErrorType}
                         />
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">
@@ -67,7 +63,7 @@ PasswordForgotComponent.propTypes = {
     setFormValue: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func
 }
 

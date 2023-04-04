@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../assets/styles/pages/login/index.scss'
-import Input from '../../input/Input.jsx'
-import { INPUT } from '../../../../constants/inputConst'
-import Button from '../../button/Button'
+import Input from '@common/input/Input.jsx'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 /**
@@ -22,18 +21,7 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @returns {JSX.Element} - A new password form with a code input field and a submit button.
  */
 
-const NewPasswordForm = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const NewPasswordForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
     console.log(error)
     const [isVisible, setIsVisible] = React.useState(false)
     const handleVisibilityToggle = () => {
@@ -78,10 +66,7 @@ NewPasswordForm.propTypes = {
     handleChange: PropTypes.func,
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
-    error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    error: PropTypes.object
 }
 
 export default NewPasswordForm

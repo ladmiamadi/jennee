@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../../assets/styles/pages/login/index.scss'
-import Input from '../../../input/Input'
-import { INPUT } from '../../../../../constants/inputConst'
-import Button from '../../../button/Button'
+import Input from '@common/input/Input'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 
@@ -19,24 +18,11 @@ SignUpFormStepOne component represents the first step of a sign-up form
 @param {object} props.formValue - The current state of the form.
 @param {function} props.setFormValue - The function to update the state of the form.
 @param {object} props.error - The error state for the form inputs.
-@param {function} props.setError - The function to update the error state.
-@param {object} props.errortype - The error messages for the form inputs.
-@param {function} props.setErrortype - The function to update the error messages.
+@param {object} props.errorType - The error messages for the form inputs.
 @return {JSX.Element} - The rendered component.
 */
 
-const SignUpFormStepOne = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const SignUpFormStepOne = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
     const [isVisible, setIsVisible] = React.useState(false)
     const handleVisibilityToggle = () => {
         setIsVisible(!isVisible)
@@ -57,7 +43,7 @@ const SignUpFormStepOne = ({
                     onChange={handleChange}
                     placeholder="Nom"
                 />
-                {error.name ? <label className="card__error">{errortype.name}</label> : ''}
+                {error.name ? <label className="card__error">{errorType.name}</label> : ''}
                 <Input
                     required={true}
                     name={!error.surname ? 'input' : 'input-error'}
@@ -71,7 +57,7 @@ const SignUpFormStepOne = ({
                     onChange={handleChange}
                     placeholder="Prénom"
                 />
-                {error.surname ? <label className="card__error">{errortype.surname}</label> : ''}
+                {error.surname ? <label className="card__error">{errorType.surname}</label> : ''}
                 <Input
                     required={false}
                     name={!error.school ? 'input' : 'input-error'}
@@ -85,7 +71,7 @@ const SignUpFormStepOne = ({
                     onChange={handleChange}
                     placeholder="École"
                 />
-                {error.school ? <label className="card__error">{errortype.school}</label> : ''}
+                {error.school ? <label className="card__error">{errorType.school}</label> : ''}
 
                 <Input
                     required={true}
@@ -100,7 +86,7 @@ const SignUpFormStepOne = ({
                     onChange={handleChange}
                     placeholder="Adresse mail"
                 />
-                {error.email ? <label className="card__error">{errortype.email}</label> : ''}
+                {error.email ? <label className="card__error">{errorType.email}</label> : ''}
                 <Input
                     required={true}
                     name={!error.password ? 'input' : 'input-error'}
@@ -118,7 +104,7 @@ const SignUpFormStepOne = ({
                     {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                 </span>
                 {error.password ? (
-                    <label className="card__error">{errortype.password}</label>
+                    <label className="card__error">{errorType.password}</label>
                 ) : (
                     <label htmlFor="input-password" className="card__label-input-password">
                         *au moins 8 charactères dont un chiffre, une lettre Maj et Min
@@ -138,9 +124,7 @@ SignUpFormStepOne.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object
 }
 
 export default SignUpFormStepOne

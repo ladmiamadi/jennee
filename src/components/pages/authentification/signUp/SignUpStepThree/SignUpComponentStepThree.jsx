@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '../../../../layout/authLayout/header/logo'
-import '../../../../../assets/styles/main.scss'
-import { ROUTES } from '../../../../../constants/routesConst'
-import SignUpFormStepThree from '../../../../common/form/SignUp/SignUpStepThree/SignUpFormStepThree'
+import { ROUTES } from '@constants/routesConst'
+import SignUpFormStepThree from '@common/form/SignUp/SignUpStepThree/SignUpFormStepThree'
 import { Grid } from '@mui/material'
-import Footer from '../../../../layout/authLayout/footer/Footer'
-import Layout from '../../../../layout/shape/Layout'
+import Layout from '@layout/shape/Layout'
 /**
 A component for the third step of the Sign Up process.
 @param {Object} props - The component props.
@@ -18,7 +15,7 @@ A component for the third step of the Sign Up process.
 @param {Function} props.HorizontalLabelPositionBelowStepper - The stepper component to display the progress.
 @param {Object} props.error - The errors in the form.
 @param {Function} props.setError - The function to set form errors.
-@param {Object} props.errortype - The error types in the form.
+@param {Object} props.errorType - The error types in the form.
 @param {Function} props.setErrorType - The function to set error types in the form.
 @returns {JSX.Element} - The Sign Up Step Three component.
 */
@@ -31,7 +28,7 @@ const SignUpComponentStepThree = ({
     HorizontalLabelPositionBelowStepper,
     error,
     setError,
-    errortype,
+    errorType,
     setErrorType
 }) => {
     return (
@@ -39,9 +36,6 @@ const SignUpComponentStepThree = ({
             <Grid className="page">
                 <Grid className="page__left">
                     <Grid className="card">
-                        <Grid className="card__header">
-                            <Logo step="Inscription" />
-                        </Grid>
                         <Grid className="card__title">
                             <strong>Informations Bancaires</strong>
                             <HorizontalLabelPositionBelowStepper />
@@ -64,14 +58,13 @@ const SignUpComponentStepThree = ({
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrorType={setErrorType}
                         />
                         <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATION.SIGN_UP.NAME}>
                             Suivez notre tutoriel
                         </Link>
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">
@@ -90,7 +83,7 @@ SignUpComponentStepThree.propTypes = {
     HorizontalLabelPositionBelowStepper: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func,
     page: PropTypes.number
 }

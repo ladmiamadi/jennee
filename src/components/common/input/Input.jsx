@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../assets/styles/pages/login/index.scss'
 /**
 A React functional component for rendering an input element.
 @param {Object} props - The props object containing the classname, required, name, placeholder, value, type, onChange, and dataOnChange props.

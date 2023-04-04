@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../../../assets/styles/pages/login/index.scss'
-import Input from '../../../input/Input'
+import Input from '@common/input/Input'
 import { INPUT } from '../../../../../constants/inputConst'
 import Button from '../../../button/Button'
 import TextArea from '../../../input/TextArea'

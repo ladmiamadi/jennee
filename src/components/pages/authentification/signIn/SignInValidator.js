@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const SignInValidator = (formValue, error, setError, errortype, setErrorType) => {
+const SignInValidator = (formValue, error, setError, errorType, setErrorType) => {
     const passwordRegex =
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[\w!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/
     for (const field in formValue) {
@@ -48,7 +48,7 @@ const SignInValidator = (formValue, error, setError, errortype, setErrorType) =>
 SignInValidator.propTypes = {
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func,
     formValue: PropTypes.object
 }

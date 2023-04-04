@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Logo from '../../../../layout/authLayout/header/logo'
-import '../../../../../assets/styles/main.scss'
-import NewPasswordFormMember from '../../../../common/form/NewMember/NewPasswordFormMember'
+import Logo from '@layout/authLayout/header/logo'
+import '@styles/main.scss'
+import NewPasswordFormMember from '@common/form/NewMember/NewPasswordFormMember'
 import { Grid } from '@mui/material'
-import Footer from '../../../../layout/authLayout/footer/Footer'
-import Layout from '../../../../layout/shape/Layout'
+import Layout from '../../../layout/shape/Layout'
 /**
-Represents the NewPasswordComponentMember functional component.
+Represents the CreatePasswordComponent functional component.
 @param {object} props - The props object containing the following properties:
 @param {function} setFormValue - A function to set the formValue state.
 @param {object} formValue - An object containing the current form values.
@@ -15,11 +14,11 @@ Represents the NewPasswordComponentMember functional component.
 @param {function} handleChange - A function to handle the form field changes.
 @param {object} error - An object containing any errors in the form.
 @param {function} setError - A function to set the error state.
-@param {object} errortype - An object containing any errors in the form field types.
-@param {function} setErrorType - A function to set the errortype state.
-@returns {JSX.Element} - A React JSX element that renders the NewPasswordComponentMember.
+@param {object} errorType - An object containing any errors in the form field types.
+@param {function} setErrorType - A function to set the errorType state.
+@returns {JSX.Element} - A React JSX element that renders the CreatePasswordComponent.
 */
-const NewPasswordComponentMember = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errortype, setErrorType }) => {
+const CreatePasswordComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error, setError, errorType, setErrorType }) => {
     return (
         // card__header // card__footer
         <>
@@ -46,11 +45,10 @@ const NewPasswordComponentMember = ({ setFormValue, formValue, HandleSubmit, han
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrorType={setErrorType}
                         />
                     </Grid>
-                    <Footer />
                 </Grid>
 
                 <Grid className="page__right">
@@ -61,15 +59,15 @@ const NewPasswordComponentMember = ({ setFormValue, formValue, HandleSubmit, han
     )
 }
 
-NewPasswordComponentMember.propTypes = {
+CreatePasswordComponent.propTypes = {
     HandleSubmit: PropTypes.func,
     handleChange: PropTypes.func,
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func
 }
 
-export default NewPasswordComponentMember
+export default CreatePasswordComponent

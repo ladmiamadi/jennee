@@ -1,12 +1,12 @@
 import React from 'react'
 import SignUpComponentStepOne from '../SignUpStepOne/SignUpComponentStepOne'
-import { HandleChange } from '../../../../../utils/HandleChange'
+import { HandleChange } from '@utils/HandleChange'
 
 import SignUpComponentStepTwo from '../SignUpStepTwo/SignUpComponentStepTwo'
 import SignUpComponentStepThree from '../SignUpStepThree/SignUpComponentStepThree'
 import SignUpComponentStepFour from '../SignUpStepFour/SignUpComponentStepFour'
 import PropTypes from 'prop-types'
-import Succes from './Succes'
+import Success from './Success'
 import EmailValidationComponent from '../EmailValidation/EmailValidationComponent.jsx'
 
 /**
@@ -16,13 +16,12 @@ ComponentList is a functional component that renders a list of child components 
 @param {function} props.setFormValue - A function that sets the value of the form fields
 @param {Object} props.formValue - An object that contains the current value of the form fields
 @param {function} props.HandleSubmit - A function that handles the form submission
-@param {function} props.handleChange - A function that handles the form input changes
 @param {number} props.page - The current page number of the multi-step form
 @param {function} props.setPage - A function that sets the current page number of the multi-step form
 @param {function} props.HorizontalLabelPositionBelowStepper - A function that sets the horizontal label position below stepper
 @param {Object} props.error - An object that contains the current error state of the form fields
 @param {function} props.setError - A function that sets the error state of the form fields
-@param {Object} props.errortype - An object that contains the current error type of the form fields
+@param {Object} props.errorType - An object that contains the current error type of the form fields
 @param {function} props.setErrorType - A function that sets the error type of the form fields
 @returns {Array} An array of child components to render
 */
@@ -35,7 +34,7 @@ const ComponentList = ({
     HorizontalLabelPositionBelowStepper,
     error,
     setError,
-    errortype,
+    errorType,
     setErrorType
 }) => [
     <SignUpComponentStepOne
@@ -49,7 +48,7 @@ const ComponentList = ({
         HandleSubmit={HandleSubmit}
         error={error}
         setError={setError}
-        errortype={errortype}
+        errorType={errorType}
         setErrorType={setErrorType}
     />,
     <SignUpComponentStepTwo
@@ -63,7 +62,7 @@ const ComponentList = ({
         HandleSubmit={HandleSubmit}
         error={error}
         setError={setError}
-        errortype={errortype}
+        errorType={errorType}
         setErrorType={setErrorType}
     />,
     <SignUpComponentStepThree
@@ -77,7 +76,7 @@ const ComponentList = ({
         HandleSubmit={HandleSubmit}
         error={error}
         setError={setError}
-        errortype={errortype}
+        errorType={errorType}
         setErrorType={setErrorType}
     />,
     <SignUpComponentStepFour
@@ -91,7 +90,7 @@ const ComponentList = ({
         HandleSubmit={HandleSubmit}
         error={error}
         setError={setError}
-        errortype={errortype}
+        errorType={errorType}
         setErrorType={setErrorType}
     />,
     <EmailValidationComponent
@@ -104,10 +103,10 @@ const ComponentList = ({
         HandleSubmit={HandleSubmit}
         error={error}
         setError={setError}
-        errortype={errortype}
+        errorType={errorType}
         setErrorType={setErrorType}
     />,
-    <Succes key={'6'} />
+    <Success key={'6'} />
 ]
 
 ComponentList.propTypes = {
@@ -119,8 +118,8 @@ ComponentList.propTypes = {
     HorizontalLabelPositionBelowStepper: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object,
+    setErrorType: PropTypes.func
 }
 
 export default ComponentList

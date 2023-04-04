@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../../assets/styles/pages/login/index.scss'
 
 /**
 A React functional component for rendering a textarea element.

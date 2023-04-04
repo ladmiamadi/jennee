@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import NewMemberComponent from '../CodeVerification/NewMemberComponent'
-import { HandleChange } from '../../../../../utils/HandleChange'
-import NewPasswordComponentMember from './NewPasswordComponentMember'
-import Success from './Success'
-import NewMemberValidator from '../CodeVerification/NewMemberValidator'
+import NewMemberComponent from './CodeVerification/NewMemberComponent'
+import { HandleChange } from '@utils/HandleChange'
+import CreatePasswordComponent from './CreatePasswordComponent'
+import Success from './CreatePassword/Success'
+import NewMemberValidator from './CodeVerification/NewMemberValidator'
 /**
  * Container component for creating a new member.
  * @return {JSX.Element} The JSX code for the container component.
  */
 
-const NewMemberContainer = () => {
+const CreatePasswordContainer = () => {
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [formSuccess, setFormSucces] = useState(false)
     const [error, setError] = useState({
@@ -17,7 +17,7 @@ const NewMemberContainer = () => {
         password: false,
         confirm_password: false
     })
-    const [errortype, setErrorType] = useState({
+    const [errorType, setErrorType] = useState({
         code: '',
         password: '',
         confirm_password: ''
@@ -35,11 +35,11 @@ const NewMemberContainer = () => {
     const HandleSubmit = (event) => {
         event.preventDefault()
         if (formSubmitted === false) {
-            if (NewMemberValidator(formDataStepOne, error, setError, errortype, setError)) {
+            if (NewMemberValidator(formDataStepOne, error, setError, errorType, setError)) {
                 setFormSubmitted(true)
             }
         } else {
-            if (NewMemberValidator(formDataStepTwo, error, setError, errortype, setError)) {
+            if (NewMemberValidator(formDataStepTwo, error, setError, errorType, setError)) {
                 setFormSucces(true)
             }
         }
@@ -53,14 +53,14 @@ const NewMemberContainer = () => {
                             <Success />
                         </>
                     ) : (
-                        <NewPasswordComponentMember
+                        <CreatePasswordComponent
                             handleChange={HandleChange}
                             formValue={formValue}
                             setFormValue={setFormValue}
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrortype={setErrorType}
                         />
                     )}
@@ -73,7 +73,7 @@ const NewMemberContainer = () => {
                     HandleSubmit={HandleSubmit}
                     error={error}
                     setError={setError}
-                    errortype={errortype}
+                    errorType={errorType}
                     setErrorType={setErrorType}
                 />
             )}
@@ -81,4 +81,4 @@ const NewMemberContainer = () => {
     )
 }
 
-export default NewMemberContainer
+export default CreatePasswordContainer

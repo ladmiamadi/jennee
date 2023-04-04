@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 /**
-Represents the PasswordForgotValidator function.
-@param {object} formData - An object containing the form data to be validated.
-@param {object} error - An object containing any errors in the form.
-@param {function} setError - A function to set the error state.
-@param {object} errortype - An object containing any errors in the form field types.
-@param {function} setErrorType - A function to set the errortype state.
-@returns {boolean} - A boolean value indicating whether the form data is valid or not.
-*/
-const PasswordForgotValidator = (formValue, error, setError, errortype, setErrorType) => {
+ Represents the PasswordForgotValidator function.
+ @param formValue
+ @param {object} error - An object containing any errors in the form.
+ @param {function} setError - A function to set the error state.
+ @param {object} errorType - An object containing any errors in the form field types.
+ @param {function} setErrorType - A function to set the errorType state.
+ @returns {boolean} - A boolean value indicating whether the form data is valid or not.
+ */
+const PasswordForgotValidator = (formValue, error, setError, errorType, setErrorType) => {
     let isValid = true
     for (const field in formValue) {
         if (formValue[field] === '') {
@@ -16,8 +16,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 [field]: true
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 [field]: '*champ de texte requis'
             }))
             isValid = false
@@ -26,8 +26,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 email: true
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 email: '*adresse email invalide'
             }))
             isValid = false
@@ -36,8 +36,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 validation: true
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 validation: '*Le code de validation doit contenir 6 caractères'
             }))
             isValid = false
@@ -46,8 +46,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 validation: true
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 validation: 'code invalide'
             }))
             isValid = false
@@ -56,8 +56,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 email: true
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 email: "*l'adresse mail n'est pas associé à un compte"
             }))
             isValid = false
@@ -66,8 +66,8 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
                 ...prevError,
                 [field]: false
             }))
-            setErrorType((prevErrortype) => ({
-                ...prevErrortype,
+            setErrorType((prevErrorType) => ({
+                ...prevErrorType,
                 [field]: ''
             }))
             isValid = true
@@ -79,7 +79,7 @@ const PasswordForgotValidator = (formValue, error, setError, errortype, setError
 PasswordForgotValidator.propTypes = {
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
+    errorType: PropTypes.object,
     setErrorType: PropTypes.func,
     formValue: PropTypes.object
 }
