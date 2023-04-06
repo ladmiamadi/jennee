@@ -15,89 +15,84 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @param {string} className - The CSS class(es) to be applied to the new password form.
  @param {string} name - The name of the new password form.
  @param {Object} error - An object containing error messages for the new password form fields.
- @param {function} setError - The function to be called when updating the error messages for the new password form fields.
- @param {Object} errortype - An object containing error types for the new password form fields.
- @param {function} setErrortype - The function to be called when updating the error types for the new password form fields.
  @returns {JSX.Element} - A new password form with a code input field and a submit button.
  */
 
 const NewPasswordFormMember = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
+	formValue,
+	setFormValue,
+	handleChange,
+	HandleSubmit,
+	className,
+	name,
+	error,
 }) => {
-    console.log(error)
-    const [isVisible, setIsVisible] = React.useState(false)
-    const handleVisibilityToggle = () => {
-        setIsVisible(!isVisible)
-    }
-    return (
-        <>
-            <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
-                <Input
-                    className="card__form-code"
-                    required={true}
-                    name={!error.password ? 'input' : 'input-error'}
-                    type={isVisible ? 'text' : 'password'}
-                    value={formValue.password}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.NEW_MEMBER.PASSWORD.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Mot de passe"
-                />
-                {error.password ? (
-                    <label className="card__error">{error.password}</label>
-                ) : (
-                    <label htmlFor="password-member" className="card__label-input-password-member">
-                        *au moins 8 charactères dont un chiffre, une lettre Maj et Min
-                    </label>
-                )}
-                <span aria-hidden="true" className="visibility-off-newmember" onClick={handleVisibilityToggle}>
-                    {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
-                </span>
+	console.log(error)
+	const [isVisible, setIsVisible] = React.useState(false)
+	const handleVisibilityToggle = () => {
+		setIsVisible(!isVisible)
+	}
+	return (
+		<>
+			<form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+				<Input
+					className="card__form-code"
+					required={true}
+					name={!error.password ? 'input' : 'input-error'}
+					type={isVisible ? 'text' : 'password'}
+					value={formValue.password}
+					dataOnChange={{
+						state: formValue,
+						setState: setFormValue,
+						name: INPUT.NEW_MEMBER.PASSWORD.NAME,
+					}}
+					onChange={handleChange}
+					placeholder="Mot de passe"
+					childrenOnClick={handleVisibilityToggle}
+				>
+					{isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
+				</Input>
+				{error.password ? (
+					<label className="card__error">{error.password}</label>
+				) : (
+					<label htmlFor="password-member" className="card__label-input-password-member">
+						*au moins 8 charactères dont un chiffre, une lettre Maj et Min
+					</label>
+				)}
 
-                <Input
-                    className="card"
-                    required={true}
-                    name={!error.confirm_password ? 'input' : 'input-error'}
-                    type={isVisible ? 'text' : 'password'}
-                    value={formValue.confirm_password}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.NEW_MEMBER.PASSWORD_CONFIRMATION.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Vérifier votre nouveau mot de passe"
-                />
-                {error.confirm_password ? <label className="card__error">{error.confirm_password}</label> : ''}
-                <Button className="card__form-submit" name="Valider l’inscription"></Button>
-            </form>
-        </>
-    )
+				<Input
+					className="card"
+					required={true}
+					name={!error.confirm_password ? 'input' : 'input-error'}
+					type={isVisible ? 'text' : 'password'}
+					value={formValue.confirm_password}
+					dataOnChange={{
+						state: formValue,
+						setState: setFormValue,
+						name: INPUT.NEW_MEMBER.PASSWORD_CONFIRMATION.NAME,
+					}}
+					onChange={handleChange}
+					placeholder="Vérifier votre nouveau mot de passe"
+				/>
+				{error.confirm_password ? (
+					<label className="card__error">{error.confirm_password}</label>
+				) : (
+					''
+				)}
+				<Button className="card__form-submit" name="Valider l’inscription"></Button>
+			</form>
+		</>
+	)
 }
 
 NewPasswordFormMember.propTypes = {
-    name: PropTypes.string,
-    className: PropTypes.string,
-    HandleSubmit: PropTypes.func,
-    handleChange: PropTypes.func,
-    formValue: PropTypes.object,
-    setFormValue: PropTypes.func,
-    error: PropTypes.object,
-    setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+	name: PropTypes.string,
+	className: PropTypes.string,
+	HandleSubmit: PropTypes.func,
+	handleChange: PropTypes.func,
+	formValue: PropTypes.object,
+	setFormValue: PropTypes.func,
+	error: PropTypes.object,
 }
 
 export default NewPasswordFormMember

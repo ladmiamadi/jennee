@@ -22,64 +22,76 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @returns {JSX.Element} - A SignIn form with a code input field and a submit button.
  */
 
-const SignInForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType, setErrorType }) => {
-    const [isVisible, setIsVisible] = React.useState(false)
-    const handleVisibilityToggle = () => {
-        setIsVisible(!isVisible)
-    }
+const SignInForm = ({
+	formValue,
+	setFormValue,
+	handleChange,
+	HandleSubmit,
+	className,
+	name,
+	error,
+	setError,
+	errorType,
+	setErrorType,
+}) => {
+	const [isVisible, setIsVisible] = React.useState(false)
+	const handleVisibilityToggle = (e) => {
+		e.preventDefault()
+		setIsVisible(!isVisible)
+	}
 
-    return (
-        <>
-            <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
-                <Input
-                    required={true}
-                    name={!error.email ? 'input' : 'input-error'}
-                    type="email"
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_IN.EMAIL.NAME
-                    }}
-                    value={formValue.email}
-                    onChange={handleChange}
-                    placeholder="Identifiant ou addresse email"
-                />
-                {error.email ? <label className="card__error">{errorType.email}</label> : ''}
-                <Input
-                    required={true}
-                    name={!error.password ? 'input' : 'input-error'}
-                    type={isVisible ? 'text' : 'password'}
-                    value={formValue.password}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_IN.PASSWORD.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Mot de passe"
-                />
-                <span aria-hidden="true" className="visibility-off-signin" onClick={handleVisibilityToggle}>
-                    {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
-                </span>
+	return (
+		<form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+			<Input
+				required={true}
+				name={!error.email ? 'input' : 'input-error'}
+				type="email"
+				dataOnChange={{
+					state: formValue,
+					setState: setFormValue,
+					name: INPUT.SIGN_IN.EMAIL.NAME,
+				}}
+				value={formValue.email}
+				onChange={handleChange}
+				placeholder="Identifiant ou addresse email"
+			/>
+			{error.email ? <label className="card__error">{errorType.email}</label> : ''}
+			<Input
+				required={true}
+				name={!error.password ? 'input' : 'input-error'}
+				type={isVisible ? 'text' : 'password'}
+				value={formValue.password}
+				dataOnChange={{
+					state: formValue,
+					setState: setFormValue,
+					name: INPUT.SIGN_IN.PASSWORD.NAME,
+				}}
+				onChange={handleChange}
+				childrenOnClick={handleVisibilityToggle}
+				placeholder="Mot de passe"
+			>
+				{isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
+			</Input>
+			{/*      <span aria-hidden="true" className="visibility-off-signin" >
 
-                {error.password ? <label className="card__error">{errorType.password}</label> : ''}
-                <Button className="card__form-submit" name="Se connecter"></Button>
-            </form>
-        </>
-    )
+            </span>*/}
+			{error.password ? <label className="card__error">{errorType.password}</label> : ''}
+			<Button className="card__form-submit" name="Se connecter"></Button>
+		</form>
+	)
 }
 
 SignInForm.propTypes = {
-    name: PropTypes.string,
-    className: PropTypes.string,
-    HandleSubmit: PropTypes.func,
-    handleChange: PropTypes.func,
-    formValue: PropTypes.object,
-    setFormValue: PropTypes.func,
-    error: PropTypes.object,
-    setError: PropTypes.func,
-    errorType: PropTypes.object,
-    setErrorType: PropTypes.func
+	name: PropTypes.string,
+	className: PropTypes.string,
+	HandleSubmit: PropTypes.func,
+	handleChange: PropTypes.func,
+	formValue: PropTypes.object,
+	setFormValue: PropTypes.func,
+	error: PropTypes.object,
+	setError: PropTypes.func,
+	errorType: PropTypes.object,
+	setErrorType: PropTypes.func,
 }
 
 export default SignInForm

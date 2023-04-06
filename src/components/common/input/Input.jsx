@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 /**
 A React functional component for rendering an input element.
 @param {Object} props - The props object containing the classname, required, name, placeholder, value, type, onChange, and dataOnChange props.
@@ -14,17 +15,22 @@ A React functional component for rendering an input element.
 @returns {JSX.Element} - An input element with the specified props.
 */
 
-const Input = ({ classname, required, name, placeholder, value, type, onChange, dataOnChange }) => {
+const Input = ({ classname, required, name, placeholder, value, type, onChange, dataOnChange, children, childrenOnClick }) => {
     return (
-        <input
-            name={name}
-            className={classname}
-            placeholder={placeholder}
-            type={type}
-            value={value}
-            onChange={(e) => onChange(dataOnChange.state, dataOnChange.setState, dataOnChange.name, e.target.value)}
-            required={required}
-        />
+        <div className={'input-container'}>
+            <input
+                name={name}
+                className={classname}
+                placeholder={placeholder}
+                type={type}
+                value={value}
+                onChange={(e) => onChange(dataOnChange.state, dataOnChange.setState, dataOnChange.name, e.target.value)}
+                required={required}
+            />
+            <div aria-hidden="true" className="input-container__icon" onClick={(e) => childrenOnClick(e)}>
+                {children}
+            </div>
+        </div>
     )
 }
 

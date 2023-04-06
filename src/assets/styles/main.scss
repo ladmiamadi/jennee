@@ -1,11 +1,12 @@
-@import './pages/login/index.scss';
-@import './pages/register/index.scss';
 @import 'components/index';
-
+@import 'layout/index';
+@import 'abstracts/index.scss';
+@import 'base/index.scss';
+@import 'themes/index.scss';
+@import 'vendors/index.scss';
+@import 'pages/index.scss';
 body,
 html {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-
+	font-family: 'Helvetica Neue', sans-serif !important;
 	overflow-x: hidden;
 }

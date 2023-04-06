@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
 import SignUpFormStepTwo from '@common/form/SignUp/SignUpStepTwo/SignUpFormStepTwo'
-import { Grid } from '@mui/material'
-import Layout from '@layout/shape/Layout'
+import { Box, Typography } from '@mui/material'
 /**
 A component for the second step of the Sign Up process.
 @param {Object} props - The component props.
@@ -32,45 +31,41 @@ const SignUpComponentStepTwo = ({
     setErrorType
 }) => {
     return (
-        <>
-            <Grid className="page">
-                <Grid className="page__left">
-                    <Grid className="card">
-                        <Grid className="card__title">
-                            <strong>Organisation Étudiante</strong>
-                            <HorizontalLabelPositionBelowStepper />
-                            <Grid className="card__title-step">Étape {page + 1}</Grid>
-                        </Grid>
-                        <Grid className="card__no-account">
-                            <p className="card__text">Vous avez déjà un compte ?</p>
-                            <Link className="card__link-registration" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
-                                {' '}
-                                Connectez-vous{' '}
-                            </Link>
-                        </Grid>
-                        <SignUpFormStepTwo
-                            formValue={formValue}
-                            setFormValue={setFormValue}
-                            handleChange={handleChange}
-                            className={'card__form'}
-                            name={'form'}
-                            HandleSubmit={HandleSubmit}
-                            error={error}
-                            setError={setError}
-                            errorType={errorType}
-                            setErrorType={setErrorType}
-                        />
-                        <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATION.SIGN_UP.PATH}>
-                            Suivez notre tutoriel
-                        </Link>
-                    </Grid>
-                </Grid>
-
-                <Grid className="page__right">
-                    <Layout />
-                </Grid>
-            </Grid>
-        </>
+        <Box component={'div'} className="card card--no-margin">
+            <div className="card__header">
+                <Typography className={'card__title'} variant={'h3'} component={'p'}>
+                    Organisation Étudiante
+                </Typography>
+                <HorizontalLabelPositionBelowStepper />
+                <Box component={'div'} className="card__title-step">
+                    Étape {page + 1}
+                </Box>
+                <Typography variant={'subtitle1'} className="card__text" gutterBottom>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    Vous avez déjà un compte ?{' '}
+                    <Link class="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
+                        Connectez-vous
+                    </Link>
+                </Typography>
+            </div>
+            <div className="card__body">
+                <SignUpFormStepTwo
+                    formValue={formValue}
+                    setFormValue={setFormValue}
+                    handleChange={handleChange}
+                    className={'card__form'}
+                    name={'form'}
+                    HandleSubmit={HandleSubmit}
+                    error={error}
+                    setError={setError}
+                    errorType={errorType}
+                    setErrorType={setErrorType}
+                />
+            </div>
+            <Link className="card__footer-title--tutorial" to={ROUTES.AUTHENTIFICATION.SIGN_UP.PATH}>
+                Suivez notre tutoriel
+            </Link>
+        </Box>
     )
 }
 

@@ -28,91 +28,88 @@ const SignUpFormStepOne = ({ formValue, setFormValue, handleChange, HandleSubmit
         setIsVisible(!isVisible)
     }
     return (
-        <>
-            <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
-                <Input
-                    required={true}
-                    name={!error.name ? 'input' : 'input-error'}
-                    type="text"
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_UP.PERSONAL_INFO.NAME.NAME
-                    }}
-                    value={formValue.name}
-                    onChange={handleChange}
-                    placeholder="Nom"
-                />
-                {error.name ? <label className="card__error">{errorType.name}</label> : ''}
-                <Input
-                    required={true}
-                    name={!error.surname ? 'input' : 'input-error'}
-                    type="text"
-                    value={formValue.surname}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_UP.PERSONAL_INFO.SURNAME.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Prénom"
-                />
-                {error.surname ? <label className="card__error">{errorType.surname}</label> : ''}
-                <Input
-                    required={false}
-                    name={!error.school ? 'input' : 'input-error'}
-                    type="text"
-                    value={formValue.school}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_UP.PERSONAL_INFO.SCHOOL.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="École"
-                />
-                {error.school ? <label className="card__error">{errorType.school}</label> : ''}
+        <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+            <Input
+                required={true}
+                name={!error.name ? 'input' : 'input-error'}
+                type="text"
+                dataOnChange={{
+                    state: formValue,
+                    setState: setFormValue,
+                    name: INPUT.SIGN_UP.PERSONAL_INFO.NAME.NAME
+                }}
+                value={formValue.name}
+                onChange={handleChange}
+                placeholder="Nom"
+            />
+            {error.name ? <label className="card__error">{errorType.name}</label> : ''}
+            <Input
+                required={true}
+                name={!error.surname ? 'input' : 'input-error'}
+                type="text"
+                value={formValue.surname}
+                dataOnChange={{
+                    state: formValue,
+                    setState: setFormValue,
+                    name: INPUT.SIGN_UP.PERSONAL_INFO.SURNAME.NAME
+                }}
+                onChange={handleChange}
+                placeholder="Prénom"
+            />
+            {error.surname ? <label className="card__error">{errorType.surname}</label> : ''}
+            <Input
+                required={false}
+                name={!error.school ? 'input' : 'input-error'}
+                type="text"
+                value={formValue.school}
+                dataOnChange={{
+                    state: formValue,
+                    setState: setFormValue,
+                    name: INPUT.SIGN_UP.PERSONAL_INFO.SCHOOL.NAME
+                }}
+                onChange={handleChange}
+                placeholder="École"
+            />
+            {error.school ? <label className="card__error">{errorType.school}</label> : ''}
 
-                <Input
-                    required={true}
-                    name={!error.email ? 'input' : 'input-error'}
-                    type="email"
-                    value={formValue.email}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_UP.PERSONAL_INFO.EMAIL.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Adresse mail"
-                />
-                {error.email ? <label className="card__error">{errorType.email}</label> : ''}
-                <Input
-                    required={true}
-                    name={!error.password ? 'input' : 'input-error'}
-                    type={isVisible ? 'text' : 'password'}
-                    value={formValue.password}
-                    dataOnChange={{
-                        state: formValue,
-                        setState: setFormValue,
-                        name: INPUT.SIGN_UP.PERSONAL_INFO.PASSWORD.NAME
-                    }}
-                    onChange={handleChange}
-                    placeholder="Mot de passe "
-                />
-                <span aria-hidden="true" className="visibility-off-signup" onClick={handleVisibilityToggle}>
-                    {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
-                </span>
-                {error.password ? (
-                    <label className="card__error">{errorType.password}</label>
-                ) : (
-                    <label htmlFor="input-password" className="card__label-input-password">
-                        *au moins 8 charactères dont un chiffre, une lettre Maj et Min
-                    </label>
-                )}
-                <Button className="card__form-submit" name="Passer à l'étape suivante"></Button>
-            </form>
-        </>
+            <Input
+                required={true}
+                name={!error.email ? 'input' : 'input-error'}
+                type="email"
+                value={formValue.email}
+                dataOnChange={{
+                    state: formValue,
+                    setState: setFormValue,
+                    name: INPUT.SIGN_UP.PERSONAL_INFO.EMAIL.NAME
+                }}
+                onChange={handleChange}
+                placeholder="Adresse mail"
+            />
+            {error.email ? <label className="card__error">{errorType.email}</label> : ''}
+            <Input
+                required={true}
+                name={!error.password ? 'input' : 'input-error'}
+                type={isVisible ? 'text' : 'password'}
+                value={formValue.password}
+                dataOnChange={{
+                    state: formValue,
+                    setState: setFormValue,
+                    name: INPUT.SIGN_UP.PERSONAL_INFO.PASSWORD.NAME
+                }}
+                onChange={handleChange}
+                placeholder="Mot de passe "
+                childrenOnClick={handleVisibilityToggle}>
+                {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
+            </Input>
+            {error.password ? (
+                <label className="card__error">{errorType.password}</label>
+            ) : (
+                <label htmlFor="input-password" className="card__label-input-password">
+                    *au moins 8 charactères dont un chiffre, une lettre Maj et Min
+                </label>
+            )}
+            <Button className="card__form-submit" name="Passer à l'étape suivante"></Button>
+        </form>
     )
 }
 

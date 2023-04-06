@@ -12,14 +12,12 @@ import { ROUTES } from '@constants/routesConst'
 
 export const Header = ({ step }) => {
     return (
-        <>
-            <div className="logo">
-                <Link to={ROUTES.ROOT.PATH}>
-                    <JeneeLogo />
-                </Link>
-                <h1>X {step}</h1>
-            </div>
-        </>
+        <div className="header">
+            <Link to={ROUTES.ROOT.PATH}>
+                <JeneeLogo />
+            </Link>
+            <h1>X {step} Connexion</h1>
+        </div>
     )
 }
 export default Header

@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
 import SignUpFormStepFour from '@common/form/SignUp/SignUpStepFour/SignUpFormStepFour'
-import { Grid } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import Layout from '@layout/shape/Layout'
 /**
-A component for the fourth step of the Sign Up process.
-@param {Object} props - The component props.
-@param {Function} props.HandleSubmit - The function to handle form submission.
-@param {Function} props.handleChange - The function to handle input change.
-@param {Object} props.formValue - The form values.
-@param {Function} props.setFormValue - The function to set form values.
-@param {Function} props.HorizontalLabelPositionBelowStepper - The stepper component to display the progress.
-@param {Object} props.error - The errors in the form.
-@param {Function} props.setError - The function to set form errors.
-@param {Object} props.errorType - The error types in the form.
-@param {Function} props.setErrorType - The function to set error types in the form.
-@returns {JSX.Element} - The Sign Up Step Four component.
-*/
+ A component for the fourth step of the Sign Up process.
+ @param {Object} props - The component props.
+ @param {Function} props.HandleSubmit - The function to handle form submission.
+ @param {Function} props.handleChange - The function to handle input change.
+ @param {Object} props.formValue - The form values.
+ @param {Function} props.setFormValue - The function to set form values.
+ @param {Function} props.HorizontalLabelPositionBelowStepper - The stepper component to display the progress.
+ @param {Object} props.error - The errors in the form.
+ @param {Function} props.setError - The function to set form errors.
+ @param {Object} props.errorType - The error types in the form.
+ @param {Function} props.setErrorType - The function to set error types in the form.
+ @returns {JSX.Element} - The Sign Up Step Four component.
+ */
 const SignUpComponentStepFour = ({
     setFormValue,
     formValue,
@@ -32,42 +32,41 @@ const SignUpComponentStepFour = ({
     setErrorType
 }) => {
     return (
-        <>
-            <Grid className="page">
-                <Grid className="page__left">
-                    <Grid name="card" className="card">
-                        <Grid className="card__title">
-                            <strong>Informations personnelles</strong>
-                            <HorizontalLabelPositionBelowStepper />
-                            <Grid className="card__title-step">Étape {page + 1}</Grid>
-                        </Grid>
-                        <Grid className="card__no-account">
-                            <p className="card__text">Vous avez déjà un compte ?</p>
-                            <Link className="card__link-registration" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
-                                {' '}
-                                Connectez-vous{' '}
-                            </Link>
-                        </Grid>
-
-                        <SignUpFormStepFour
-                            formValue={formValue}
-                            setFormValue={setFormValue}
-                            handleChange={handleChange}
-                            className={'card__form'}
-                            name={'form'}
-                            HandleSubmit={HandleSubmit}
-                            error={error}
-                            setError={setError}
-                            errorType={errorType}
-                            setErrorType={setErrorType}
-                        />
-                    </Grid>
-                </Grid>
-                <Grid className="page__right">
-                    <Layout />
-                </Grid>
-            </Grid>
-        </>
+        <Box component={'div'} className="card card--no-margin">
+            <div className="card__header">
+                <Typography className={'card__title'} variant={'h3'} component={'p'}>
+                    Identité visuel
+                </Typography>
+                <HorizontalLabelPositionBelowStepper />
+                <Box component={'div'} className="card__title-step">
+                    Étape {page + 1}
+                </Box>
+                <Typography variant={'subtitle1'} className="card__text" gutterBottom>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    Vous avez déjà un compte ?{' '}
+                    <Link class="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
+                        Connectez-vous
+                    </Link>
+                </Typography>
+            </div>
+            <div className="card__body">
+                <SignUpFormStepFour
+                    formValue={formValue}
+                    setFormValue={setFormValue}
+                    handleChange={handleChange}
+                    className={'card__form'}
+                    name={'form'}
+                    HandleSubmit={HandleSubmit}
+                    error={error}
+                    setError={setError}
+                    errorType={errorType}
+                    setErrorType={setErrorType}
+                />
+            </div>
+            <Link className="card__footer-title--tutorial" to={ROUTES.AUTHENTIFICATION.SIGN_UP.PATH}>
+                Suivez notre tutoriel
+            </Link>
+        </Box>
     )
 }
 

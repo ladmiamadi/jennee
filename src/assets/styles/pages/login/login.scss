@@ -1,9 +1,37 @@
-@import '../../abstracts/index.scss';
-@import '../../base/index.scss';
-@import '../../components/button/index.scss';
-@import '../../components/table/index.scss';
-@import '../../components/card/index.scss';
-@import '../../components/input/index.scss';
-@import '../../layout/index.scss';
-@import '../../themes/index.scss';
-@import '../../vendors/index.scss';
+/*
+.sign-in {
+  text-align: center;
+  margin: 8%;
+
+  &__title {
+    font-weight: bold !important;
+    color: $blue;
+  }
+  &__text{
+    color: $light_grey;
+  }
+  &__link:hover{
+    text-decoration: underline;
+  }
+  &__body {
+    margin: 16px 0 16px 0;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 447px;
+    width: -webkit-fill-available;;
+  }
+  &__forgot-password {
+    margin-top: 16px;
+    & > a {
+      color: $light_grey;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
+*/

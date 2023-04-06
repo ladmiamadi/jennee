@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '@layout/authLayout/header/logo'
 import NewMemberForm from '@common/form/NewMember/NewMemberForm'
-import { Grid } from '@mui/material'
-import Layout from '@layout/shape/Layout'
+import { Box, Typography } from '@mui/material'
 
 /**
  Represents the NewMemberComponent functional component.
@@ -19,41 +17,33 @@ import Layout from '@layout/shape/Layout'
 
 const NewMemberComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, error }) => {
     return (
-        <>
-            <Grid className="page">
-                <Grid className="page__left">
-                    <Grid className="card">
-                        <Grid className="card__header">
-                            <Logo step="Nouveau Membre" />
-                        </Grid>
-                        <Grid className="card__title">
-                            <strong>BDE MAS’QUADRA</strong>
-                        </Grid>
-                        <p className="card__info">Vous à invité à rejoindre leur équipe</p>
-                        <Grid className="card__no-account">
-                            <p className="card__text">Veuillez renseigner le code recu sur votre adresse e-mail</p>
-                        </Grid>
-
-                        <NewMemberForm
-                            formValue={formValue}
-                            setFormValue={setFormValue}
-                            handleChange={handleChange}
-                            className={'card__form'}
-                            name={'form'}
-                            HandleSubmit={HandleSubmit}
-                            error={error}
-                        />
-                        <Link className="card__forgot-password" to={''}>
-                            Renvoyer le code
-                        </Link>
-                    </Grid>
-                </Grid>
-
-                <Grid className="page__right">
-                    <Layout />
-                </Grid>
-            </Grid>
-        </>
+        <Box component={'div'} className="card">
+            <div className="card__header">
+                <Typography className={'card__title'} variant={'h3'} component={'p'}>
+                    BDE MAS’QUADRA
+                </Typography>
+                <Typography variant={'subtitle1'} className="card__text" gutterBottom>
+                    Vous à invité à rejoindre leur équipe
+                </Typography>
+                <Typography variant={'subtitle1'} className="card__text" gutterBottom>
+                    Veuillez renseigner le code recu sur votre adresse e-mail
+                </Typography>
+            </div>
+            <div className="card__body">
+                <NewMemberForm
+                    formValue={formValue}
+                    setFormValue={setFormValue}
+                    handleChange={handleChange}
+                    className={'card__form'}
+                    name={'form'}
+                    HandleSubmit={HandleSubmit}
+                    error={error}
+                />
+            </div>
+            <Link className="card__footer-title--tutorial" to={''}>
+                Renvoyer le code
+            </Link>
+        </Box>
     )
 }
 

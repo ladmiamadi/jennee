@@ -12,23 +12,21 @@ import { ROUTES } from '@constants/routesConst'
 
 const Footer = () => {
     return (
-        <>
-            <Grid className={'page__left-footer'}>
-                <p>@Jenee</p>
-                <a href={'https://jenee.fr/contact'}>
-                    <p>Contact</p>
-                </a>
-                <Link to={ROUTES.PRIVACY_POLICY.PATH}>
-                    <p>Confidentialité</p>
-                </Link>
-                <Link to={ROUTES.CGU.PATH}>
-                    <p>CGU</p>
-                </Link>
-                <Link to={ROUTES.CGV.PATH}>
-                    <p>CGV</p>
-                </Link>
-            </Grid>
-        </>
+        <footer className={'footer'}>
+            <p>@Jenee</p>
+            <a href={'https://jenee.fr/contact'}>
+                <p>Contact</p>
+            </a>
+            <Link to={ROUTES.PRIVACY_POLICY.PATH}>
+                <p>Confidentialité</p>
+            </Link>
+            <Link to={ROUTES.CGU.PATH}>
+                <p>CGU</p>
+            </Link>
+            <Link to={ROUTES.CGV.PATH}>
+                <p>CGV</p>
+            </Link>
+        </footer>
     )
 }
 

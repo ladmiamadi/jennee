@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
-import { Grid } from '@mui/material'
-import Layout from '@layout/shape/Layout'
+import { Box, Typography } from '@mui/material'
 /**
  * A component that displays a success message after a user account has been created
  *
@@ -11,26 +10,20 @@ import Layout from '@layout/shape/Layout'
  */
 const Success = () => {
     return (
-        <>
-            <Grid className="page">
-                <Grid className="page__left">
-                    <Grid className="card__succes">
-                        <Grid className="card__title">
-                            <strong>Votre mot de passe a été mis à jour avec succès</strong>
-                        </Grid>
-                        <Grid className="card__no-account"></Grid>
-
-                        <Link className="card__forgot-password" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
-                            Connectez-vous
-                        </Link>
-                    </Grid>
-                </Grid>
-
-                <Grid className="page__right">
-                    <Layout />
-                </Grid>
-            </Grid>
-        </>
+        <Box component={'div'} className="card ">
+            <div className="card__header">
+                <Typography className={'card__title'} variant={'h3'} component={'p'}>
+                    Votre mot de passe a été mis à jour avec succès
+                </Typography>
+                <Typography variant={'subtitle1'} className="card__text" gutterBottom>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    Vous avez déjà un compte ?{' '}
+                    <Link class="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
+                        Connectez-vous
+                    </Link>
+                </Typography>
+            </div>
+        </Box>
     )
 }
 

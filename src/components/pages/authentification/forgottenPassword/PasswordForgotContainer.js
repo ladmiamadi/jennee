@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import PasswordForgotComponent from '../EmailVerification/PasswordForgotComponent.jsx'
+import PasswordForgotComponent from './PasswordForgotComponent.jsx'
 import { HandleChange } from '@utils/HandleChange.js'
-import PasswordForgotCodeComponent from '../CodeVerification/PasswordForgotCodeComponent.jsx'
-import PasswordForgotValidator from '../CodeVerification/PasswordForgotValidator.js'
-import NewPasswordComponent from './NewPasswordComponent.jsx'
-import NewPasswordValidator from './NewPasswordValidator.js'
-import Success from './Success.jsx'
+import PasswordForgotCodeComponent from './CodeVerification/PasswordForgotCodeComponent.jsx'
+import PasswordForgotValidator from './CodeVerification/PasswordForgotValidator.js'
+import NewPasswordComponent from './NewPassword/NewPasswordComponent.jsx'
+import NewPasswordValidator from './NewPassword/NewPasswordValidator.js'
+import Success from './NewPassword/Success.jsx'
 
 /**
  * A container component that handles the state and functions for the PasswordForgotComponent
@@ -20,7 +20,7 @@ const PasswordForgotContainer = () => {
         email: false,
         validation: false
     })
-    const [errortype, setErrorType] = useState({
+    const [errorType, setErrorType] = useState({
         password: '',
         email: '',
         validation: ''
@@ -42,17 +42,16 @@ const PasswordForgotContainer = () => {
         event.preventDefault()
         console.log(formValue)
         if (formSubmitted === false) {
-            if (PasswordForgotValidator(formDataStepOne, error, setError, errortype, setError)) {
+            if (PasswordForgotValidator(formDataStepOne, error, setError, errorType, setError)) {
                 setFormSubmitted(true)
             }
         } else {
-            if (PasswordForgotValidator(formDataStepTwo, error, setError, errortype, setError)) {
+            if (PasswordForgotValidator(formDataStepTwo, error, setError, errorType, setError)) {
                 setStepOneCompleted(true)
             }
             if (stepOneCompleted) {
                 // vérifie si l'étape 1 a été validée avant de permettre à l'utilisateur d'accéder à l'étape suivante
-
-                if (NewPasswordValidator(formDataStepThree, error, setError, errortype, setError)) {
+                if (NewPasswordValidator(formDataStepThree, error, setError, errorType, setError)) {
                     setFormSuccess(true)
                 }
             }
@@ -73,7 +72,7 @@ const PasswordForgotContainer = () => {
                             HandleSubmit={HandleSubmit}
                             error={error}
                             setError={setError}
-                            errortype={errortype}
+                            errorType={errorType}
                             setErrorType={setErrorType}
                         />
                     )
@@ -85,7 +84,7 @@ const PasswordForgotContainer = () => {
                         HandleSubmit={HandleSubmit}
                         error={error}
                         setError={setError}
-                        errortype={errortype}
+                        errorType={errorType}
                         setErrorType={setErrorType}
                     />
                 )
@@ -97,7 +96,7 @@ const PasswordForgotContainer = () => {
                     HandleSubmit={HandleSubmit}
                     error={error}
                     setError={setError}
-                    errortype={errortype}
+                    errorType={errorType}
                     setErrorType={setErrorType}
                 />
             )}

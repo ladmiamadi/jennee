@@ -5,10 +5,8 @@ import AuthLayout from '@components/layout/authLayout'
 import { ROUTES } from '@constants/routesConst'
 // render - login
 const SignInContainer = lazy(() => import('@components/pages/authentification/signIn/SignInContainer'))
-const SignUpContainer = lazy(() => import('@components/pages/authentification/signUp/ComponentList/SignUpContainer'))
-const PasswordForgotContainer = lazy(() =>
-    import('@components/pages/authentification/forgottenPassword/NewPassword/PasswordForgotContainer')
-)
+const SignUpContainer = lazy(() => import('@components/pages/authentification/signUp/SignUpContainer'))
+const PasswordForgotContainer = lazy(() => import('@components/pages/authentification/forgottenPassword/PasswordForgotContainer'))
 const CreatePasswordContainer = lazy(() => import('@components/pages/authentification/createPassword/CreatePasswordContainer'))
 const PrivacyPolicy = lazy(() => import('@components/pages/privacyPolicy/PrivacyPolicy'))
 const Cgu = lazy(() => import('@components/pages/cgu/Cgu'))

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { AUTHENTIFICATION } from '@constants/authentificationConst'
 /**
  Represents the PasswordForgotValidator function.
  @param formValue
@@ -41,7 +42,7 @@ const PasswordForgotValidator = (formValue, error, setError, errorType, setError
                 validation: '*Le code de validation doit contenir 6 caractères'
             }))
             isValid = false
-        } else if (field === 'validation' && formValue[field] !== '123456') {
+        } else if (field === 'validation' && formValue[field] !== AUTHENTIFICATION.FORGOTTEN_PASSWORD.code) {
             setError((prevError) => ({
                 ...prevError,
                 validation: true
@@ -51,7 +52,7 @@ const PasswordForgotValidator = (formValue, error, setError, errorType, setError
                 validation: 'code invalide'
             }))
             isValid = false
-        } else if (field === 'email' && formValue.email !== 'a@gmail.com') {
+        } else if (field === 'email' && formValue.email !== AUTHENTIFICATION.FORGOTTEN_PASSWORD.email) {
             setError((prevError) => ({
                 ...prevError,
                 email: true

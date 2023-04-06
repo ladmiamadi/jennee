@@ -17,23 +17,11 @@ SignUpFormStepTwo is a functional component that renders a form with input field
 @param {Function} props.setFormValue - The function to set the form input field values.
 @param {Object} props.error - The object that contains the error status for each input field.
 @param {Function} props.setError - The function to set the error status for each input field.
-@param {Object} props.errortype - The object that contains the error message for each input field.
-@param {Function} props.setErrortype - The function to set the error message for each input field.
+@param {Object} props.errorType - The object that contains the error message for each input field.
 @returns {JSX.Element} - The JSX element that represents the SignUpFormStepTwo component.
 */
 
-const SignUpFormStepTwo = ({
-    formValue,
-    setFormValue,
-    handleChange,
-    HandleSubmit,
-    className,
-    name,
-    error,
-    setError,
-    errortype,
-    setErrortype
-}) => {
+const SignUpFormStepTwo = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType }) => {
     console.log(error, setError)
     return (
         <>
@@ -51,7 +39,7 @@ const SignUpFormStepTwo = ({
                     onChange={handleChange}
                     placeholder="Ville"
                 />
-                {error.city ? <label className="card__error">{errortype.city}</label> : ''}
+                {error.city ? <label className="card__error">{errorType.city}</label> : ''}
                 <Input
                     required={true}
                     name={!error.name_organisation ? 'input' : 'input-error'}
@@ -66,7 +54,7 @@ const SignUpFormStepTwo = ({
                     placeholder="Nom de l'organisation"
                 />
                 {error.name_organisation ? (
-                    <label className="card__error">{errortype.name_organisation}</label>
+                    <label className="card__error">{errorType.name_organisation}</label>
                 ) : (
                     <label htmlFor="name-organisation" className="card__label-input-name-organisation">
                         ex: Bureau des Arts - M Art rix
@@ -87,7 +75,7 @@ const SignUpFormStepTwo = ({
                     placeholder="Votre rôle dans l’organisation"
                 />
                 {error.role_organisation ? (
-                    <label className="card__error">{errortype.role_organisation}</label>
+                    <label className="card__error">{errorType.role_organisation}</label>
                 ) : (
                     <label htmlFor="role-organisation" className="card__label-input-role-organisation">
                         ex: Président
@@ -108,7 +96,7 @@ const SignUpFormStepTwo = ({
                     placeholder="Ajouter un numéro de siret"
                 />
                 {error.siret_number ? (
-                    <label className="card__error">{errortype.siret_number}</label>
+                    <label className="card__error">{errorType.siret_number}</label>
                 ) : (
                     <label htmlFor="siret" className="card__label-input-siret">
                         *Ce champ est optionnel pour le moment
@@ -129,7 +117,7 @@ const SignUpFormStepTwo = ({
                     name={!error.description ? 'card__form-description' : 'card__form-description-error'}
                 />
                 {error.description ? (
-                    <label className="card__error">{errortype.description}</label>
+                    <label className="card__error">{errorType.description}</label>
                 ) : (
                     <label htmlFor="description" className="card__label-input-description">
                         *Ce champ est optionnel pour le moment
@@ -154,8 +142,7 @@ SignUpFormStepTwo.propTypes = {
     setFormValue: PropTypes.func,
     error: PropTypes.object,
     setError: PropTypes.func,
-    errortype: PropTypes.object,
-    setErrortype: PropTypes.func
+    errorType: PropTypes.object
 }
 
 export default SignUpFormStepTwo
