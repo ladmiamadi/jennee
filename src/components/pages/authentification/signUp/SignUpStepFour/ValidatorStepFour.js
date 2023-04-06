@@ -24,7 +24,6 @@ const ValidatorStepFour = (formData, error, setError, errortype, setErrorType) =
 
     for (const field in formData) {
         if (formData[field] === '') {
-            console.log('error')
             setError((prevError) => ({
                 ...prevError,
                 [field]: true

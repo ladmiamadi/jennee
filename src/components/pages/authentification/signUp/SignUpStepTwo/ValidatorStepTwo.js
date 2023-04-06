@@ -21,7 +21,6 @@ const ValidatorStepTwo = (formData, error, setError, errortype, setErrorType) =>
         }
 
         if (formData[field] === '') {
-            console.log('error')
             setError((prevError) => ({
                 ...prevError,
                 [field]: true

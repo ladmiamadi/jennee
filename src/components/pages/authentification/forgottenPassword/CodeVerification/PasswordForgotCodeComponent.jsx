@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '@components/layout/authLayout/header/logo'
 import { ROUTES } from '@constants/routesConst'
 import PasswordForgotCodeForm from '@components/common/form/PasswordForgot/PasswordForgotCodeForm'
-import { Box, Grid, Typography } from '@mui/material'
-import Layout from '@components/layout/shape/Layout'
+import { Box, Typography } from '@mui/material'
 /**
  Represents the PasswordForgotCodeComponent functional component.
  @param {object} props - The props object containing the following properties:

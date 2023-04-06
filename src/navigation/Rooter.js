@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import Loader from '@components/loader/Loader'
 import { BrowserRouter } from 'react-router-dom'
 import Routes from '@navigation/Routes'

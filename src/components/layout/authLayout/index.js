@@ -5,13 +5,16 @@ import Footer from './footer'
 import Header from './header'
 import { Box } from '@mui/material'
 import Layout from '@layout/shape/Layout'
-import Grid2 from '@mui/material/Unstable_Grid2' // Grid version 2
+import Grid2 from '@mui/material/Unstable_Grid2'
+import { activeLinkSelector } from '@selectors/application.selector'
+import { useSelector } from 'react-redux' // Grid version 2
 const AuthLayout = () => {
+    const activeLink = useSelector(activeLinkSelector)
     return (
         /*sx={{ height: '100vh' }}*/
         <Box>
-            <Header />
-            <Grid2 container maxWidth={'lg'}>
+            <Header activeLink={activeLink} />
+            <Grid2 container maxWidth={'lg'} sx={{ marginBottom: '8%' }}>
                 <Grid2 xs={6} md={6} lg={8}>
                     <Outlet />
                 </Grid2>

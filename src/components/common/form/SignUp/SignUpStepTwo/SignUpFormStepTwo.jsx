@@ -22,7 +22,6 @@ SignUpFormStepTwo is a functional component that renders a form with input field
 */
 
 const SignUpFormStepTwo = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType }) => {
-    console.log(error, setError)
     return (
         <>
             <form noValidate name={name} className={className} onSubmit={HandleSubmit}>

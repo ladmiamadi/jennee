@@ -73,9 +73,8 @@ const SignUpContainer = () => {
         banner: '',
         code: ''
     })
-    const [page, setPage] = useState(4)
+    const [page, setPage] = useState(0)
     const HandleSubmit = (event) => {
-        console.log(formValue)
         event.preventDefault()
         const { name, surname, school, email, password } = formValue
         const { city, name_organisation, role_organisation, siret_number, description } = formValue

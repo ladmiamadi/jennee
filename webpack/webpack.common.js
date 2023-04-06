@@ -2,7 +2,6 @@ const path = require('path')
 const config = require('../portal.config')
 const loaders = require('./webpack.loaders')
 const plugins = require('./webpack.plugins')
-console.log(path.join(config.root, config.paths.src, 'assets/styles'))
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const webpackConf = {
 	entry: path.join(__dirname, '..', config.paths.src, 'index.js'),

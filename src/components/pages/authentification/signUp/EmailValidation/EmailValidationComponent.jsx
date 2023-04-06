@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Logo from '@layout/authLayout/header/logo'
 import EmailValidationForm from '@common/form/SignUp/EmailValidation/EmailValidationForm'
-import { Box, Grid, Typography } from '@mui/material'
-import Layout from '@layout/shape/Layout'
-import { ROUTES } from '@constants/routesConst'
+import { Box, Typography } from '@mui/material'
 /**
  Represents the EmailValidationComponent functional component.
  @param {object} props - The props object containing the following properties:

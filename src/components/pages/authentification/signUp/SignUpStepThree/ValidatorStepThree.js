@@ -23,7 +23,6 @@ const ValidatorStepThree = (formData, error, setError, errortype, setErrorType) 
     }
 
     if (areAllFieldsEmpty()) {
-        console.log('all fields empty')
         for (const field in formData) {
             setError((prevError) => ({
                 ...prevError,
@@ -38,7 +37,6 @@ const ValidatorStepThree = (formData, error, setError, errortype, setErrorType) 
     } else {
         for (const field in formData) {
             if (formData[field] === '') {
-                console.log('error')
                 setError((prevError) => ({
                     ...prevError,
                     [field]: true

@@ -40,7 +40,6 @@ const PasswordForgotContainer = () => {
 
     const HandleSubmit = (event) => {
         event.preventDefault()
-        console.log(formValue)
         if (formSubmitted === false) {
             if (PasswordForgotValidator(formDataStepOne, error, setError, errorType, setError)) {
                 setFormSubmitted(true)

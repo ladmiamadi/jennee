@@ -38,7 +38,7 @@ TextArea.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     classname: PropTypes.string,
-    onChange: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
     required: PropTypes.bool,

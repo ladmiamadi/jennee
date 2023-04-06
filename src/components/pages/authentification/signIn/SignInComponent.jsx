@@ -25,7 +25,7 @@ const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, 
                 <Typography variant={'subtitle1'} className="card__text" gutterBottom>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     Vous n'avez pas de compte ?{' '}
-                    <Link class="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_UP.PATH}>
+                    <Link className="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_UP.PATH}>
                         Inscrivez-vous
                     </Link>
                 </Typography>
@@ -44,7 +44,7 @@ const SignInComponent = ({ setFormValue, formValue, HandleSubmit, handleChange, 
                     setErrorType={setErrorType}
                 />
             </div>
-            <Typography class="card__footer-title" variant={'body2'} gutterBottom>
+            <Typography className="card__footer-title" variant={'body2'} gutterBottom>
                 <Link to={ROUTES.AUTHENTIFICATION.FORGOTTEN_PASSWORD.PATH}>Mot de passe oublié ?</Link>
             </Typography>
         </Box>

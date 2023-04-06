@@ -18,81 +18,67 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @returns {JSX.Element} - A new password form with a code input field and a submit button.
  */
 
-const NewPasswordFormMember = ({
-	formValue,
-	setFormValue,
-	handleChange,
-	HandleSubmit,
-	className,
-	name,
-	error,
-}) => {
-	console.log(error)
-	const [isVisible, setIsVisible] = React.useState(false)
-	const handleVisibilityToggle = () => {
-		setIsVisible(!isVisible)
-	}
-	return (
-		<>
-			<form name={name} className={className} onSubmit={HandleSubmit} noValidate>
-				<Input
-					className="card__form-code"
-					required={true}
-					name={!error.password ? 'input' : 'input-error'}
-					type={isVisible ? 'text' : 'password'}
-					value={formValue.password}
-					dataOnChange={{
-						state: formValue,
-						setState: setFormValue,
-						name: INPUT.NEW_MEMBER.PASSWORD.NAME,
-					}}
-					onChange={handleChange}
-					placeholder="Mot de passe"
-					childrenOnClick={handleVisibilityToggle}
-				>
-					{isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
-				</Input>
-				{error.password ? (
-					<label className="card__error">{error.password}</label>
-				) : (
-					<label htmlFor="password-member" className="card__label-input-password-member">
-						*au moins 8 charactères dont un chiffre, une lettre Maj et Min
-					</label>
-				)}
+const NewPasswordFormMember = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
+    const [isVisible, setIsVisible] = React.useState(false)
+    const handleVisibilityToggle = () => {
+        setIsVisible(!isVisible)
+    }
+    return (
+        <>
+            <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+                <Input
+                    className="card__form-code"
+                    required={true}
+                    name={!error.password ? 'input' : 'input-error'}
+                    type={isVisible ? 'text' : 'password'}
+                    value={formValue.password}
+                    dataOnChange={{
+                        state: formValue,
+                        setState: setFormValue,
+                        name: INPUT.NEW_MEMBER.PASSWORD.NAME
+                    }}
+                    onChange={handleChange}
+                    placeholder="Mot de passe"
+                    childrenOnClick={handleVisibilityToggle}>
+                    {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
+                </Input>
+                {error.password ? (
+                    <label className="card__error">{error.password}</label>
+                ) : (
+                    <label htmlFor="password-member" className="card__label-input-password-member">
+                        *au moins 8 charactères dont un chiffre, une lettre Maj et Min
+                    </label>
+                )}
 
-				<Input
-					className="card"
-					required={true}
-					name={!error.confirm_password ? 'input' : 'input-error'}
-					type={isVisible ? 'text' : 'password'}
-					value={formValue.confirm_password}
-					dataOnChange={{
-						state: formValue,
-						setState: setFormValue,
-						name: INPUT.NEW_MEMBER.PASSWORD_CONFIRMATION.NAME,
-					}}
-					onChange={handleChange}
-					placeholder="Vérifier votre nouveau mot de passe"
-				/>
-				{error.confirm_password ? (
-					<label className="card__error">{error.confirm_password}</label>
-				) : (
-					''
-				)}
-				<Button className="card__form-submit" name="Valider l’inscription"></Button>
-			</form>
-		</>
-	)
+                <Input
+                    className="card"
+                    required={true}
+                    name={!error.confirm_password ? 'input' : 'input-error'}
+                    type={isVisible ? 'text' : 'password'}
+                    value={formValue.confirm_password}
+                    dataOnChange={{
+                        state: formValue,
+                        setState: setFormValue,
+                        name: INPUT.NEW_MEMBER.PASSWORD_CONFIRMATION.NAME
+                    }}
+                    onChange={handleChange}
+                    placeholder="Vérifier votre nouveau mot de passe"
+                />
+                {error.confirm_password ? <label className="card__error">{error.confirm_password}</label> : ''}
+                <Button className="card__form-submit" name="Valider l’inscription"></Button>
+            </form>
+        </>
+    )
 }
 
 NewPasswordFormMember.propTypes = {
-	name: PropTypes.string,
-	className: PropTypes.string,
-	HandleSubmit: PropTypes.func,
-	handleChange: PropTypes.func,
-	formValue: PropTypes.object,
-	setFormValue: PropTypes.func,
-	error: PropTypes.object,
+    name: PropTypes.string,
+    className: PropTypes.string,
+    HandleSubmit: PropTypes.func,
+    handleChange: PropTypes.func,
+    formValue: PropTypes.object,
+    setFormValue: PropTypes.func,
+    error: PropTypes.object
 }
 
 export default NewPasswordFormMember

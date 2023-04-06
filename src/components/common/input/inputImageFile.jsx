@@ -40,7 +40,7 @@ InputImageFile.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     classname: PropTypes.string,
-    onChange: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
     required: PropTypes.bool,
     dataOnChange: PropTypes.object.isRequired

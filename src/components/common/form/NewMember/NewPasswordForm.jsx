@@ -18,62 +18,50 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @returns {JSX.Element} - A new password form with a code input field and a submit button.
  */
 
-const NewPasswordForm = ({
-	formValue,
-	setFormValue,
-	handleChange,
-	HandleSubmit,
-	className,
-	name,
-	error,
-}) => {
-	console.log(error)
-	const [isVisible, setIsVisible] = React.useState(false)
-	const handleVisibilityToggle = () => {
-		setIsVisible(!isVisible)
-	}
-	return (
-		<>
-			<form name={name} className={className} onSubmit={HandleSubmit} noValidate>
-				<Input
-					className="card__form-code"
-					required={true}
-					name={!error.password ? 'input' : 'input-error'}
-					type={isVisible ? 'text' : 'password'}
-					value={formValue.password}
-					dataOnChange={{
-						state: formValue,
-						setState: setFormValue,
-						name: INPUT.PASSWORD_FORGOT.NEW_PASSWORD.NAME,
-					}}
-					onChange={handleChange}
-					placeholder="Nouveau mot de passe"
-					childrenOnClick={handleVisibilityToggle}
-				>
-					{isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
-				</Input>
-				{error.password ? (
-					<label className="card__error">{error.password}</label>
-				) : (
-					// eslint-disable-next-line jsx-a11y/label-has-associated-control
-					<label className="card__label-newpassword">
-						*au moins 8 charactères dont un chiffre, une lettre Maj et Min
-					</label>
-				)}
-				<Button className="card__form-submit" name="Passer à l'étape suivante"></Button>
-			</form>
-		</>
-	)
+const NewPasswordForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
+    const [isVisible, setIsVisible] = React.useState(false)
+    const handleVisibilityToggle = () => {
+        setIsVisible(!isVisible)
+    }
+    return (
+        <>
+            <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+                <Input
+                    className="card__form-code"
+                    required={true}
+                    name={!error.password ? 'input' : 'input-error'}
+                    type={isVisible ? 'text' : 'password'}
+                    value={formValue.password}
+                    dataOnChange={{
+                        state: formValue,
+                        setState: setFormValue,
+                        name: INPUT.PASSWORD_FORGOT.NEW_PASSWORD.NAME
+                    }}
+                    onChange={handleChange}
+                    placeholder="Nouveau mot de passe"
+                    childrenOnClick={handleVisibilityToggle}>
+                    {isVisible ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
+                </Input>
+                {error.password ? (
+                    <label className="card__error">{error.password}</label>
+                ) : (
+                    // eslint-disable-next-line jsx-a11y/label-has-associated-control
+                    <label className="card__label-newpassword">*au moins 8 charactères dont un chiffre, une lettre Maj et Min</label>
+                )}
+                <Button className="card__form-submit" name="Passer à l'étape suivante"></Button>
+            </form>
+        </>
+    )
 }
 
 NewPasswordForm.propTypes = {
-	name: PropTypes.string,
-	className: PropTypes.string,
-	HandleSubmit: PropTypes.func,
-	handleChange: PropTypes.func,
-	formValue: PropTypes.object,
-	setFormValue: PropTypes.func,
-	error: PropTypes.object,
+    name: PropTypes.string,
+    className: PropTypes.string,
+    HandleSubmit: PropTypes.func,
+    handleChange: PropTypes.func,
+    formValue: PropTypes.object,
+    setFormValue: PropTypes.func,
+    error: PropTypes.object
 }
 
 export default NewPasswordForm

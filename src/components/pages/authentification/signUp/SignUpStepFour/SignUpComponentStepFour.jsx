@@ -44,7 +44,7 @@ const SignUpComponentStepFour = ({
                 <Typography variant={'subtitle1'} className="card__text" gutterBottom>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     Vous avez déjà un compte ?{' '}
-                    <Link class="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
+                    <Link className="card__link" to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH}>
                         Connectez-vous
                     </Link>
                 </Typography>

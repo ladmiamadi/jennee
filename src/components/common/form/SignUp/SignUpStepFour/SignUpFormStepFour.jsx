@@ -19,7 +19,6 @@ A component that renders the fourth step of the sign-up form which allows the us
 */
 
 const SignUpFormStepFour = ({ formValue, setFormValue, handleChange, HandleSubmit, className, error, errorType }) => {
-    console.log(formValue)
     return (
         <>
             <form className={className} onSubmit={HandleSubmit} noValidate>

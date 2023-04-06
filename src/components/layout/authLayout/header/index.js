@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ReactComponent as JeneeLogo } from '@assets/images/svg/features/JeNee_LOGO-removebg-preview.svg'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
+import { Typography } from '@mui/material'
 
 /**
 
@@ -10,18 +11,18 @@ import { ROUTES } from '@constants/routesConst'
  @returns {JSX.Element} - A logo element with JeNee logo and the text "X Connexion".
  */
 
-export const Header = ({ step }) => {
+export const Header = ({ activeLink }) => {
     return (
         <div className="header">
             <Link to={ROUTES.ROOT.PATH}>
                 <JeneeLogo />
             </Link>
-            <h1>X {step} Connexion</h1>
+            <Typography variant={'h2'}>X {activeLink}</Typography>
         </div>
     )
 }
 export default Header
 
 Header.propTypes = {
-    step: PropTypes.string
+    activeLink: PropTypes.string
 }

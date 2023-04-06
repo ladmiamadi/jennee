@@ -18,7 +18,6 @@ import Button from '@common/button/Button'
  */
 
 const PasswordForgotForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error }) => {
-    console.log(error)
     return (
         <>
             <form name={name} className={className} onSubmit={HandleSubmit} noValidate>

@@ -14,7 +14,6 @@ const ValidatorStepOne = (formData, error, setError, errortype, setErrorType) =>
     const passwordRegex =
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[\w!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/
     let isValid = true
-    console.log(formData)
 
     // Fonction pour vérifier si tous les éléments sont vides
     const areAllFieldsEmpty = () => {
@@ -28,11 +27,9 @@ const ValidatorStepOne = (formData, error, setError, errortype, setErrorType) =>
 
     for (const field in formData) {
         if (areAllFieldsEmpty()) {
-            console.log('all fields empty')
             isValid = false
         }
         if (formData[field] === '') {
-            console.log('error')
             setError((prevError) => ({
                 ...prevError,
                 [field]: true
@@ -44,7 +41,6 @@ const ValidatorStepOne = (formData, error, setError, errortype, setErrorType) =>
             isValid = false
         } else if (field === 'email' && !emailRegex.test(formData[field])) {
             // check if email is valid
-            console.log('invalid email')
             setError((prevError) => ({
                 ...prevError,
                 [field]: true
@@ -55,7 +51,6 @@ const ValidatorStepOne = (formData, error, setError, errortype, setErrorType) =>
             }))
             isValid = false
         } else if (field === 'password' && !passwordRegex.test(formData[field])) {
-            console.log('invalid password')
             setError((prevError) => ({
                 ...prevError,
                 [field]: true

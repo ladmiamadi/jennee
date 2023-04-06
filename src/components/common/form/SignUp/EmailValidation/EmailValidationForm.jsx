@@ -17,7 +17,6 @@ import Button from '@common/button/Button'
  @returns {JSX.Element} - The EmailValidationForm component.
  */
 const EmailValidationForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
-    console.log(error)
     return (
         <>
             <form name={name} className={className} onSubmit={HandleSubmit} noValidate>
