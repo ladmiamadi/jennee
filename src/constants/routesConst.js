@@ -3,22 +3,38 @@ export const ROUTES = {
         NAME: 'root',
         PATH: '/'
     },
+    CGU: {
+        NAME: 'CGU',
+        PATH: '/cgu'
+    },
+    CGV: {
+        NAME: 'cgv',
+        PATH: '/cgv'
+    },
+    PRIVACY_POLICY: {
+        NAME: 'privacy-policy',
+        PATH: '/privacy-policy'
+    },
     AUTHENTIFICATION: {
         SIGN_IN: {
             NAME: 'login',
-            PATH: '/'
+            PATH: '/',
+            TITLE: 'Connexion'
         },
         SIGN_UP: {
             NAME: 'register',
-            PATH: 'register'
+            PATH: 'register',
+            TITLE: 'Inscription'
         },
         FORGOTTEN_PASSWORD: {
             NAME: 'forgotten-password',
-            PATH: 'forgotten-password'
+            PATH: 'forgotten-password',
+            TITLE: 'Mot de passe oublié'
         },
         CREATE_PASSWORD: {
             NAME: 'create-password',
-            PATH: 'create-password'
+            PATH: 'create-password',
+            TITLE: 'Nouveau membre'
         }
     },
     DASHBOARD: {

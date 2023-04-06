@@ -1,0 +1,12 @@
+.header {
+	display: flex;
+	align-items: center;
+	height: 150px;
+	& > a {
+		margin-top: 28px;
+	}
+	& > h2 {
+		color: #4f5eab;
+		font-size: 1.5em;
+	}
+}

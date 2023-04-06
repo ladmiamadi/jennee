@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>components/common/form/SignIn/SignInForm.jsx - Jenee</title>
+
+		<meta name="description" content="A clean, responsive documentation." />
+
+		<meta name="keywords" content="jsdoc, docdash" />
+		<meta name="keyword" content="jsdoc, docdash" />
+
+		<script src="scripts/prettify/prettify.js"></script>
+		<script src="scripts/prettify/lang-css.js"></script>
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+		<link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+		<script src="scripts/nav.js" defer></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+		<label for="nav-trigger" class="navicon-button x">
+			<div class="navicon"></div>
+		</label>
+
+		<label for="nav-trigger" class="overlay"></label>
+
+		<nav>
+			<input type="text" id="nav-search" placeholder="Search" />
+
+			<h2><a href="index.html">Home</a></h2>
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="StepperConnector.html">StepperConnector</a></li>
+			</ul>
+		</nav>
+
+		<div id="main">
+			<h1 class="page-title">components/common/form/SignIn/SignInForm.jsx</h1>
+
+			<section>
+				<article>
+					<pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types'
+import Input from '@common/input/Input.jsx'
+import { INPUT } from '@constants/inputConst'
+import Button from '@common/button/Button'
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
+
+/**
+ * A React functional component for rendering a SignIn Form
+ @param {Object} props - The props object containing the formValue, setFormValue, handleChange, HandleSubmit, className, and name props.
+ @param {Object} formValue - An object containing the values of the SignIn form fields.
+ @param {function} setFormValue - The function to be called when updating the values of the SignIn form fields.
+ @param {function} handleChange - The function to be called when a SignIn form field value changes.
+ @param {function} HandleSubmit - The function to be called when the SignIn form is submitted.
+ @param {string} className - The CSS class(es) to be applied to the SignIn form.
+ @param {string} name - The name of the SignIn form.
+ @param {Object} error - An object containing error messages for the SignIn form fields.
+ @param {function} setError - The function to be called when updating the error messages for the SignIn form fields.
+ @param {Object} errorType - An object containing error types for the SignIn form fields.
+ @param {function} setErrorType - The function to be called when updating the error types for the SignIn form fields.
+ @returns {JSX.Element} - A SignIn form with a code input field and a submit button.
+ */
+
+const SignInForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType, setErrorType }) => {
+    const [isVisible, setIsVisible] = React.useState(false)
+    const handleVisibilityToggle = () => {
+        setIsVisible(!isVisible)
+    }
+
+    return (
+        &lt;>
+            &lt;form name={name} className={className} onSubmit={HandleSubmit} noValidate>
+                &lt;Input
+                    required={true}
+                    name={!error.email ? 'input' : 'input-error'}
+                    type="email"
+                    dataOnChange={{
+                        state: formValue,
+                        setState: setFormValue,
+                        name: INPUT.SIGN_IN.EMAIL.NAME
+                    }}
+                    value={formValue.email}
+                    onChange={handleChange}
+                    placeholder="Identifiant ou addresse email"
+                />
+                {error.email ? &lt;label className="card__error">{errorType.email}&lt;/label> : ''}
+                &lt;Input
+                    required={true}
+                    name={!error.password ? 'input' : 'input-error'}
+                    type={isVisible ? 'text' : 'password'}
+                    value={formValue.password}
+                    dataOnChange={{
+                        state: formValue,
+                        setState: setFormValue,
+                        name: INPUT.SIGN_IN.PASSWORD.NAME
+                    }}
+                    onChange={handleChange}
+                    placeholder="Mot de passe"
+                />
+                &lt;span aria-hidden="true" className="visibility-off-signin" onClick={handleVisibilityToggle}>
+                    {isVisible ? &lt;VisibilityOutlinedIcon /> : &lt;VisibilityOffOutlinedIcon />}
+                &lt;/span>
+
+                {error.password ? &lt;label className="card__error">{errorType.password}&lt;/label> : ''}
+                &lt;Button className="card__form-submit" name="Se connecter">&lt;/Button>
+            &lt;/form>
+        &lt;/>
+    )
+}
+
+SignInForm.propTypes = {
+    name: PropTypes.string,
+    className: PropTypes.string,
+    HandleSubmit: PropTypes.func,
+    handleChange: PropTypes.func,
+    formValue: PropTypes.object,
+    setFormValue: PropTypes.func,
+    error: PropTypes.object,
+    setError: PropTypes.func,
+    errorType: PropTypes.object,
+    setErrorType: PropTypes.func
+}
+
+export default SignInForm
+</code></pre>
+				</article>
+			</section>
+		</div>
+
+		<br class="clear" />
+
+		<footer>
+			Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Wed
+			Apr 05 2023 15:25:56 GMT+0200 (Central European Summer Time) using the
+			<a href="https://github.com/clenemt/docdash">docdash</a> theme.
+		</footer>
+
+		<script>
+			prettyPrint()
+		</script>
+		<script src="scripts/polyfill.js"></script>
+		<script src="scripts/linenumber.js"></script>
+
+		<script src="scripts/search.js" defer></script>
+
+		<script src="scripts/collapse.js" defer></script>
+	</body>
+</html>
