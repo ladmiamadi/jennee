@@ -81,6 +81,10 @@ export const ROUTES = {
                     PATH: 'bills'
                 }
             }
+        },
+        MESSAGING: {
+            NAME: 'messaging',
+            PATH: 'messaging'
         }
     }
 }

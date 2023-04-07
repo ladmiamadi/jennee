@@ -1,47 +1,47 @@
 {
-    "tags": {
-        "allowUnknownTags": false
-    },
-    "source": {
-        "include": ["src"],
-        "includePattern": "(.js$|.jsx$)",
-        "excludePattern": "(node_modules/|docs/|public)"
-    },
-    "plugins": ["plugins/markdown"],
-    "templates": {
-        "cleverLinks": false,
-        "monospaceLinks": false,
-    },
-    "opts": {
-        "recurse": true,
-        "encoding": "utf8",
-        "destination": "./docs/",
-        "readme": "./readme.md",
-        "template": "node_modules/docdash"
-    },
-    "docdash": {
-        "static": true,
-        "sort": true,
-        "disqus": "",
-        "sectionOrder": [
-            "Classes",
-            "Modules",
-            "Externals",
-            "Events",
-            "Namespaces",
-            "Mixins",
-            "Tutorials",
-            "Interfaces"
-        ],
-        "meta": {
-            "title": "Jenee",
-            "description": "A clean, responsive documentation.",
-            "keyword": "jsdoc, docdash"
-        },
-        "search": true,
-        "collapse": true,
-        "typedefs": true,
-        "removeQuotes": "none",
-        "scripts": []
-    }
+	"tags": {
+		"allowUnknownTags": false
+	},
+	"source": {
+		"include": ["src"],
+		"includePattern": "(.js$|.jsx$)",
+		"excludePattern": "(node_modules/|docs/|public)"
+	},
+	"plugins": ["plugins/markdown"],
+	"templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false
+	},
+	"opts": {
+		"recurse": true,
+		"encoding": "utf8",
+		"destination": "./docs/",
+		"readme": "./readme.md",
+		"template": "node_modules/docdash"
+	},
+	"docdash": {
+		"static": true,
+		"sort": true,
+		"disqus": "",
+		"sectionOrder": [
+			"Classes",
+			"Modules",
+			"Externals",
+			"Events",
+			"Namespaces",
+			"Mixins",
+			"Tutorials",
+			"Interfaces"
+		],
+		"meta": {
+			"title": "Jenee",
+			"description": "A clean, responsive documentation.",
+			"keyword": "jsdoc, docdash"
+		},
+		"search": true,
+		"collapse": true,
+		"typedefs": true,
+		"removeQuotes": "none",
+		"scripts": []
+	}
 }

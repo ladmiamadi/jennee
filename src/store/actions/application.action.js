@@ -1,4 +1,4 @@
-import { HIDE_ERROR, HIDE_LOADER, SHOW_ERROR, SHOW_LOADER, ACTIVE_ITEM } from './actions'
+import { HIDE_ERROR, HIDE_LOADER, SHOW_ERROR, SHOW_LOADER, ACTIVE_ITEM, ACTIVE_LINK } from './actions'
 
 export const showLoader = () => (dispatch) => {
     dispatch({
@@ -25,6 +25,12 @@ export const hideError = () => (dispatch) => {
 export const activeItem = (data) => (dispatch) => {
     dispatch({
         type: ACTIVE_ITEM,
+        payload: data
+    })
+}
+export const activeLink = (data) => (dispatch) => {
+    dispatch({
+        type: ACTIVE_LINK,
         payload: data
     })
 }

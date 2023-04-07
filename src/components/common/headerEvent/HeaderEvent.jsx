@@ -3,9 +3,9 @@ import { Grid } from '@mui/material'
 import Button from '../button/Button'
 import Input from '../input/Input'
 import PropTypes from 'prop-types'
+import { EVENT_MENU_ITEMS } from '@constants/eventMenuItemsConst'
 
 const HeaderEvent = ({ handleOpen }) => {
-    const filter = ['À venir', 'Passés', 'Brouillons', 'Partagés']
     const [filterSelect, setFilterSelect] = useState(0)
     return (
         <Grid container className="header-event">
@@ -13,9 +13,9 @@ const HeaderEvent = ({ handleOpen }) => {
                 <h1>Mes events</h1>
             </Grid>
             <Grid item xs={6} className="header-event__menu">
-                {filter.map((item, i) => {
+                {EVENT_MENU_ITEMS.map((item, i) => {
                     return (
-                        <li
+                        <button
                             onClick={() => setFilterSelect(i)}
                             className={
                                 filterSelect === i
@@ -23,8 +23,8 @@ const HeaderEvent = ({ handleOpen }) => {
                                     : 'header-event__menu__item'
                             }
                             key={i}>
-                            {item}
-                        </li>
+                            {item.title}
+                        </button>
                     )
                 })}
             </Grid>
