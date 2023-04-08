@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
 import SignInForm from '@common/form/SignIn/SignInForm'
-import { Box, Grid, Typography } from '@mui/material'
-import Layout from '@layout/shape/Layout'
+import { Box, Typography } from '@mui/material'
 /**
  The component for the sign in page.
  @typedef {Object} Props

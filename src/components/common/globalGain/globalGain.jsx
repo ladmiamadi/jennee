@@ -1,4 +1,4 @@
-import { Grid, LinearProgress } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import { ReactComponent as GrowthIcon } from '@assets/svg/event/icon-growth-1.svg'
 

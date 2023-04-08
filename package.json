@@ -12,6 +12,7 @@
 		"build": "webpack --config ./webpack/webpack.prod.js",
 		"test": "cypress open --e2e",
 		"test:ci": "cypress run --config '{\"e2e\": {\"excludeSpecPattern\": [\"cypress/e2e/all.cy.js\"]}}'",
+		"lint": "eslint src/**/*.js src/**/*.jsx",
 		"eslint": "eslint ./src/**/*.{js,jsx}",
 		"eslint:fix": "eslint ./src/**/*.{js,jsx} --fix",
 		"docs": "jsdoc -c jsdoc.json",

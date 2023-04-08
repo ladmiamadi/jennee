@@ -1,5 +1,6 @@
-import { Grid, Box } from '@mui/material'
 import React from 'react'
+
+import { Grid, Box } from '@mui/material'
 import { ReactComponent as EventAvatar1 } from '../../../assets/svg/event/event-avatar-1.svg'
 import { ReactComponent as EventAvatar2 } from '../../../assets/svg/event/event-avatar-2.svg'
 import EventCover from '../../../assets/svg/event/event-cover.svg'

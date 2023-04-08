@@ -1,3 +1,4 @@
-@import './layout';
-@import './header';
-@import './footer';
+@import 'authLayout/layout';
+@import 'authLayout/header';
+@import 'authLayout/footer';
+@import 'mainLayout';

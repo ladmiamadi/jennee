@@ -33,7 +33,7 @@ const EventsContainer = () => {
     }
 
     const handleSubmit = (event) => {
-        console.log(formData)
+        event.preventDefault()
 
         let newErrors = {}
 

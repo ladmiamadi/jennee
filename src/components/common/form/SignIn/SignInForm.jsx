@@ -16,13 +16,11 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
  @param {string} className - The CSS class(es) to be applied to the SignIn form.
  @param {string} name - The name of the SignIn form.
  @param {Object} error - An object containing error messages for the SignIn form fields.
- @param {function} setError - The function to be called when updating the error messages for the SignIn form fields.
  @param {Object} errorType - An object containing error types for the SignIn form fields.
- @param {function} setErrorType - The function to be called when updating the error types for the SignIn form fields.
  @returns {JSX.Element} - A SignIn form with a code input field and a submit button.
  */
 
-const SignInForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType, setErrorType }) => {
+const SignInForm = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
     const [isVisible, setIsVisible] = React.useState(false)
     const handleVisibilityToggle = (e) => {
         e.preventDefault()
@@ -77,9 +75,7 @@ SignInForm.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
-    setError: PropTypes.func,
-    errorType: PropTypes.object,
-    setErrorType: PropTypes.func
+    errorType: PropTypes.object
 }
 
 export default SignInForm

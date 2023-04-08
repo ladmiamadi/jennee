@@ -16,12 +16,11 @@ SignUpFormStepTwo is a functional component that renders a form with input field
 @param {Object} props.formValue - The object that contains the form input field values.
 @param {Function} props.setFormValue - The function to set the form input field values.
 @param {Object} props.error - The object that contains the error status for each input field.
-@param {Function} props.setError - The function to set the error status for each input field.
 @param {Object} props.errorType - The object that contains the error message for each input field.
 @returns {JSX.Element} - The JSX element that represents the SignUpFormStepTwo component.
 */
 
-const SignUpFormStepTwo = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, setError, errorType }) => {
+const SignUpFormStepTwo = ({ formValue, setFormValue, handleChange, HandleSubmit, className, name, error, errorType }) => {
     return (
         <>
             <form noValidate name={name} className={className} onSubmit={HandleSubmit}>
@@ -140,7 +139,6 @@ SignUpFormStepTwo.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     error: PropTypes.object,
-    setError: PropTypes.func,
     errorType: PropTypes.object
 }
 

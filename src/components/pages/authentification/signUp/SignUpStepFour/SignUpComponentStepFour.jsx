@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
 import SignUpFormStepFour from '@common/form/SignUp/SignUpStepFour/SignUpFormStepFour'
 import { Box, Typography } from '@mui/material'
-import Layout from '@layout/shape/Layout'
 /**
  A component for the fourth step of the Sign Up process.
  @param {Object} props - The component props.

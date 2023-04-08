@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
 

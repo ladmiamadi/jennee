@@ -9,8 +9,10 @@ A React functional component for rendering an input element.
 @param {string} placeholder - The placeholder text to be displayed inside the input element.
 @param {string} value - The value of the input element.
 @param {string} type - The type of the input element (e.g. "text", "email", "password").
-@param {function} props.onChange - The function to be called when the input value changes.
-@param {Object} props.dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
+@param {function} onChange - The function to be called when the input value changes.
+@param {Object} dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
+@param {Element} children - An html element icon
+@param {function} childrenOnClick - The function to be called when the icon is clicked.
 @returns {JSX.Element} - An input element with the specified props.
 */
 
@@ -41,7 +43,9 @@ Input.propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
     required: PropTypes.bool,
-    dataOnChange: PropTypes.object.isRequired
+    dataOnChange: PropTypes.object.isRequired,
+    children: PropTypes.node,
+    childrenOnClick: PropTypes.func
 }
 
 export default Input

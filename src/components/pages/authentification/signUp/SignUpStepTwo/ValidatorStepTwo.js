@@ -43,6 +43,7 @@ const ValidatorStepTwo = (formData, error, setError, errortype, setErrorType) =>
     }
 
     if (formData.siret_number !== '') {
+        // eslint-disable-next-line no-unused-vars
         const siretRegexp = /^[0-9]{14}$/ // RegExp to validate siret_number
         if (formData.siret_number !== '123456') {
             setError((prevError) => ({

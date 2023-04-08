@@ -7,9 +7,8 @@ import CloseIcon from '@mui/icons-material/Close'
 import PropTypes from 'prop-types'
 import AddIcon from '@mui/icons-material/Add'
 import MobileStepper from '@mui/material/MobileStepper'
-import { useTheme } from '@mui/material/styles'
 
-const ModalSecondStep = ({ formData, handleChange, handleSubmit, handleClose, errors, setErrors, handleNext, handlePrev, step }) => {
+const ModalSecondStep = ({ formData, handleChange, handleSubmit, handleClose, errors, handlePrev, step }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -21,16 +20,6 @@ const ModalSecondStep = ({ formData, handleChange, handleSubmit, handleClose, er
         padding: 4,
         borderRadius: 3
     }
-
-    const theme = useTheme()
-
-    const eventTypeOptions = ['', 'Party', 'Concert', 'Festival']
-
-    const eventLocationsOptions = ['', 'Bars', 'NightClub', 'Terrasse', 'Rooftop', 'Séminaire']
-
-    const eventOptionsVIP = ['', 'VIP', 'Dress code', 'Âge']
-
-    console.log(errors)
 
     return (
         <Box className="modal" sx={style}>

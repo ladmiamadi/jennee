@@ -3,7 +3,6 @@ import GlobalGain from '@components/common/globalGain/globalGain'
 import Growth from '@components/common/growth/Growth'
 import HeaderEvent from '@components/common/headerEvent/HeaderEvent'
 import { Grid } from '@mui/material'
-import { Box } from '@mui/system'
 import React from 'react'
 
 const EventDetailsComponent = () => {

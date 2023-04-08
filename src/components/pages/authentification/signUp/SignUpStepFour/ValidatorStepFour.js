@@ -13,6 +13,7 @@ const ValidatorStepFour = (formData, error, setError, errortype, setErrorType) =
     let isValid = true
     const MAX_FILE_SIZE = 4 * 1000000 // 4MB in bytes
 
+    // eslint-disable-next-line no-unused-vars
     const areAllFieldsEmpty = () => {
         for (const field in formData) {
             if (formData[field] !== '') {

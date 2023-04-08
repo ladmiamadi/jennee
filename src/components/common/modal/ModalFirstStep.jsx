@@ -8,18 +8,7 @@ import PropTypes from 'prop-types'
 import Select from '../../common/select/Select'
 import MobileStepper from '@mui/material/MobileStepper'
 
-const ModalFirstStep = ({
-    formData,
-    setFormData,
-    handleChange,
-    handleSubmit,
-    handleClose,
-    errors,
-    setErrors,
-    handleNext,
-    handlePrev,
-    step
-}) => {
+const ModalFirstStep = ({ formData, handleChange, handleClose, errors, handleNext, step }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -37,8 +26,6 @@ const ModalFirstStep = ({
     const eventLocationsOptions = ['', 'Bars', 'NightClub', 'Terrasse', 'Rooftop', 'Séminaire']
 
     const eventOptionsVIP = ['', 'VIP', 'Dress code', 'Âge']
-
-    console.log(formData.eventName.length)
 
     return (
         <Box className="modal" sx={style}>
