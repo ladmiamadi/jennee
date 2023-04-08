@@ -1,14 +1,9 @@
 import * as React from 'react'
 import { Box } from '@mui/material'
-import { Grid } from '@mui/material'
-import Input from '../input/Input'
-import Button from '../button/Button'
-import CloseIcon from '@mui/icons-material/Close'
-import PropTypes from 'prop-types'
-import Select from '../../common/select/Select'
-import MobileStepper from '@mui/material/MobileStepper'
 
-const ModalFirstStep = ({ formData, handleChange, handleClose, errors, handleNext, step }) => {
+import PropTypes from 'prop-types'
+
+const ModalFirstStep = () => {
     const style = {
         position: 'absolute',
         top: '50%',

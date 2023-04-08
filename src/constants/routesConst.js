@@ -40,7 +40,7 @@ export const ROUTES = {
     DASHBOARD: {
         ROOT: {
             NAME: 'dashboard',
-            PATH: 'dashboard'
+            PATH: ''
         },
         EVENTS: {
             NAME: 'events',

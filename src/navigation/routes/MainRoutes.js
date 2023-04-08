@@ -10,7 +10,7 @@ import { ROUTES } from '@constants/routesConst'
 
 // render - dashboard / events
 const EventsContainer = lazy(() => import('@components/pages/dashboard/events/EventsContainer'))
-const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/events/EventDetailsContainer'))
+const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/events/eventDetails/EventDetailsContainer'))
 /*				ORGANIZATION				*/
 
 // render - dashboard / my organization / posts

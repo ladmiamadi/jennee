@@ -1,49 +1,12 @@
-import HeaderEvent from '@components/common/headerEvent/HeaderEvent'
-import EventList from '@components/common/eventList/EventList'
+import HeaderPageContent from '@common/headerPageContent/HeaderPageContent'
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Dropdown from '@components/common/dropdown/Dropdown'
-import Modal from '@components/common/modal/Modal'
 import PropTypes from 'prop-types'
+import { EVENT_MENU_ITEMS } from '@constants/eventMenuItemsConst'
 
-const EventsComponent = ({
-    open,
-    setOpen,
-    handleOpen,
-    handleClose,
-    formData,
-    setFormData,
-    handleChange,
-    handleSubmit,
-    errors,
-    setErrors,
-    step,
-    setStep,
-    handleNext,
-    handlePrev
-}) => {
+const EventsComponent = ({ handleOpen }) => {
     return (
         <>
-            {/*  <HeaderEvent handleOpen={handleOpen} />
-            <EventList />
-            <Dropdown />
-            <Outlet />*/}
-            {/*<Modal
-                open={open}
-                setOpen={setOpen}
-                handleOpen={handleOpen}
-                handleClose={handleClose}
-                formData={formData}
-                setFormData={setFormData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                errors={errors}
-                setErrors={setErrors}
-                step={step}
-                setStep={setStep}
-                handleNext={handleNext}
-                handlePrev={handlePrev}
-            />*/}
+            <HeaderPageContent title={'Mes events'} menuItems={EVENT_MENU_ITEMS} handleOpen={handleOpen} />
         </>
     )
 }

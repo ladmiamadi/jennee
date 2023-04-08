@@ -10,8 +10,8 @@ A React functional component for rendering a button element.
 @returns {JSX.Element} - A button element with the specified name and class name.
 */
 
-const Button = (props) => {
-    return <button className={props.className}>{props.name}</button>
+const Button = ({ className, name }) => {
+    return <button className={className}>{name}</button>
 }
 
 Button.propTypes = {
