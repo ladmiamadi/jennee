@@ -1,0 +1,50 @@
+$red: #d44e49;
+$blue: #4f5eab;
+$light-grey: #716f6f;
+.card {
+	text-align: center;
+	margin: 8%;
+	&--no-margin {
+		margin: 0;
+	}
+	&__title {
+		font-weight: bold !important;
+		color: $blue;
+	}
+	&__text {
+		color: $light_grey;
+	}
+	&__link {
+		color: $blue;
+		font-weight: bold;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__body {
+		margin: 16px 0 16px 0;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 447px;
+		width: -webkit-fill-available;
+	}
+	&__footer-title {
+		margin-top: 16px;
+		& > a {
+			color: $light_grey;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		&--tutorial {
+			color: #5197cf;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}

@@ -1,7 +1,12 @@
-@import 'abstracts/index';
-@import 'base/index.scss';
 @import 'components/index';
 @import 'layout/index';
-@import 'pages/index';
-@import 'themes/index';
-@import 'vendors/index';
+@import 'abstracts/index.scss';
+@import 'base/index.scss';
+@import 'themes/index.scss';
+@import 'vendors/index.scss';
+@import 'pages/index.scss';
+body,
+html {
+	font-family: 'Helvetica Neue', sans-serif !important;
+	overflow-x: hidden;
+}
