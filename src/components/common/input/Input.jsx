@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 /**
 A React functional component for rendering an input element.
 @param {Object} props - The props object containing the classname, required, name, placeholder, value, type, onChange, and dataOnChange props.

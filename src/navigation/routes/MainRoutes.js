@@ -10,6 +10,7 @@ import { ROUTES } from '@constants/routesConst'
 
 // render - dashboard / events
 const EventsContainer = lazy(() => import('@components/pages/dashboard/events/EventsContainer'))
+const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/events/EventDetailsContainer'))
 /*				ORGANIZATION				*/
 
 // render - dashboard / my organization / posts
@@ -44,7 +45,16 @@ const MainRoutes = {
     children: [
         {
             path: ROUTES.DASHBOARD.EVENTS.PATH,
-            element: <EventsContainer />
+            children: [
+                {
+                    path: ROUTES.DASHBOARD.EVENTS.PATH,
+                    element: <EventsContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.EVENTS_DETAILS.PATH,
+                    element: <EventDetailsContainer />
+                }
+            ]
         },
         {
             path: ROUTES.DASHBOARD.ORGANIZATION.PATH,

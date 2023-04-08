@@ -1,0 +1,36 @@
+.growth{
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    h1{
+        margin: 0;
+        font-size: 200%;
+        font-weight: bold;
+    }
+
+    h2{
+        margin: 0;
+        font-size: 100%;
+    }
+
+    p{
+        font-size: 100%;
+        margin: 0;
+        color: green;
+    }
+
+    &__details{
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    &__icon{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}

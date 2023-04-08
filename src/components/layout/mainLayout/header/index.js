@@ -1,10 +1,11 @@
 import React from 'react'
+import Navbar from '../navbar/Navbar'
 
 const Header = () => {
     return (
-        <div className="header">
-            <div className="header__container">Main Layout </div>
-        </div>
+        <header className={'main-header'}>
+            <Navbar />
+        </header>
     )
 }
 
