@@ -24,11 +24,11 @@ const EventsComponent = ({
 }) => {
     return (
         <>
-            <HeaderEvent handleOpen={handleOpen} />
+            {/*  <HeaderEvent handleOpen={handleOpen} />
             <EventList />
             <Dropdown />
-            <Outlet />
-            <Modal
+            <Outlet />*/}
+            {/*<Modal
                 open={open}
                 setOpen={setOpen}
                 handleOpen={handleOpen}
@@ -43,7 +43,7 @@ const EventsComponent = ({
                 setStep={setStep}
                 handleNext={handleNext}
                 handlePrev={handlePrev}
-            />
+            />*/}
         </>
     )
 }

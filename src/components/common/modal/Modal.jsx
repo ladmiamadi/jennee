@@ -62,7 +62,7 @@ const ModalEvent = ({
                     />
                 </Modal>
             )}
-            <Modal className="modal" aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+            <Modal className="modal" aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" open={false}>
                 <ModalExit />
             </Modal>
         </Box>
