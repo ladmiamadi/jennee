@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Modal from '@mui/material/Modal'
 import PropTypes from 'prop-types'
-import ModalFirstStep from './modalFirstStep'
+/*import ModalFirstStep from './modalFirstStep'*/
 import ModalSecondStep from './ModalSecondStep'
 import { Box } from '@mui/material'
 import ModalExit from './modalExit'
@@ -29,7 +29,7 @@ const ModalEvent = ({
                     handleNext={handleNext}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description">
-                    <ModalFirstStep
+                    {/* <ModalFirstStep
                         formData={formData}
                         setFormData={setFormData}
                         handleChange={handleChange}
@@ -39,7 +39,7 @@ const ModalEvent = ({
                         setErrors={setErrors}
                         handleNext={handleNext}
                         step={step}
-                    />
+                    />*/}
                 </Modal>
             )}
             {step === 2 && (

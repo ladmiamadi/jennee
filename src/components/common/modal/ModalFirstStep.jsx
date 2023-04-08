@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import { Grid } from '@mui/material'
 import Input from '../input/Input'
 import Button from '../button/Button'
@@ -29,7 +29,7 @@ const ModalFirstStep = ({ formData, handleChange, handleClose, errors, handleNex
 
     return (
         <Box className="modal" sx={style}>
-            <Grid className="modal__first-step" item xs={12}>
+            {/* <Grid className="modal__first-step" item xs={12}>
                 <Grid item xs={12}>
                     <h1>Etape 1 : Informations générales</h1>
                 </Grid>
@@ -143,7 +143,7 @@ const ModalFirstStep = ({ formData, handleChange, handleClose, errors, handleNex
             <Grid item xs={12} className="modal__button">
                 <Button handleClick={handleNext} className="button__primary" text="Étape suivante" />
             </Grid>
-            <CloseIcon onClick={() => handleClose()} className="modal__icon" />
+            <CloseIcon onClick={() => handleClose()} className="modal__icon" />*/}
         </Box>
     )
 }
