@@ -4,15 +4,16 @@ import { ReactComponent as JeneeLogo } from '@assets/svg/mainLayout/jenee-logo.s
 import { ReactComponent as JeneeAvatar } from '@assets/svg/mainLayout/jenee-avatar.svg'
 import { NAVBAR_MENU_ITEMS } from '@constants/navbarMenuItemsConst'
 import { Link } from 'react-router-dom'
+import { ROUTES } from '@constants/routesConst'
 
 const Navbar = () => {
     const [select, setSelect] = useState(0)
     return (
         <Box className="navbar">
             <div className={'navbar__container'}>
-                <div className="navbar__logo">
+                <Link className="navbar__logo" to={ROUTES.DASHBOARD.EVENTS.PATH}>
                     <JeneeLogo />
-                </div>
+                </Link>
                 <div className="navbar__menu">
                     {NAVBAR_MENU_ITEMS.map((item, i) => (
                         <Link

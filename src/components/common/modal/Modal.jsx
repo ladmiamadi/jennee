@@ -6,19 +6,7 @@ import ModalSecondStep from './ModalSecondStep'
 import { Box } from '@mui/material'
 import ModalExit from './modalExit'
 
-const ModalEvent = ({
-    open,
-    handleClose,
-    formData,
-    setFormData,
-    handleChange,
-    handleSubmit,
-    errors,
-    setErrors,
-    step,
-    handleNext,
-    handlePrev
-}) => {
+const ModalEvent = ({ open, handleClose, formData, handleChange, handleSubmit, errors, step, handleNext, handlePrev }) => {
     return (
         <Box>
             {step === 1 && (

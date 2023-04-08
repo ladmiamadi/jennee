@@ -1,7 +1,7 @@
-import Card from '@components/common/card/Card'
-import GlobalGain from '@components/common/globalGain/globalGain'
-import Growth from '@components/common/growth/Growth'
-import HeaderEvent from '@components/common/headerEvent/HeaderEvent'
+import Card from '@common/card/Card'
+import GlobalGain from '@common/globalGain/globalGain'
+import Growth from '@common/growth/Growth'
+import HeaderPageContent from '@common/headerPageContent/HeaderPageContent'
 import { Grid } from '@mui/material'
 import React from 'react'
 
@@ -31,7 +31,7 @@ const EventDetailsComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <HeaderEvent item xs={12} />
+            <HeaderPageContent item xs={12} />
             <Grid className="layout__wrap" item xs={12}>
                 <Grid container style={{ height: '100%', width: '50%' }}>
                     <Grid item xs={12} style={{ height: '20%', padding: '10px' }}>

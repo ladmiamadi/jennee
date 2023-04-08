@@ -1,0 +1,48 @@
+.header-page-content {
+	margin: 16px 0 32px 0;
+	&__container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__left {
+		display: flex;
+		align-items: center;
+	}
+	&__menu {
+		margin-left: 128px;
+		padding-top: 4%;
+		&__item {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			padding-bottom: 8px;
+			&--select {
+				color: #5992c6;
+				border-bottom: 3px solid #5992c6;
+			}
+			&:hover {
+				background: linear-gradient(270deg, #d34d48 0%, #5595cb 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				color: transparent;
+			}
+		}
+		& > :not(style) + :not(style) {
+			margin: 0 0 0 48px;
+		}
+	}
+	&__search-create {
+		display: flex;
+		& > .input-search {
+			margin-right: 16px;
+		}
+	}
+	& > hr {
+		margin: 1px 0 1px 0;
+		background-color: #5992c6;
+		opacity: 0.3;
+	}
+}

@@ -1,29 +1,47 @@
-.button__primary{
-    background: linear-gradient(to right, #ef3b39, #e82b58, #d82a73, #c03588, #a24297, #9050a6, #7b5cb1, #6366b7, #5377c6, #4288d1, #3198d9, #26a7df);
-    width: 100%;
-    height: 40px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    color: #FFF;
-    margin: auto;
+.button__primary {
+	background: linear-gradient(270deg, #d34d48 0%, #5595cb 100%);
+	border-radius: 13px;
+	// background: linear-gradient(to right, #ef3b39, #e82b58, #d82a73, #c03588, #a24297, #9050a6, #7b5cb1, #6366b7, #5377c6, #4288d1, #3198d9, #26a7df);
+	width: 100%;
+	height: 40px;
+	outline: none;
+	border: none;
+	//border-radius: 10px;
+	padding: 0 24px 0 24px;
+	color: #fff;
+	margin: auto;
 
-    &:hover{
-        cursor: pointer;
-    }
+	&:hover {
+		cursor: pointer;
+		background: linear-gradient(
+			to right,
+			#ef3b39,
+			#e82b58,
+			#d82a73,
+			#c03588,
+			#a24297,
+			#9050a6,
+			#7b5cb1,
+			#6366b7,
+			#5377c6,
+			#4288d1,
+			#3198d9,
+			#26a7df
+		);
+		opacity: 0.7;
+	}
 }
+.button__secondary {
+	background-color: #bee2ff;
+	width: 100%;
+	height: 40px;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	color: #5f6db3;
+	margin: auto;
 
-.button__secondary{
-    background-color: #bee2ff;
-    width: 100%;
-    height: 40px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    color: #5F6DB3;
-    margin: auto;
-
-    &:hover{
-        cursor: pointer;
-    }
+	&:hover {
+		cursor: pointer;
+	}
 }
