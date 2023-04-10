@@ -23,7 +23,7 @@ const HeaderPageContent = ({ title, menuItems, handleOpen }) => {
                                             ? 'header-page-content__menu__item header-page-content__menu__item--select'
                                             : 'header-page-content__menu__item'
                                     }
-                                    key={i}>
+                                    key={item.id}>
                                     {item.title}
                                 </button>
                             )

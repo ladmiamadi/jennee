@@ -6,7 +6,7 @@ import { Box } from '@mui/material'
 
 const MainLayout = () => {
     return (
-        <Box sx={{ height: '100vh' }}>
+        <Box sx={{ height: '100%' }}>
             <Header />
             <Outlet />
         </Box>

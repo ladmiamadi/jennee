@@ -3,6 +3,7 @@ import EventsComponent from '@components/pages/dashboard/events/EventsComponent'
 
 const EventsContainer = () => {
     const [open, setOpen] = React.useState(false)
+    const [loading, setLoading] = React.useState(true)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
 
@@ -84,7 +85,10 @@ const EventsContainer = () => {
     const handlePrev = () => {
         setStep(step - 1)
     }
-
+    setTimeout(() => {
+        setLoading(false)
+    }, 2000)
+    console.log(loading)
     return (
         <EventsComponent
             formData={formData}
@@ -97,6 +101,7 @@ const EventsContainer = () => {
             handleClose={handleClose}
             errors={errors}
             setErrors={setErrors}
+            loading={loading}
             step={step}
             setStep={setStep}
             handleNext={handleNext}
