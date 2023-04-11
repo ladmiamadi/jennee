@@ -22,6 +22,7 @@ const webpackConf = {
 			'@navigation': path.join(config.root, config.paths.src, 'navigation'),
 			'@helpers': path.join(config.root, config.paths.src, 'helpers'),
 			'@services': path.join(config.root, config.paths.src, 'services'),
+			'@shared': path.join(config.root, config.paths.src, 'components', 'shared'),
 			'@common': path.join(config.root, config.paths.src, 'components', 'common'),
 			'@hooks': path.join(config.root, config.paths.src, 'hooks'),
 			'@utils': path.join(config.root, config.paths.src, 'utils'),

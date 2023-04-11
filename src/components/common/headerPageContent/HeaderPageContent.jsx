@@ -4,7 +4,7 @@ import Button from '@common/button/Button'
 import PropTypes from 'prop-types'
 import InputSearch from '@common/input/InputSearch'
 
-const HeaderPageContent = ({ title, menuItems, handleOpen }) => {
+const HeaderPageContent = ({ title, menuItems, handleOpen, btnName }) => {
     const [filterSelect, setFilterSelect] = useState(0)
     return (
         <Box className="header-page-content">
@@ -23,7 +23,7 @@ const HeaderPageContent = ({ title, menuItems, handleOpen }) => {
                                             ? 'header-page-content__menu__item header-page-content__menu__item--select'
                                             : 'header-page-content__menu__item'
                                     }
-                                    key={i}>
+                                    key={item.id}>
                                     {item.title}
                                 </button>
                             )
@@ -31,8 +31,8 @@ const HeaderPageContent = ({ title, menuItems, handleOpen }) => {
                     </div>
                 </div>
                 <div className="header-page-content__search-create">
-                    <InputSearch placeholder="Recherche" handleChange={() => ''} />
-                    <Button handleClick={handleOpen} name="Créer un nouvel event" className="button__primary" />
+                    <InputSearch placeholder="Recherche" handleChange={() => ''} value={''} onChange={() => ''} dataOnChange={{}} />
+                    <Button handleClick={handleOpen} name={btnName} className="button__primary" />
                 </div>
             </div>
             <Divider component={'hr'} />
@@ -43,7 +43,8 @@ const HeaderPageContent = ({ title, menuItems, handleOpen }) => {
 HeaderPageContent.propTypes = {
     title: PropTypes.string.isRequired,
     menuItems: PropTypes.arrayOf(Object).isRequired,
-    handleOpen: PropTypes.func
+    handleOpen: PropTypes.func,
+    btnName: PropTypes.string.isRequired
 }
 
 export default HeaderPageContent

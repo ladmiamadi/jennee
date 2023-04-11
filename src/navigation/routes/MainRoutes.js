@@ -14,7 +14,7 @@ const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/eve
 /*				ORGANIZATION				*/
 
 // render - dashboard / my organization / posts
-/*const OrganizationContainer = lazy(() => import('@components/pages/dashboard/organization/OrganizationContainer'))*/
+const OrganizationContainer = lazy(() => import('@components/pages/dashboard/organization/OrganizationContainer'))
 // render - dashboard / my organization / posts
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
 // render - dashboard / my organization / team
@@ -58,6 +58,7 @@ const MainRoutes = {
         },
         {
             path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
+            element: <OrganizationContainer />,
             children: [
                 {
                     path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,

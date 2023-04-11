@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux' // Grid version 2
 const AuthLayout = () => {
     const activeLink = useSelector(activeLinkSelector)
     return (
-        /*sx={{ height: '100vh' }}*/
         <Box>
             <Header activeLink={activeLink} />
             <Grid2 container maxWidth={'lg'} sx={{ marginBottom: '8%' }}>
