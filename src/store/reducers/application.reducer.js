@@ -4,7 +4,7 @@ const initialState = {
     loading: false,
     error: false,
     msg: false,
-    openItem: ['dashboard'],
+    openItem: ['event'],
     activeLink: ''
 }
 

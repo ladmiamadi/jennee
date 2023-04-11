@@ -1,7 +1,20 @@
 import React from 'react'
+import HeaderPageContent from '@common/headerPageContent/HeaderPageContent'
+import { ORGANIZATION_MENU_ITEMS } from '@constants/menuItemsContentPagesConst'
+import PostsContainer from '@components/pages/dashboard/organization/posts/PostsContainer'
 
 const OrganizationComponent = () => {
-    return <div>OrganizationComponent</div>
+    return (
+        <div>
+            <HeaderPageContent
+                title={'Mon asso'}
+                menuItems={ORGANIZATION_MENU_ITEMS}
+                handleOpen={() => console.log('clicked')}
+                btnName={'crer'}
+            />
+            <PostsContainer />
+        </div>
+    )
 }
 
 export default OrganizationComponent

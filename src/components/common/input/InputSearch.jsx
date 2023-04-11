@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Input from '@common/input/Input'
 /**
  A React functional component for rendering an input search element.
  @param {Object} props - The props object containing the classname, required, name, placeholder, value, type, onChange, and dataOnChange props.
@@ -22,11 +21,11 @@ const InputSearch = ({ placeholder, value, onChange, dataOnChange }) => {
         </div>
     )
 }
-Input.InputSearch = {
-    onChange: PropTypes.func,
+InputSearch.propTypes = {
+    onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
-    value: PropTypes.string,
-    dataOnChange: PropTypes.object
+    value: PropTypes.string.isRequired,
+    dataOnChange: PropTypes.object.isRequired
 }
 
 export default InputSearch

@@ -38,3 +38,21 @@ export const ORGANIZATION_MENU_ITEMS = [
         title: 'Profil'
     }
 ]
+export const FINANCES_MENU_ITEMS = [
+    {
+        id: 1,
+        title: 'Global'
+    },
+    {
+        id: 2,
+        title: 'Recettes'
+    },
+    {
+        id: 3,
+        title: 'Dépenses'
+    },
+    {
+        id: 4,
+        title: 'Factures'
+    }
+]

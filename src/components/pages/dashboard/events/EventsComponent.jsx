@@ -8,7 +8,8 @@ import Grid from '@mui/material/Unstable_Grid2'
 import { EVENTS_LIST } from '../../../../fixtures/eventsList'
 import { Box } from '@mui/material'
 import { ROUTES } from '@constants/routesConst'
-import Dropdown from '@common/dropdown/Dropdown'
+import Dropdown from '@shared/dropdown/Dropdown'
+import { FILTER_DROPDOWN_LIST_EVENT } from '@constants/filterDropDownList'
 /**
  The component for Event page
  @typedef {Object} Props
@@ -23,7 +24,12 @@ import Dropdown from '@common/dropdown/Dropdown'
 const EventsComponent = ({ handleOpen, loading }) => {
     return (
         <Box sx={{ marginBottom: '64px' }}>
-            <HeaderPageContent title={'Mes events'} menuItems={EVENT_MENU_ITEMS} handleOpen={handleOpen} />
+            <HeaderPageContent
+                title={'Mes events'}
+                menuItems={EVENT_MENU_ITEMS}
+                handleOpen={handleOpen}
+                btnName={'Créer un nouvel event'}
+            />
             <Grid container spacing={6} sx={{ marginTop: '16px' }}>
                 {EVENTS_LIST.map((event) => (
                     <Grid key={event.id} xs={'auto'}>
@@ -41,7 +47,7 @@ const EventsComponent = ({ handleOpen, loading }) => {
                     </Grid>
                 ))}
             </Grid>
-            <Dropdown />
+            <Dropdown filterList={FILTER_DROPDOWN_LIST_EVENT} />
         </Box>
     )
 }

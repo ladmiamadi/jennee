@@ -10,6 +10,7 @@
 			"@helpers/*": ["src/helpers/*"],
 			"@common/*": ["src/components/common/*"],
 			"@assets/*": ["src/assets/*"],
+			"@shared/*": ["src/components/shared/*"],
 			"@utils/*": ["src/utils/*"],
 			"@services/*": ["src/services/*"],
 			"@actions/*": ["src/store/actions/*"],

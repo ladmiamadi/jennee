@@ -88,7 +88,6 @@ const EventsContainer = () => {
     setTimeout(() => {
         setLoading(false)
     }, 2000)
-    console.log(loading)
     return (
         <EventsComponent
             formData={formData}
