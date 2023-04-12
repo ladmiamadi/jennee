@@ -13,10 +13,13 @@ const EventsContainer = lazy(() => import('@components/pages/dashboard/events/Ev
 const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/events/eventDetails/EventDetailsContainer'))
 /*				ORGANIZATION				*/
 
-// render - dashboard / my organization / posts
+// render - dashboard / my organization / organization
 const OrganizationContainer = lazy(() => import('@components/pages/dashboard/organization/OrganizationContainer'))
-// render - dashboard / my organization / posts
+// render - dashboard / my organization / organization
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
+
+// render - dashboard / my organization / posts / post-details
+const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))
 // render - dashboard / my organization / team
 const TeamContainer = lazy(() => import('@components/pages/dashboard/organization/team/TeamContainer'))
 // render - dashboard / my organization /  partnership
@@ -62,11 +65,16 @@ const MainRoutes = {
             children: [
                 {
                     path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
-                    element: <PostsContainer />
+                    element: <PostsContainer />,
+                    children: [
+                        {
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POSTS_DETAILS.PATH,
+                            element: <PostDetailsContainer />
+                        }
+                    ]
                 },
                 {
                     path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
-
                     element: <TeamContainer />
                 },
                 {
