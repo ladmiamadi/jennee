@@ -52,39 +52,35 @@ export const ROUTES = {
         },
         ORGANIZATION: {
             NAME: 'organization',
-            PATH: 'organization',
-            CHILDREN: {
-                POSTS: {
-                    NAME: 'posts',
-                    PATH: 'posts',
-                    CHILDREN: {
-                        POSTS_DETAILS: {
-                            NAME: 'details',
-                            PATH: 'details'
-                        }
-                    }
-                },
-                TEAM: {
-                    NAME: 'team',
-                    PATH: 'team'
-                },
-                PARTNERSHIP: {
-                    NAME: 'partnership',
-                    PATH: 'partnership'
-                },
-                FREE_EVENTS: {
-                    NAME: 'free-events',
-                    PATH: 'free-events'
-                },
-                PROFIL: {
-                    NAME: 'profil',
-                    PATH: 'profil'
-                },
-                SETTINGS: {
-                    NAME: 'settings',
-                    PATH: 'settings'
-                }
-            }
+            PATH: 'organization'
+        },
+        POSTS: {
+            NAME: 'posts',
+            PATH: ''
+        },
+        POSTS_DETAILS: {
+            NAME: 'post-details',
+            PATH: 'post-details'
+        },
+        TEAM: {
+            NAME: 'team',
+            PATH: 'team'
+        },
+        PARTNERSHIP: {
+            NAME: 'partnership',
+            PATH: 'partnership'
+        },
+        FREE_EVENTS: {
+            NAME: 'free-events',
+            PATH: 'free-events'
+        },
+        PROFIL: {
+            NAME: 'profil',
+            PATH: 'profil'
+        },
+        SETTINGS: {
+            NAME: 'settings',
+            PATH: 'settings'
         },
         FINANCE: {
             NAME: 'finance',

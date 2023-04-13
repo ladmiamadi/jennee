@@ -56,60 +56,56 @@ const MainRoutes = {
                 {
                     path: ROUTES.DASHBOARD.EVENTS_DETAILS.PATH,
                     element: <EventDetailsContainer />
-                }
-            ]
-        },
-        {
-            path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
-            element: <OrganizationContainer />,
-            children: [
-                {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
-                    element: <PostsContainer />,
-                    children: [
-                        {
-                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POSTS_DETAILS.PATH,
-                            element: <PostDetailsContainer />
-                        }
-                    ]
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
+                    path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
+                    element: <OrganizationContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.POSTS.PATH,
+                    element: <PostsContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.POSTS_DETAILS.PATH,
+                    element: <PostDetailsContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.TEAM.PATH,
                     element: <TeamContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PARTNERSHIP.PATH,
+                    path: ROUTES.DASHBOARD.PARTNERSHIP.PATH,
                     element: <PartnershipContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.FREE_EVENTS.PATH,
+                    path: ROUTES.DASHBOARD.FREE_EVENTS.PATH,
                     element: <FreeEventsContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
+                    path: ROUTES.DASHBOARD.PROFIL.PATH,
                     element: <ProfilContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.SETTINGS.PATH,
+                    path: ROUTES.DASHBOARD.SETTINGS.PATH,
                     element: <SettingsContainer />
-                }
-            ]
-        },
-        {
-            path: ROUTES.DASHBOARD.FINANCE.PATH,
-            element: <FinanceContainer />,
-            children: [
-                {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
-                    element: <RevenuesContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
-                    element: <ExpensesContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
-                    element: <BillsContainer />
+                    path: ROUTES.DASHBOARD.FINANCE.PATH,
+                    element: <FinanceContainer />,
+                    children: [
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
+                            element: <RevenuesContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
+                            element: <ExpensesContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
+                            element: <BillsContainer />
+                        }
+                    ]
                 }
             ]
         }
