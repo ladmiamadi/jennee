@@ -12,7 +12,7 @@ import Grid from '@mui/material/Unstable_Grid2'
 /**
  The component for posts page
  * @param {boolean} loading data loading status
- * @typedef {{id: number, name: string, picture: string, info: string, status: string}} Post
+ * @typedef {{id: number, name: string, picture: string, info: string, status: string, description: string ,comment: number, like: number, share:number, reaction: number}} Post
  * @param {Post} post
  * @returns {JSX.Element} PostsComponent
  */
