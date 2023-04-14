@@ -9,7 +9,6 @@ import ModalExit from './modalExit'
 const ModalEvent = ({ open, handleClose, formData, handleChange, handleSubmit, errors, step, handleNext, handlePrev }) => {
     return (
         <Box>
-            dza
             {step === 1 && (
                 <Modal
                     className="modal"
