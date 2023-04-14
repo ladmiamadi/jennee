@@ -56,7 +56,13 @@ export const ROUTES = {
             CHILDREN: {
                 POSTS: {
                     NAME: 'posts',
-                    PATH: 'posts'
+                    PATH: 'posts',
+                    CHILDREN: {
+                        POSTS_DETAILS: {
+                            NAME: 'details',
+                            PATH: 'details'
+                        }
+                    }
                 },
                 TEAM: {
                     NAME: 'team',

@@ -10,7 +10,7 @@ const OrganizationComponent = () => {
                 title={'Mon asso'}
                 menuItems={ORGANIZATION_MENU_ITEMS}
                 handleOpen={() => console.log('clicked')}
-                btnName={'crer'}
+                btnName={'Publier un post'}
             />
             <PostsContainer />
         </div>
