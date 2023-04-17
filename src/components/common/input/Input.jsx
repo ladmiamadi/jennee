@@ -7,6 +7,7 @@ A React functional component for rendering an input element.
 @param {boolean} props.required - A boolean value indicating whether the input is required or not.
 @param {string} name - The name of the input element.
 @param {string} placeholder - The placeholder text to be displayed inside the input element.
+@param {string} id - The CSS id to be applied to the input element.
 @param {string} value - The value of the input element.
 @param {string} type - The type of the input element (e.g. "text", "email", "password").
 @param {function} onChange - The function to be called when the input value changes.
@@ -16,26 +17,30 @@ A React functional component for rendering an input element.
 @returns {JSX.Element} - An input element with the specified props.
 */
 
-const Input = ({ classname, required, name, placeholder, value, type, onChange, dataOnChange, children, childrenOnClick }) => {
+const Input = ({ id, classname, required, name, placeholder, value, type, onChange, dataOnChange, children, childrenOnClick }) => {
     return (
         <div className={'input-container'}>
             <input
+                id={id}
                 name={name}
                 className={classname}
                 placeholder={placeholder}
                 type={type}
                 value={value}
-                onChange={(e) => onChange(dataOnChange.state, dataOnChange.setState, dataOnChange.name, e.target.value)}
+                onChange={(e) => onChange(dataOnChange.state, dataOnChange.setState, dataOnChange.name, e.target.value, e)}
                 required={required}
             />
-            <div aria-hidden="true" className="input-container__icon" onClick={(e) => childrenOnClick(e)}>
-                {children}
-            </div>
+            {children && (
+                <div aria-hidden="true" className="input-container__icon" onClick={(e) => childrenOnClick(e)}>
+                    {children}
+                </div>
+            )}
         </div>
     )
 }
 
 Input.propTypes = {
+    id: PropTypes.string,
     classname: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     name: PropTypes.string,

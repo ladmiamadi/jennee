@@ -5,21 +5,18 @@ import { Link } from 'react-router-dom'
 import { EVENT_MENU_ITEMS } from '@constants/menuItemsContentPagesConst'
 import Cards from '@components/pages/dashboard/events/eventsCard/EventCard'
 import Grid from '@mui/material/Unstable_Grid2'
-import { EVENTS_LIST } from '../../../../fixtures/eventsList'
+import { EVENTS_LIST } from '@fixtures/eventsList'
 import { Box } from '@mui/material'
 import { ROUTES } from '@constants/routesConst'
 import Dropdown from '@shared/dropdown/Dropdown'
 import { FILTER_DROPDOWN_LIST_EVENT } from '@constants/filterDropDownList'
+
 /**
  The component for Event page
  @typedef {Object} Props
- @property {String} day - Day of the event.
- @property {String} month - month of the event.
- @property {String} picture - picture of the event.
- @property {String} type - type of the event.
- @property {String} name - name of the event.
- @property {String} info - information as last modified of the event.
- @returns {JSX.Element} The EventsComponent component.
+ @property {function} loading - boolean for loading.
+ @property {boolean} handleOpen - function for open modal.
+ @returns {JSX.Element} The EventsPageComponent component.
  */
 const EventsComponent = ({ handleOpen, loading }) => {
     return (
@@ -27,13 +24,13 @@ const EventsComponent = ({ handleOpen, loading }) => {
             <HeaderPageContent
                 title={'Mes events'}
                 menuItems={EVENT_MENU_ITEMS}
-                handleOpen={handleOpen}
+                handleClick={handleOpen}
                 btnName={'Créer un nouvel event'}
             />
             <Grid container spacing={6} sx={{ marginTop: '16px' }}>
                 {EVENTS_LIST.map((event) => (
                     <Grid key={event.id} xs={'auto'}>
-                        <Link to={ROUTES.DASHBOARD.EVENTS_DETAILS.PATH}>
+                        <Link to={ROUTES.DASHBOARD.EVENTS.CHILDREN.EVENTS_DETAILS.PATH}>
                             <Cards
                                 day={event.day}
                                 month={event.month}
@@ -47,27 +44,15 @@ const EventsComponent = ({ handleOpen, loading }) => {
                     </Grid>
                 ))}
             </Grid>
+
             <Dropdown filterList={FILTER_DROPDOWN_LIST_EVENT} />
         </Box>
     )
 }
 
 EventsComponent.propTypes = {
-    open: PropTypes.bool,
-    setOpen: PropTypes.func,
     handleOpen: PropTypes.func,
-    handleClose: PropTypes.func,
-    formData: PropTypes.object,
-    setFormData: PropTypes.func,
-    handleChange: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    errors: PropTypes.object,
-    setErrors: PropTypes.func,
-    step: PropTypes.number,
-    setStep: PropTypes.func,
-    handleNext: PropTypes.func,
-    loading: PropTypes.bool,
-    handlePrev: PropTypes.func
+    loading: PropTypes.bool
 }
 
 export default EventsComponent

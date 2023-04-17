@@ -44,11 +44,17 @@ export const ROUTES = {
         },
         EVENTS: {
             NAME: 'events',
-            PATH: ''
-        },
-        EVENTS_DETAILS: {
-            NAME: 'events-details',
-            PATH: 'events-details'
+            PATH: 'events',
+            CHILDREN: {
+                EVENT: {
+                    NAME: 'events',
+                    PATH: ''
+                },
+                EVENTS_DETAILS: {
+                    NAME: 'events-details',
+                    PATH: 'details'
+                }
+            }
         },
         ORGANIZATION: {
             NAME: 'organization',

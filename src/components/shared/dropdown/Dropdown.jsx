@@ -15,8 +15,6 @@ import { Divider } from '@mui/material'
 const Dropdown = ({ filterList }) => {
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(false)
-    console.log('open', open)
-    console.log('selected', selected)
     const handleOpenChangeArrow = (e) => {
         e.preventDefault()
         setTimeout(() => {

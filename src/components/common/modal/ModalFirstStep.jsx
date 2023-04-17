@@ -1,9 +1,16 @@
 import * as React from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 import PropTypes from 'prop-types'
+import MobileStepper from '@mui/material/MobileStepper'
+import Input from '@common/input/Input'
+import Select from '@common/select/Select'
+import Button from '@common/button/Button'
+import CloseIcon from '@mui/icons-material/Close'
+import TextArea from '@common/input/TextArea'
+import { INPUT } from '@constants/inputConst'
 
-const ModalFirstStep = () => {
+const ModalFirstStep = ({ formValue, setFormValue, handleChange, handleNext, handleClose, errors, step }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -21,131 +28,136 @@ const ModalFirstStep = () => {
     const eventLocationsOptions = ['', 'Bars', 'NightClub', 'Terrasse', 'Rooftop', 'Séminaire']
 
     const eventOptionsVIP = ['', 'VIP', 'Dress code', 'Âge']
+    const eventType = ['', 'Free-event', 'Evenement payant']
 
     return (
         <Box className="modal" sx={style}>
-            {/* <Grid className="modal__first-step" item xs={12}>
-                <Grid item xs={12}>
-                    <h1>Etape 1 : Informations générales</h1>
-                </Grid>
-                <Grid item xs={12}>
-                    <MobileStepper variant="progress" steps={6} position="static" activeStep={step} className="MuiMobileStepper-progress">
+            <div className="modal__container">
+                <Typography variant={'h3'}>Etape 1 : Informations générales</Typography>
+                <div className={'modal__stepper'}>
+                    <MobileStepper
+                        variant="progress"
+                        steps={6}
+                        position="static"
+                        activeStep={step}
+                        backButton={<></>}
+                        nextButton={<></>}
+                        className="MuiMobileStepper-progress">
                         <div className="modal__stepper-blank"></div>
                     </MobileStepper>
-                </Grid>
-                <Grid item xs={12}>
-                    <h2>Nom de l&apos;évènement</h2>
-                    <p>Remplissez le champ de texte suivant, le nom choisi apparaitra notammement pour le différencier de vos évènements</p>
-                    <form className="modal__form-input">
+                </div>
+                <div>
+                    <div>
+                        <h4>Nom de l&apos;évènement</h4>
+                        <p>
+                            Remplissez le champ de texte suivant, le nom choisi apparaitra notamment pour le différencier de vos évènements
+                        </p>
                         <Input
-                            name="eventName"
-                            className="input__primary"
+                            classname={'modal__input'}
+                            name={'name'}
+                            type="text"
                             placeholder="Ex : Soirée d'Halloween"
-                            value={formData.eventName}
-                            handleChange={handleChange}
-                            errors={errors.eventName}
-                            formData={formData.eventName}
+                            value={formValue.name}
+                            errors={errors.name}
+                            formValue={formValue.name}
+                            required={true}
+                            dataOnChange={{
+                                state: formValue,
+                                setState: setFormValue,
+                                name: INPUT.MODAL.NEW_EVENT.NAME
+                            }}
+                            onChange={handleChange}
                         />
-                        {formData.eventName === '' ? <p>{errors.eventName}</p> : ''}
-                    </form>
-                </Grid>
-            </Grid>
-            <Grid className="modal__first-step">
-                <h2>Description de l&apos;évènement</h2>
-                <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
-                <form className="modal__form-input">
-                    <Input
-                        name="eventDescription"
-                        className="input__primary input__primary--text"
-                        placeholder="Ex : Thème, lieu, occasion..."
-                        value={formData.eventDescription}
-                        handleChange={handleChange}
-                        errors={errors.eventDescription}
-                    />
-                    {formData.eventDescription === '' ? <p>{errors.eventDescription}</p> : ''}
-                </form>
-            </Grid>
-            <Grid className="modal__first-step" container spacing={2}>
-                <Grid item xs={12}>
-                    <h2>Thèmes & Ambiances</h2>
-                    <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
-                </Grid>
-                <Grid item xs={8}>
-                    <form className="modal__form-input">
-                        <Select
-                            name="eventTheme"
-                            className="select__primary"
-                            options={eventTypeOptions}
-                            value={formData.eventTheme}
-                            handleChange={handleChange}
-                            errors={errors.eventTheme}
-                        />
-                        {formData.eventTheme === '' ? <p>{errors.eventTheme}</p> : ''}
-                    </form>
-                </Grid>
-                <Grid item xs={4}>
-                    <Button handleClick={''} className="button__secondary" text="Sélectionner" />
-                </Grid>
-            </Grid>
-            <Grid container>
-                <Grid item xs={6} className="modal__first-step">
-                    <Grid item={12}>
-                        <h2>Type de lieu</h2>
-                    </Grid>
-                    <Grid container spacing={2}>
-                        <Grid item xs={8}>
-                            <form className="modal__form-input">
-                                <Select
-                                    name="eventLocation"
-                                    className="select__primary"
-                                    options={eventLocationsOptions}
-                                    value={formData.eventLocation}
-                                    handleChange={handleChange}
-                                    errors={errors.eventLocation}
-                                />
-                                {formData.eventLocation === '' ? <p>{errors.eventLocation}</p> : ''}
-                            </form>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Button handleClick={''} className="button__secondary" text="Sélectionner" />
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item xs={6} className="modal__first-step">
-                    <Grid item xs={12}>
-                        <h2>Autorisation d&apos;entrée</h2>
-                    </Grid>
-                    <Grid container spacing={2}>
-                        <Grid item xs={8}>
-                            <form className="modal__form-input">
-                                <Select
-                                    name="eventVIP"
-                                    className="select__primary"
-                                    options={eventOptionsVIP}
-                                    value={formData.eventVIP}
-                                    handleChange={handleChange}
-                                    errors={errors.eventVIP}
-                                />
-                                {formData.eventVIP === '' ? <p>{errors.eventVIP}</p> : ''}
-                            </form>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Button handleClick={''} className="button__secondary" text="Sélectionner" />
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item xs={12} className="modal__button">
-                <Button handleClick={handleNext} className="button__primary" text="Étape suivante" />
-            </Grid>
-            <CloseIcon onClick={() => handleClose()} className="modal__icon" />*/}
+                        {formValue.name === '' ? <p>{errors.name}</p> : ''}
+                    </div>
+                    <div>
+                        <h4>Description de l&apos;évènement</h4>
+                        <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
+                        <div>
+                            <TextArea
+                                classname={'modal__textarea'}
+                                type="text"
+                                required={false}
+                                value={formValue.description}
+                                dataOnChange={{
+                                    state: formValue,
+                                    setState: setFormValue,
+                                    name: INPUT.MODAL.NEW_EVENT.DESCRIPTION
+                                }}
+                                onChange={handleChange}
+                                placeholder="Ex : Thème, lieu, occasion, …"
+                                name={'description'}
+                            />
+                        </div>
+                        {formValue.description === '' ? <p>{errors.description}</p> : ''}
+                    </div>
+                    <div className={'modal__row'}>
+                        <div className={'modal__row__items'}>
+                            <h4>Thèmes & Ambiances</h4>
+                            <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
+                            <Select
+                                name="type"
+                                className="select__primary"
+                                options={eventTypeOptions}
+                                value={formValue.type}
+                                handleChange={handleChange}
+                                errors={errors.type}
+                            />
+                            {formValue.type === '' ? <p>{errors.type}</p> : ''}
+                        </div>
+                        <div className={'modal__row__items'}>
+                            <h4>Type event</h4>
+                            <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
+                            <Select
+                                name="event"
+                                className="select__primary"
+                                options={eventType}
+                                value={formValue.event}
+                                handleChange={handleChange}
+                                errors={errors.event}
+                            />
+                            {formValue.event === '' ? <p>{errors.event}</p> : ''}
+                        </div>
+                    </div>
+                    <div className={'modal__row'}>
+                        <div className={'modal__row__items'}>
+                            <h4>Type de lieu</h4>
+                            <Select
+                                name="place"
+                                className="select__primary"
+                                options={eventLocationsOptions}
+                                value={formValue.place}
+                                handleChange={handleChange}
+                                errors={errors.place}
+                            />
+                            {formValue.place === '' ? <p>{errors.place}</p> : ''}
+                        </div>
+                        <div className={'modal__row__items'}>
+                            <h4>Autorisation d&apos;entrée</h4>
+                            <Select
+                                name="authorisation"
+                                className="select__primary"
+                                options={eventOptionsVIP}
+                                value={formValue.authorisation}
+                                handleChange={handleChange}
+                                errors={errors.authorisation}
+                            />
+                            {formValue.authorisation === '' ? <p>{errors.authorisation}</p> : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="modal__button">
+                <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
+            </div>
+            <CloseIcon onClick={() => handleClose()} className="modal__icon" />
         </Box>
     )
 }
 
 ModalFirstStep.propTypes = {
-    formData: PropTypes.object,
-    setFormData: PropTypes.func,
+    formValue: PropTypes.object,
+    setFormValue: PropTypes.func,
     handleChange: PropTypes.func,
     handleSubmit: PropTypes.func,
     handleClose: PropTypes.func,

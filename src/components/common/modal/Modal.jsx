@@ -1,25 +1,29 @@
 import * as React from 'react'
-import Modal from '@mui/material/Modal'
 import PropTypes from 'prop-types'
-/*import ModalFirstStep from './modalFirstStep'*/
 import ModalSecondStep from './ModalSecondStep'
-import { Box } from '@mui/material'
-import ModalExit from './modalExit'
+import { Modal } from '@mui/material'
+import ModalFirstStep from '@common/modal/ModalFirstStep'
 
-const ModalEvent = ({ open, handleClose, formData, handleChange, handleSubmit, errors, step, handleNext, handlePrev }) => {
-    return (
-        <Box>
-            {step === 1 && (
-                <Modal
-                    className="modal"
-                    open={open}
-                    onClose={handleClose}
-                    handleNext={handleNext}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description">
-                    {/* <ModalFirstStep
-                        formData={formData}
-                        setFormData={setFormData}
+const ModalEvent = ({
+    open,
+    handleClose,
+    formValue,
+    setFormValue,
+    handleChange,
+    handleSubmit,
+    errors,
+    setErrors,
+    step,
+    handleNext,
+    handlePrev
+}) => {
+    const stepModal = () => {
+        switch (step) {
+            case 1:
+                return (
+                    <ModalFirstStep
+                        formValue={formValue}
+                        setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
                         handleClose={handleClose}
@@ -27,46 +31,59 @@ const ModalEvent = ({ open, handleClose, formData, handleChange, handleSubmit, e
                         setErrors={setErrors}
                         handleNext={handleNext}
                         step={step}
-                    />*/}
-                </Modal>
-            )}
-            {step === 2 && (
-                <Modal
-                    className="modal"
-                    open={open}
-                    onClose={handleClose}
-                    handleNext={handleNext}
-                    handlePrev={handlePrev}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description">
+                    />
+                )
+            case 2:
+                return (
                     <ModalSecondStep
-                        errors={errors}
-                        handleClose={handleClose}
-                        handlePrev={handlePrev}
+                        formValue={formValue}
+                        setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
-                        formData={formData}
+                        handleClose={handleClose}
+                        errors={errors}
+                        setErrors={setErrors}
+                        handleNext={handleNext}
+                        handlePrev={handlePrev}
                         step={step}
                     />
-                </Modal>
-            )}
-            <Modal className="modal" aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" open={false}>
-                <ModalExit />
-            </Modal>
-        </Box>
+                )
+            default:
+                return (
+                    <ModalFirstStep
+                        formValue={formValue}
+                        setFormValue={setFormValue}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        handleClose={handleClose}
+                        errors={errors}
+                        setErrors={setErrors}
+                        handleNext={handleNext}
+                        step={step}
+                    />
+                )
+        }
+    }
+    return (
+        <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+            {stepModal()}
+            {/*    <Modal className="modal" aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" open={false}>
+                        <ModalExit />
+                   */}
+        </Modal>
     )
 }
 
 ModalEvent.propTypes = {
     open: PropTypes.bool,
     handleClose: PropTypes.func,
-    formData: PropTypes.object,
-    setFormData: PropTypes.func,
+    formValue: PropTypes.object,
+    setFormValue: PropTypes.func,
     handleChange: PropTypes.func,
     handleSubmit: PropTypes.func,
     errors: PropTypes.object,
     setErrors: PropTypes.func,
-    step: PropTypes.numb,
+    step: PropTypes.number,
     handleNext: PropTypes.func,
     handlePrev: PropTypes.func
 }
