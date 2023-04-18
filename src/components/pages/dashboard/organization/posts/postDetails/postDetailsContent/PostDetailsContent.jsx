@@ -5,7 +5,7 @@ import { Box } from '@mui/material'
 
 const PostDetailsContent = ({ post }) => {
     return (
-        <Box className={'post-details'}>
+        <Box className={'post__details'}>
             <PostDetailsContentDescription post={post} />
             <PostDetailsContentComments comment={post.comment} />
         </Box>
