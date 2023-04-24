@@ -14,10 +14,13 @@ const EventsContainer = lazy(() => import('@components/pages/dashboard/events/ev
 const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/events/eventDetails/EventDetailsContainer'))
 /*				ORGANIZATION				*/
 
-// render - dashboard / my organization / posts
+// render - dashboard / my organization / organization
 const OrganizationContainer = lazy(() => import('@components/pages/dashboard/organization/OrganizationContainer'))
-// render - dashboard / my organization / posts
+// render - dashboard / my organization / organization
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
+
+// render - dashboard / my organization / posts / post-details
+const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))
 // render - dashboard / my organization / team
 const TeamContainer = lazy(() => import('@components/pages/dashboard/organization/team/TeamContainer'))
 // render - dashboard / my organization /  partnership
@@ -55,55 +58,56 @@ const MainRoutes = {
                 {
                     path: ROUTES.DASHBOARD.EVENTS.CHILDREN.EVENTS_DETAILS.PATH,
                     element: <EventDetailsContainer />
-                }
-            ]
-        },
-        {
-            path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
-            element: <OrganizationContainer />,
-            children: [
+                },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
+                    path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
+                    element: <OrganizationContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.POSTS.PATH,
                     element: <PostsContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
-
+                    path: ROUTES.DASHBOARD.POSTS_DETAILS.PATH,
+                    element: <PostDetailsContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.TEAM.PATH,
                     element: <TeamContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PARTNERSHIP.PATH,
+                    path: ROUTES.DASHBOARD.PARTNERSHIP.PATH,
                     element: <PartnershipContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.FREE_EVENTS.PATH,
+                    path: ROUTES.DASHBOARD.FREE_EVENTS.PATH,
                     element: <FreeEventsContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
+                    path: ROUTES.DASHBOARD.PROFIL.PATH,
                     element: <ProfilContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.SETTINGS.PATH,
+                    path: ROUTES.DASHBOARD.SETTINGS.PATH,
                     element: <SettingsContainer />
-                }
-            ]
-        },
-        {
-            path: ROUTES.DASHBOARD.FINANCE.PATH,
-            element: <FinanceContainer />,
-            children: [
-                {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
-                    element: <RevenuesContainer />
                 },
                 {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
-                    element: <ExpensesContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
-                    element: <BillsContainer />
+                    path: ROUTES.DASHBOARD.FINANCE.PATH,
+                    element: <FinanceContainer />,
+                    children: [
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
+                            element: <RevenuesContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
+                            element: <ExpensesContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
+                            element: <BillsContainer />
+                        }
+                    ]
                 }
             ]
         }

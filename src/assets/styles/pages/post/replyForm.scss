@@ -1,0 +1,39 @@
+.reply {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	padding: 10px;
+	height: 35px;
+	background-color: rgba(104, 104, 103, 0.07);
+	justify-content: center;
+	align-items: center;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	color: #686867;
+	&__input {
+		background-color: $jenee_white;
+		border-radius: 10px !important;
+		width: 90%;
+		margin: 0 15px !important;
+		& > input {
+			border: none;
+			width: 100%;
+			padding: 7px;
+			border-radius: 10px !important;
+			color: #686867;
+		}
+	}
+	&--emoji {
+		cursor: pointer;
+	}
+	&--send {
+		& > button {
+			color: #686867;
+			border: none;
+			background: none;
+			transform: rotate(-45deg);
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	}
+}

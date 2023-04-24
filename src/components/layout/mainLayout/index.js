@@ -3,13 +3,24 @@ import { Outlet } from 'react-router-dom'
 // project import
 import Header from './header'
 import { Box } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material'
 
 const MainLayout = () => {
+    const theme = createTheme({
+        palette: {
+            secondary: {
+                main: '#E8E80C'
+            }
+        }
+    })
+
     return (
-        <Box sx={{ height: '100%' }}>
-            <Header />
-            <Outlet />
-        </Box>
+        <ThemeProvider theme={theme}>
+            <Box sx={{ height: '100%' }}>
+                <Header />
+                <Outlet />
+            </Box>
+        </ThemeProvider>
     )
 }
 
