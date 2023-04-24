@@ -3,19 +3,26 @@ import { Box, Divider, Typography } from '@mui/material'
 import { COMMENTS_LIST } from '../../../../../../../fixtures/commentsList'
 import { ReactComponent as PostCommentAvatar } from '@assets/svg/post/post-comments-avatar.svg'
 import CommentAccordion from '@common/accordion/CommentAccordion'
+import PropTypes from 'prop-types'
 
-const PostDetailsContentComments = ({ comment }) => {
+/**
+ * @param comment {object} - the comment object to be displayed with details
+ * @param editPost {boolean} - the prop to enable editing post
+ * @returns {JSX.Element} - The PostDetailsContentComments component
+ * @constructor
+ */
+const PostDetailsContentComments = ({ comment, editPost }) => {
     return (
         <>
             <div className={'post__details__comment'}>
-                <div className={'post__details__comment--title'}>
+                <div className={'post__details__comment__title'}>
                     <Typography variant="h6" gutterBottom>
                         Commentaires
                     </Typography>
                     <Typography
                         variant="h6"
                         gutterBottom
-                        className={'post__details__comment--title--number'}
+                        className={'post__details__comment__title--number'}
                         sx={{ marginLeft: '20px', opacity: '0.3' }}>
                         {comment}
                     </Typography>
@@ -33,7 +40,7 @@ const PostDetailsContentComments = ({ comment }) => {
                                 <div className={'post__details__comments__item--user'}>{comment.user}</div>
                                 <div className={'post__details__comments__item--point'}>.</div>
                                 <div className={'post__details__comments__item--reply'}>{comment.replies.length} réponses</div>
-                                <CommentAccordion comment={comment} />
+                                <CommentAccordion comment={comment} editPost={editPost} />
                             </div>
                         )
                     })}
@@ -43,4 +50,8 @@ const PostDetailsContentComments = ({ comment }) => {
     )
 }
 
+PostDetailsContentComments.prototype = {
+    comment: PropTypes.object.isRequired,
+    editPost: PropTypes.bool.isRequired
+}
 export default PostDetailsContentComments

@@ -13,12 +13,22 @@
 				background-color: $light-grey;
 				color: $description-grey;
 				border-radius: 25px;
-				padding: 20px;
 				margin-top: 20px;
 				margin-bottom: 20px;
-				& > p {
+				height: 170px;
+				& > textarea {
 					line-height: 1.5rem;
-					padding-left: 5px;
+					width: 400px;
+					height: 120px;
+					border: none;
+					background-color: transparent;
+					margin: 20px;
+					resize: none;
+					padding: 10px;
+					font-size: 0.9rem;
+					&:focus {
+						border-radius: 13px;
+					}
 				}
 			}
 			&--feedback {

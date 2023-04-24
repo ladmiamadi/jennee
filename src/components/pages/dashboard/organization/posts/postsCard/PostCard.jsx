@@ -18,25 +18,25 @@ const PostCard = ({ post, loading }) => {
                     <Skeleton width="60%" animation={'wave'} />
                 </Box>
             ) : (
-                <Card className="posts-card">
+                <Card className="posts__card">
                     <CardMedia image={post.picture} title={post.name} className={'posts-card__picture'} component="img" alt="post" />
-                    <div className={'posts-card__content'}>
-                        <div className={'posts-card__content__title'}>
-                            <Typography gutterBottom variant="h6" component="div" className={'posts-card__content__name'}>
+                    <div className={'posts__card__content'}>
+                        <div className={'posts__card__content__title'}>
+                            <Typography gutterBottom variant="h6" component="div" className={'posts__card__content__name'}>
                                 {post.name}
                             </Typography>
-                            <Typography variant="caption" gutterBottom className={'posts-card__content__title__info'}>
+                            <Typography variant="caption" gutterBottom className={'posts__card__content__title__info'}>
                                 {post.info}
                             </Typography>
                         </div>
 
-                        <div className={'posts-card__content__status'}>
+                        <div className={'posts__card__content__status'}>
                             <Brightness1RoundedIcon
                                 color={post.status === 'En ligne' ? 'success' : 'secondary'}
                                 fontSize={'small'}
-                                className={'posts-card__content__icon'}
+                                className={'posts__card__content__icon'}
                             />
-                            <Typography variant="caption" gutterBottom className={'posts-card__content__status__caption'}>
+                            <Typography variant="caption" gutterBottom className={'posts__card__content__status__caption'}>
                                 {post.status}
                             </Typography>
                         </div>

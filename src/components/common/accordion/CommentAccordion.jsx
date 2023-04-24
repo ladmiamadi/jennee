@@ -7,18 +7,30 @@ import ReplyAllIcon from '@mui/icons-material/ReplyAll'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ReplyForm from '@common/form/Post/ReplyForm'
 
-const CommentAccordion = ({ comment }) => {
+/**
+ *
+ * @param comment {Object} - The post.comment object with all attributes to be displayed
+ * @param editPost {boolean} - The prop to enable edit post form
+ * @returns {JSX.Element} - The CommentAccordion component
+ * @constructor
+ */
+const CommentAccordion = ({ comment, editPost }) => {
     const [isActive, setIsActive] = useState(false)
 
     return (
         <>
-            <div>
-                {isActive ? (
-                    <Button className={'accordion--close'} name={'Fermer'} onClick={() => setIsActive(!isActive)} />
-                ) : (
-                    <Button className={'accordion--open'} name={'Ouvrir'} onClick={() => setIsActive(!isActive)} />
-                )}
-            </div>
+            {editPost ? (
+                <Button className={'accordion--close'} name={'Supprimer'} />
+            ) : (
+                <div>
+                    {isActive ? (
+                        <Button className={'accordion--close'} name={'Fermer'} onClick={() => setIsActive(!isActive)} />
+                    ) : (
+                        <Button className={'accordion--open'} name={'Ouvrir'} onClick={() => setIsActive(!isActive)} />
+                    )}
+                </div>
+            )}
+
             {isActive && (
                 <div className="accordion__content">
                     <Divider component={'hr'} />

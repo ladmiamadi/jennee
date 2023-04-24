@@ -1,8 +1,18 @@
 import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
+import TextArea from '@common/input/TextArea'
+import PropTypes from 'prop-types'
 
-const PostDetailsContentDescription = ({ post }) => {
+/**
+ *
+ * @param post {Object} - The post to be displayed with details
+ * @param editPost {boolean} - The prop to enable editing post form
+ * @param handleTextareaChange {function}- The function to execute when textArea content is changed
+ * @returns {JSX.Element} - The postDetailsContentDescription component
+ * @constructor
+ */
+const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange }) => {
     return (
         <div className={'post__details__description'}>
             <Typography variant="h6" gutterBottom>
@@ -10,9 +20,14 @@ const PostDetailsContentDescription = ({ post }) => {
             </Typography>
             <div className={'post__details__description__content'}>
                 <div className={'post__details__description__content__text'}>
-                    <Typography variant="body2" gutterBottom>
-                        {post.description}
-                    </Typography>
+                    <TextArea
+                        name={post.name}
+                        className={''}
+                        value={post.description}
+                        onChange={handleTextareaChange}
+                        required={false}
+                        isDisabled={!editPost}
+                    />
                 </div>
                 <Box sx={{ width: '40%' }}>
                     <Grid
@@ -71,6 +86,12 @@ const PostDetailsContentDescription = ({ post }) => {
             </div>
         </div>
     )
+}
+
+PostDetailsContentDescription.prototype = {
+    post: PropTypes.object.isRequired,
+    editPost: PropTypes.bool,
+    handleTextAreaChange: PropTypes.func
 }
 
 export default PostDetailsContentDescription

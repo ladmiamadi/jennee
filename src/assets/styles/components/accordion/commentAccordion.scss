@@ -9,6 +9,7 @@
 		cursor: pointer;
 		margin-right: 15px;
 		&:hover {
+			background-color: rgba(228, 240, 250, 0.75);
 		}
 	}
 	&--close {
@@ -21,6 +22,7 @@
 		margin-right: 15px;
 		cursor: pointer;
 		&:hover {
+			background-color: rgba(254, 242, 242, 0.68);
 		}
 	}
 	&__content {
