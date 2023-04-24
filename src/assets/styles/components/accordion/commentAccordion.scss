@@ -1,0 +1,103 @@
+.accordion {
+	&--open {
+		background-color: $light-blue;
+		width: 200px;
+		height: 44px;
+		border: none;
+		border-radius: 13px;
+		color: $blue;
+		cursor: pointer;
+		margin-right: 15px;
+		&:hover {
+		}
+	}
+	&--close {
+		background-color: $button-danger;
+		width: 200px;
+		height: 44px;
+		border: none;
+		border-radius: 13px;
+		color: $text-danger;
+		margin-right: 15px;
+		cursor: pointer;
+		&:hover {
+		}
+	}
+	&__content {
+		width: 100%;
+		margin-top: 20px;
+		&__comments {
+			margin-top: 20px;
+			margin-left: 60px;
+
+			&__mainComment {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				width: 80%;
+				&__userItem {
+					margin-left: 20px;
+					margin-right: auto;
+					color: $comments;
+					line-height: 1.8rem;
+					width: 80%;
+					&__user {
+						font-weight: bold;
+					}
+				}
+				&--userLikes {
+					margin-left: auto;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					&--icon {
+						color: $text-danger;
+						cursor: pointer;
+					}
+					&--number {
+						color: $jenee_black;
+					}
+				}
+				&--replies {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					width: 100%;
+					border-radius: 15px;
+					margin-top: 15px;
+					margin-bottom: 15px;
+					&__item {
+						display: flex;
+						flex-direction: row;
+						border-radius: 15px;
+						border: 1px solid rgba(29, 29, 29, 0.06);
+						justify-content: space-between;
+						align-items: center;
+						width: 80%;
+						margin-left: 20px;
+						margin-right: 40px;
+						padding: 10px;
+						&__userItem {
+							width: 70%;
+							margin-left: 20px;
+						}
+						&--favorite {
+							margin-right: auto;
+							margin-left: 40px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							flex-direction: column;
+						}
+					}
+					& > div {
+						& > svg {
+							color: $jenee_grey;
+						}
+					}
+				}
+			}
+		}
+	}
+}

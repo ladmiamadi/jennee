@@ -80,30 +80,31 @@
 		&__item {
 			background-color: $light-grey;
 			margin-top: 15px;
+			padding-top: 10px;
 			margin-bottom: 15px;
-			padding: 15px;
 			border-radius: 15px;
 			display: flex;
 			flex-direction: row;
+			flex-wrap: wrap;
 			align-items: center;
 			justify-content: space-between;
+			&--avatar {
+				margin-left: 15px;
+			}
 			&--user {
 				color: $comments;
 				margin-left: 20px;
-				margin-right: auto;
+				margin-right: 20px;
 			}
-			&--open {
-				background-color: $light-blue;
-				width: 200px;
-				height: 44px;
-				border: none;
-				border-radius: 13px;
+			&--point {
+				margin-right: 10px;
 				color: $blue;
+				margin-bottom: 5px;
+			}
+			&--reply {
+				color: $blue;
+				margin-right: auto;
 				cursor: pointer;
-				&:hover {
-					color: $light-blue;
-					background-color: $blue;
-				}
 			}
 		}
 	}

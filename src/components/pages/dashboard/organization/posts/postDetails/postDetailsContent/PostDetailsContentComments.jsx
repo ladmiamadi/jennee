@@ -1,8 +1,8 @@
 import React from 'react'
-import { Box, Divider, Grid, Typography } from '@mui/material'
+import { Box, Divider, Typography } from '@mui/material'
 import { COMMENTS_LIST } from '../../../../../../../fixtures/commentsList'
 import { ReactComponent as PostCommentAvatar } from '@assets/svg/post/post-comments-avatar.svg'
-import Button from '@common/button/Button'
+import CommentAccordion from '@common/accordion/CommentAccordion'
 
 const PostDetailsContentComments = ({ comment }) => {
     return (
@@ -31,9 +31,9 @@ const PostDetailsContentComments = ({ comment }) => {
                                     <PostCommentAvatar />
                                 </div>
                                 <div className={'post__details__comments__item--user'}>{comment.user}</div>
-                                <div>
-                                    <Button className={'post__details__comments__item--open'} name={'Ouvrir'} />
-                                </div>
+                                <div className={'post__details__comments__item--point'}>.</div>
+                                <div className={'post__details__comments__item--reply'}>{comment.replies.length} réponses</div>
+                                <CommentAccordion comment={comment} />
                             </div>
                         )
                     })}
