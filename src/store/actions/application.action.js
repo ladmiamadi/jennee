@@ -29,7 +29,6 @@ export const activeItem = (data) => (dispatch) => {
     })
 }
 export const activeLink = (data) => (dispatch) => {
-    console.log('activeLink zation', data)
     dispatch({
         type: ACTIVE_LINK,
         payload: data

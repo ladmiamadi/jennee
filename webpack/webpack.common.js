@@ -18,6 +18,7 @@ const webpackConf = {
 			'@layout': path.join(config.root, config.paths.src, 'components', 'layout'),
 			'@styles': path.join(config.root, config.paths.src, 'assets', 'styles'),
 			'@constants': path.join(config.root, config.paths.src, 'constants'),
+			'@fixtures': path.join(config.root, config.paths.src, 'fixtures'),
 			'@assets': path.join(config.root, config.paths.src, 'assets'),
 			'@navigation': path.join(config.root, config.paths.src, 'navigation'),
 			'@helpers': path.join(config.root, config.paths.src, 'helpers'),

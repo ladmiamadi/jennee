@@ -125,5 +125,23 @@ export const INPUT = {
         PASSWORD_CONFIRMATION: {
             NAME: 'confirm_password'
         }
+    },
+    MODAL: {
+        NEW_EVENT: {
+            NAME: 'name',
+            DESCRIPTION: 'description',
+            TYPE: 'type',
+            EVENT: 'event',
+            PLACE: 'place',
+            AUTHORISATION: 'authorisation',
+            PRESENTATION_COVER: 'presentationCover',
+            PROMOTION_COVER: 'promotionCover',
+            TOTAL_NUMBER_PLACES: 'totalNumberPlaces',
+            OPENING: 'opening',
+            ENDING: 'ending',
+            TICKETING_OPENING: 'ticketingOpening',
+            TICKETING_ENDING: 'ticketingEnding',
+            PUBLICATION: 'publication'
+        }
     }
 }

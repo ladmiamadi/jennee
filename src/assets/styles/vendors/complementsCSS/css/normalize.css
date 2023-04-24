@@ -11,10 +11,6 @@
 html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
-	font-family: 'Helvetica Neue', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-		'Droid Sans', sans-serif;
-	padding: 20px;
-	height: 100%;
 }
 
 /* Sections
@@ -26,7 +22,6 @@ html {
 
 body {
 	margin: 0;
-	padding: 0 !important;
 }
 
 /**
@@ -354,7 +349,4 @@ template {
 
 [hidden] {
 	display: none;
-}
-li {
-	list-style-type: none;
 }

@@ -12,6 +12,7 @@
 			"@assets/*": ["src/assets/*"],
 			"@shared/*": ["src/components/shared/*"],
 			"@utils/*": ["src/utils/*"],
+			"@fixtures/*": ["src/fixtures/*"],
 			"@services/*": ["src/services/*"],
 			"@actions/*": ["src/store/actions/*"],
 			"@reducers/*": ["src/store/reducers/*"],
