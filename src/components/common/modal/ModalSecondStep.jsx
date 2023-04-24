@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import AddIcon from '@mui/icons-material/Add'
 import { INPUT } from '@constants/inputConst'
 
-const ModalSecondStep = ({ setFormValue, formValue, handleChange, handleSubmit, handleClose, errors, handlePrev, step }) => {
+const ModalSecondStep = ({ setFormValue, formValue, handleChange, handlePreClose, errors, handlePrev, handleNext, step }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -117,10 +117,10 @@ const ModalSecondStep = ({ setFormValue, formValue, handleChange, handleSubmit, 
                     <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
                 </div>
                 <div className="modal__button">
-                    <Button handleClick={handleSubmit} className="button__primary" name="Étape suivante" />
+                    <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
                 </div>
             </div>
-            <CloseIcon onClick={() => handleClose()} className="modal__icon" />
+            <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
 }
@@ -128,8 +128,7 @@ const ModalSecondStep = ({ setFormValue, formValue, handleChange, handleSubmit, 
 ModalSecondStep.propTypes = {
     formValue: PropTypes.object,
     handleChange: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    handleClose: PropTypes.func,
+    handlePreClose: PropTypes.func,
     setFormValue: PropTypes.func,
     errors: PropTypes.object,
     setErrors: PropTypes.func,

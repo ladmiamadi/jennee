@@ -6,7 +6,8 @@ const EventsContainer = () => {
     const [open, setOpen] = React.useState(true)
     const [loading, setLoading] = React.useState(true)
     const [errors, setErrors] = useState({})
-    const [step, setStep] = useState(2)
+    const [step, setStep] = useState(5)
+    const [lastStep, setLastStep] = useState(null)
     const [formValue, setFormValue] = useState({
         name: '',
         description: '',
@@ -15,10 +16,30 @@ const EventsContainer = () => {
         place: '',
         authorisation: '',
         presentationCover: '',
-        promotionCover: ''
+        promotionCover: '',
+        totalNumberPlaces: 0,
+        opening: '',
+        ending: '',
+        ticketingOpening: '',
+        ticketingEnding: '',
+        publication: ''
     })
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
+    const handleOpen = () => {
+        setOpen(true)
+    }
+    const handlePreClose = () => {
+        handleLastStep()
+        setStep(0)
+    }
+
+    const handleClose = () => {
+        setStep(1)
+        setLastStep(null)
+        setOpen(false)
+    }
+    const handleCloseDraft = () => {
+        setOpen(false)
+    }
 
     const handleChange = (state, setState, inputName, inputValue, event) => {
         const { name, value, files } = event.target
@@ -78,15 +99,20 @@ const EventsContainer = () => {
         if (step < 7) {
             setStep(step + 1)
         }
+        handleLastStep()
     }
     const handlePrev = () => {
         setStep(step - 1)
+        handleLastStep()
     }
+    const handleLastStep = () => setLastStep(step)
+    const handleComeLastStep = () => setStep(lastStep)
+
     setTimeout(() => {
         setLoading(false)
     }, 2000)
-    console.log(step)
-    console.log(open)
+    console.log('laststep', lastStep)
+    console.log('ste', step)
     return (
         <>
             <EventsComponent
@@ -108,8 +134,11 @@ const EventsContainer = () => {
             />
             <ModalEvent
                 open={open}
+                handleCloseDraft={handleCloseDraft}
                 handleClose={handleClose}
                 formValue={formValue}
+                handlePreClose={handlePreClose}
+                handleComeLastStep={handleComeLastStep}
                 setErrors={setErrors}
                 setFormValue={setFormValue}
                 handleChange={handleChange}

@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import TextArea from '@common/input/TextArea'
 import { INPUT } from '@constants/inputConst'
 
-const ModalFirstStep = ({ formValue, setFormValue, handleChange, handleNext, handleClose, errors, step }) => {
+const ModalFirstStep = ({ formValue, setFormValue, handleChange, handleNext, handlePreClose, errors, step }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -145,12 +145,41 @@ const ModalFirstStep = ({ formValue, setFormValue, handleChange, handleNext, han
                             {formValue.authorisation === '' ? <p>{errors.authorisation}</p> : ''}
                         </div>
                     </div>
+                    <div>
+                        <div className={'text-center mb-24'}>
+                            <h4>Sélectionner les nouvelles dates d’ouverture et de fermeture de l’évènement :</h4>
+                        </div>
+                        <div className={'d-flex justify-between'}>
+                            <div className={'w-full mr-40'}>
+                                <Input
+                                    classname={'modal__input-datetime'}
+                                    onChange={null}
+                                    type={'datetime-local'}
+                                    dataOnChange={null}
+                                    name={''}
+                                    value={''}
+                                />
+                                <p className={'mt-8'}>Date et heure d’ouverture</p>
+                            </div>
+                            <div className={'w-full'}>
+                                <Input
+                                    classname={'modal__input-datetime'}
+                                    onChange={null}
+                                    type={'datetime-local'}
+                                    dataOnChange={null}
+                                    name={''}
+                                    value={''}
+                                />
+                                <p className={'mt-8'}>Date et heure de fermeture</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="modal__button">
                 <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
             </div>
-            <CloseIcon onClick={() => handleClose()} className="modal__icon" />
+            <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
 }
@@ -159,8 +188,7 @@ ModalFirstStep.propTypes = {
     formValue: PropTypes.object,
     setFormValue: PropTypes.func,
     handleChange: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    handleClose: PropTypes.func,
+    handlePreClose: PropTypes.func,
     errors: PropTypes.object,
     setErrors: PropTypes.func,
     handleNext: PropTypes.func,

@@ -135,7 +135,13 @@ export const INPUT = {
             PLACE: 'place',
             AUTHORISATION: 'authorisation',
             PRESENTATION_COVER: 'presentationCover',
-            PROMOTION_COVER: 'promotionCover'
+            PROMOTION_COVER: 'promotionCover',
+            TOTAL_NUMBER_PLACES: 'totalNumberPlaces',
+            OPENING: 'opening',
+            ENDING: 'ending',
+            TICKETING_OPENING: 'ticketingOpening',
+            TICKETING_ENDING: 'ticketingEnding',
+            PUBLICATION: 'publication'
         }
     }
 }

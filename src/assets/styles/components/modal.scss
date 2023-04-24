@@ -186,4 +186,42 @@
 		right: 50%;
 		z-index: 1;
 	}
+	&__new-ticketing-category {
+		width: auto;
+		max-width: 325px;
+		max-height: 267px;
+		height: 267px;
+		background: rgba(228, 240, 250, 1);
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		cursor: pointer;
+		& > svg {
+			font-size: 4em;
+			color: rgba(94, 109, 178, 1);
+			margin-bottom: 16px;
+		}
+		& > p {
+			color: rgba(94, 109, 178, 1);
+		}
+	}
+	&__new-ticketing-category:hover {
+		border: 1px solid transparent;
+		border-radius: 10px;
+		background: linear-gradient(to right, white, white),
+			linear-gradient(270deg, #d34d48 0%, #5595cb 100%);
+		background-clip: padding-box, border-box;
+		background-origin: padding-box, border-box;
+	}
+	&__button-skip-step {
+		margin: 40px 0 40px 0;
+		display: flex;
+		& > button {
+			max-width: 442px;
+			background: rgba(228, 240, 250, 1);
+		}
+	}
 }
