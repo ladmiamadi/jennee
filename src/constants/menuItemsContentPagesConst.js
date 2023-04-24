@@ -38,6 +38,7 @@ export const ORGANIZATION_MENU_ITEMS = [
         title: 'Profil'
     }
 ]
+
 export const FINANCES_MENU_ITEMS = [
     {
         id: 1,
