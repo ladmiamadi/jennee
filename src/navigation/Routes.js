@@ -7,7 +7,7 @@ import MainRoutes from '@navigation/routes/MainRoutes'
 import NotFoundComponent from '@components/pages/notFound/notFoundComponent'
 import { ROUTES } from '@constants/routesConst'
 import { useDispatch } from 'react-redux'
-import { activeLink } from '@actions/application.action'
+import { activeItem, activeLink } from '@actions/application.action'
 // ==============================|| ROUTING RENDER ||============================== //
 
 export default function Routes() {
@@ -21,6 +21,7 @@ export default function Routes() {
                 dispatch(activeLink(ROUTES.AUTHENTIFICATION[key].TITLE))
             }
         })
+        dispatch(activeItem(location.pathname.split('/')[2]))
     }, [dispatch, location])
 
     return useRoutes([MainRoutes, LoginRoutes, { path: '*', element: <NotFoundComponent /> }])

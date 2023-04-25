@@ -8,6 +8,10 @@ import PropTypes from 'prop-types'
 import { FILTER_DROPDOWN_LIST_POST } from '@constants/filterDropDownList'
 import Dropdown from '@shared/dropdown/Dropdown'
 import Grid from '@mui/material/Unstable_Grid2'
+import { ROUTES } from '@constants/routesConst'
+import { Outlet } from 'react-router-dom'
+import HeaderPageContent from '@common/headerPageContent/HeaderPageContent'
+import { ORGANIZATION_MENU_ITEMS } from '@constants/menuItemsContentPagesConst'
 
 /**
  The component for posts page
@@ -19,10 +23,16 @@ import Grid from '@mui/material/Unstable_Grid2'
 const PostsComponent = ({ loading }) => {
     return (
         <Box sx={{ marginBottom: '64px' }}>
+            <HeaderPageContent
+                title={'Mon asso'}
+                menuItems={ORGANIZATION_MENU_ITEMS}
+                handleOpen={() => console.log('clicked')}
+                btnName={'Publier un post'}
+            />
             <Grid container spacing={6} sx={{ marginTop: '16px' }}>
                 {POSTS_LIST.map((post) => (
                     <Grid key={post.id} xs={'auto'}>
-                        <Link to={'/dashboard/post-details'} state={{ data: post }}>
+                        <Link to={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POSTS_DETAILS.PATH} state={{ data: post }}>
                             <PostCard post={post} loading={loading} />
                         </Link>
                     </Grid>

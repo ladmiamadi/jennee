@@ -40,7 +40,7 @@ export const ROUTES = {
     DASHBOARD: {
         ROOT: {
             NAME: 'dashboard',
-            PATH: ''
+            PATH: '/dashboard'
         },
         EVENTS: {
             NAME: 'events',
@@ -58,27 +58,32 @@ export const ROUTES = {
         },
         ORGANIZATION: {
             NAME: 'organization',
-            PATH: 'organization'
-        },
-        POSTS: {
-            NAME: 'posts',
-            PATH: ''
-        },
-        POSTS_DETAILS: {
-            NAME: 'post-details',
-            PATH: 'post-details'
-        },
-        TEAM: {
-            NAME: 'team',
-            PATH: 'team'
-        },
-        PARTNERSHIP: {
-            NAME: 'partnership',
-            PATH: 'partnership'
-        },
-        FREE_EVENTS: {
-            NAME: 'free-events',
-            PATH: 'free-events'
+            PATH: 'organization',
+            CHILDREN: {
+                POSTS: {
+                    HEADER_ROOT: 'organization/posts',
+                    NAME: 'posts',
+                    PATH: 'posts',
+                    CHILDREN: {
+                        POST: {
+                            NAME: 'posts',
+                            PATH: ''
+                        },
+                        POSTS_DETAILS: {
+                            NAME: 'post-details',
+                            PATH: 'details'
+                        }
+                    }
+                },
+                TEAM: {
+                    NAME: 'team',
+                    PATH: 'team'
+                },
+                PARTNERSHIP: {
+                    NAME: 'partnership',
+                    PATH: 'partnership'
+                }
+            }
         },
         PROFIL: {
             NAME: 'profil',

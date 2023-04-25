@@ -18,15 +18,12 @@ const EventDetailsContainer = lazy(() => import('@components/pages/dashboard/eve
 const OrganizationContainer = lazy(() => import('@components/pages/dashboard/organization/OrganizationContainer'))
 // render - dashboard / my organization / organization
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
+const PostsPageContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsPageContainer'))
 
 // render - dashboard / my organization / posts / post-details
 const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))
 // render - dashboard / my organization / team
 const TeamContainer = lazy(() => import('@components/pages/dashboard/organization/team/TeamContainer'))
-// render - dashboard / my organization /  partnership
-const PartnershipContainer = lazy(() => import('@components/pages/dashboard/organization/partnerships/PartnershipsContainer'))
-// render - dashboard / my organization / free event
-const FreeEventsContainer = lazy(() => import('@components/pages/dashboard/organization/freeEvents/FreeEventsContainer'))
 // render - dashboard / my organization / profil
 const ProfilContainer = lazy(() => import('@components/pages/dashboard/organization/profil/ProfilContainer'))
 // render - dashboard / my organization / settings
@@ -44,7 +41,7 @@ const BillsContainer = lazy(() => import('@components/pages/dashboard/finance/bi
 // ==============================|| MAIN ROUTING ||============================== //
 let isAuthenticated = true
 const MainRoutes = {
-    path: '/dashboard',
+    path: ROUTES.DASHBOARD.ROOT.PATH,
     element: isAuthenticated ? <MainLayout /> : <Navigate to={ROUTES.AUTHENTIFICATION.SIGN_IN.PATH} replace />,
     children: [
         {
@@ -58,56 +55,56 @@ const MainRoutes = {
                 {
                     path: ROUTES.DASHBOARD.EVENTS.CHILDREN.EVENTS_DETAILS.PATH,
                     element: <EventDetailsContainer />
-                },
+                }
+            ]
+        },
+        {
+            path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
+            element: <OrganizationContainer />,
+            children: [
                 {
-                    path: ROUTES.DASHBOARD.ORGANIZATION.PATH,
-                    element: <OrganizationContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.POSTS.PATH,
-                    element: <PostsContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.POSTS_DETAILS.PATH,
-                    element: <PostDetailsContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.TEAM.PATH,
-                    element: <TeamContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.PARTNERSHIP.PATH,
-                    element: <PartnershipContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.FREE_EVENTS.PATH,
-                    element: <FreeEventsContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.PROFIL.PATH,
-                    element: <ProfilContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.SETTINGS.PATH,
-                    element: <SettingsContainer />
-                },
-                {
-                    path: ROUTES.DASHBOARD.FINANCE.PATH,
-                    element: <FinanceContainer />,
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
+                    element: <PostsPageContainer />,
                     children: [
                         {
-                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
-                            element: <RevenuesContainer />
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POST.PATH,
+                            element: <PostsContainer />
                         },
                         {
-                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
-                            element: <ExpensesContainer />
-                        },
-                        {
-                            path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
-                            element: <BillsContainer />
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POSTS_DETAILS.PATH,
+                            element: <PostDetailsContainer />
                         }
                     ]
+                },
+                {
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
+                    element: <TeamContainer />
+                }
+            ]
+        },
+        {
+            path: ROUTES.DASHBOARD.PROFIL.PATH,
+            element: <ProfilContainer />
+        },
+        {
+            path: ROUTES.DASHBOARD.SETTINGS.PATH,
+            element: <SettingsContainer />
+        },
+        {
+            path: ROUTES.DASHBOARD.FINANCE.PATH,
+            element: <FinanceContainer />,
+            children: [
+                {
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
+                    element: <RevenuesContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH,
+                    element: <ExpensesContainer />
+                },
+                {
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
+                    element: <BillsContainer />
                 }
             ]
         }

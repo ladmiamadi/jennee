@@ -1,3 +1,5 @@
+import { ROUTES } from '@constants/routesConst'
+
 export const EVENT_MENU_ITEMS = [
     {
         id: 1,
@@ -19,19 +21,12 @@ export const EVENT_MENU_ITEMS = [
 export const ORGANIZATION_MENU_ITEMS = [
     {
         id: 1,
-        title: 'Posts'
+        title: 'Posts',
+        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH
     },
     {
         id: 2,
         title: 'Equipe'
-    },
-    {
-        id: 3,
-        title: 'Partenariats'
-    },
-    {
-        id: 4,
-        title: 'Free Event'
     },
     {
         id: 5,
