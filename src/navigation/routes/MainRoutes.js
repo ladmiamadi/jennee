@@ -5,6 +5,7 @@ import React, { lazy } from 'react'
 import MainLayout from '@components/layout/mainLayout'
 import { Navigate } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
+import MemberDetailsContainer from '@components/pages/dashboard/organization/team/teamDetails/MemberDetailsContainer'
 
 /*				ORGANIZATION				*/
 
@@ -84,6 +85,10 @@ const MainRoutes = {
                         {
                             path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH,
                             element: <TeamContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_DETAILS.PATH,
+                            element: <MemberDetailsContainer />
                         }
                     ]
                 }
