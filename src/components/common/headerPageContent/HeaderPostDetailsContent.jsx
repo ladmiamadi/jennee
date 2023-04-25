@@ -13,7 +13,7 @@ const HeaderPostDetailsContent = ({ handleClick, btnName, link, editPost, setEdi
                 </div>
                 <div className="header-page-content__search-create">
                     {editPost && <Button handleClick={handleClick} name={'Supprimer'} className="button--danger" />}
-                    <Button onClick={() => setEditPost(!editPost)} name={btnName} className="button__primary" />
+                    <Button handleClick={() => setEditPost(!editPost)} name={btnName} className="button__primary" />
                 </div>
             </div>
             <Divider component={'hr'} />
