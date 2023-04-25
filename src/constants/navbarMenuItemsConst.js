@@ -7,7 +7,8 @@ export const NAVBAR_MENU_ITEMS = [
     },
     {
         title: 'mon asso',
-        link: ROUTES.DASHBOARD.ORGANIZATION.PATH
+        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.HEADER_ROOT
+        // link: ROUTES.DASHBOARD.ORGANIZATION.PATH
     },
     {
         title: 'finances',

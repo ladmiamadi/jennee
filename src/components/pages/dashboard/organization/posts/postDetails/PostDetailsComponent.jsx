@@ -7,6 +7,7 @@ import HeaderPostDetailsContent from '@common/headerPageContent/HeaderPostDetail
 import PostDetailsCard from '@components/pages/dashboard/organization/posts/postsCard/PostDetailsCard'
 import PostDetailsContent from '@components/pages/dashboard/organization/posts/postDetails/postDetailsContent/PostDetailsContent'
 import PropTypes from 'prop-types'
+import { ROUTES } from '@constants/routesConst'
 
 /**
  *
@@ -22,7 +23,7 @@ const PostDetailsComponent = ({ handleOpen, post }) => {
         <Box sx={{ marginBottom: '64px' }}>
             <HeaderPostDetailsContent
                 btnName={editPost ? 'Modifier' : 'Modifier le Post'}
-                link={'/dashboard/organization'}
+                link={'/dashboard/organization/posts'}
                 handleClick={handleOpen}
                 setEditPost={setEditPost}
                 editPost={editPost}

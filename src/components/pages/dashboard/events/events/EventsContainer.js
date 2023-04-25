@@ -3,7 +3,7 @@ import EventsComponent from '@components/pages/dashboard/events/events/EventsCom
 import ModalEvent from '@common/modal/Modal'
 
 const EventsContainer = () => {
-    const [open, setOpen] = React.useState(true)
+    const [open, setOpen] = React.useState(false)
     const [loading, setLoading] = React.useState(true)
     const [errors, setErrors] = useState({})
     const [step, setStep] = useState(5)

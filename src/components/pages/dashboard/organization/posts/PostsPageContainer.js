@@ -1,7 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-const OrganizationComponent = () => {
+
+const PostsPageContainer = () => {
     return <Outlet />
 }
 
-export default OrganizationComponent
+export default PostsPageContainer

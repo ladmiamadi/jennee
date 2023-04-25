@@ -3,6 +3,7 @@ import { Box, Divider, Typography } from '@mui/material'
 import Button from '@common/button/Button'
 import PropTypes from 'prop-types'
 import InputSearch from '@common/input/InputSearch'
+import { Link } from 'react-router-dom'
 
 /**
  A React functional component for rendering header page content with exemple: event, event passe =....
@@ -34,7 +35,7 @@ const HeaderPageContent = ({ title, menuItems, handleClick, btnName }) => {
                                             : 'header-page-content__menu__item'
                                     }
                                     key={item.id}>
-                                    {item.title}
+                                    {item.link ? <Link to={item.link}>{item.title}</Link> : item.title}
                                 </button>
                             )
                         })}

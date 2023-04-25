@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 import Layout from '@layout/shape/Layout'
 import Grid2 from '@mui/material/Unstable_Grid2'
 import { activeLinkSelector } from '@selectors/application.selector'
-import { useSelector } from 'react-redux' // Grid version 2
+import { useSelector } from 'react-redux'
 const AuthLayout = () => {
     const activeLink = useSelector(activeLinkSelector)
     return (
