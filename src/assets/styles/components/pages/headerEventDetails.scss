@@ -1,0 +1,51 @@
+.events-details-container {
+	&__header-infos {
+		margin: 64px 0 0 0;
+		width: auto;
+		height: auto;
+		padding: 40px;
+		background: #ececec;
+		border-radius: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&__left-side {
+			display: flex;
+			&__revenues {
+				margin-left: 40px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+		&__right-side {
+			&__maximum-revenues {
+				display: flex;
+				&__icon {
+					width: 63px;
+					height: 61px;
+					background: #ced5f4;
+					border-radius: 15px;
+					transform: rotate(-0.27deg);
+					margin-right: 64px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+			&__ticketing-details {
+				display: flex;
+				&__icon {
+					width: 63px;
+					height: 61px;
+					background: #f5dadd;
+					border-radius: 15px;
+					margin-right: 64px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
