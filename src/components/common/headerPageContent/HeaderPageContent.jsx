@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom'
  @returns {JSX.Element} - An input element with the specified props.
  */
 
-const HeaderPageContent = ({ title, menuItems, handleClick, btnName }) => {
+const HeaderPageContent = ({ title, menuItems, handleClick }) => {
     const [filterSelect, setFilterSelect] = useState(0)
     return (
         <Box className="header-page-content">
@@ -43,7 +43,7 @@ const HeaderPageContent = ({ title, menuItems, handleClick, btnName }) => {
                 </div>
                 <div className="header-page-content__search-create">
                     <InputSearch placeholder="Recherche" handleChange={() => ''} value={''} onChange={() => ''} dataOnChange={{}} />
-                    <Button handleClick={handleClick} name={btnName} className="button__primary" />
+                    <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
                 </div>
             </div>
             <Divider component={'hr'} />

@@ -10,6 +10,9 @@ const MainLayout = () => {
         palette: {
             secondary: {
                 main: '#E8E80C'
+            },
+            disconnected: {
+                main: '#B4B4B4FF'
             }
         }
     })
