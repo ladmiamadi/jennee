@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import TeamComponent from '@components/pages/dashboard/organization/team/TeamComponent'
 
 const TeamContainer = () => {
-    return <div></div>
+    const [loading, setLoading] = useState(true)
+
+    setTimeout(() => {
+        setLoading(false)
+    }, 2000)
+
+    return <TeamComponent loading={loading} />
 }
 
 export default TeamContainer

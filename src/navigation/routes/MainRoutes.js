@@ -24,6 +24,7 @@ const PostsPageContainer = lazy(() => import('@components/pages/dashboard/organi
 const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))
 // render - dashboard / my organization / team
 const TeamContainer = lazy(() => import('@components/pages/dashboard/organization/team/TeamContainer'))
+const TeamPageContainer = lazy(() => import('@components/pages/dashboard/organization/team/TeamPageContainer'))
 // render - dashboard / my organization / profil
 const ProfilContainer = lazy(() => import('@components/pages/dashboard/organization/profil/ProfilContainer'))
 // render - dashboard / my organization / settings
@@ -78,7 +79,13 @@ const MainRoutes = {
                 },
                 {
                     path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
-                    element: <TeamContainer />
+                    element: <TeamPageContainer />,
+                    children: [
+                        {
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH,
+                            element: <TeamContainer />
+                        }
+                    ]
                 }
             ]
         },
