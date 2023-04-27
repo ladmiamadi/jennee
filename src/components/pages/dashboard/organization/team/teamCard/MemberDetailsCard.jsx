@@ -39,7 +39,7 @@ const MemberDetailsCard = ({ picture, name, status, role, loading, editMember })
                         <div className={'member__details__card--edit'}>
                             <Button name={'Modifier les contenus visuels'} className={'member__details__card--edit--visual'}></Button>
                             <Divider component={'hr'} />
-                            <Button name={'Informations générales'} className={'member__details__card--edit--informations'}></Button>
+                            <Button name={'Compte administrateur'} className={'member__details__card--edit--informations'}></Button>
                         </div>
                     ) : (
                         <div className={'member__details__card__content'}>

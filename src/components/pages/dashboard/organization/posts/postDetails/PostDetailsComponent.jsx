@@ -25,6 +25,7 @@ const PostDetailsComponent = ({ handleOpen, post }) => {
                 btnName={editPost ? 'Modifier' : 'Modifier le Post'}
                 backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH}
                 handleClick={handleOpen}
+                dangerBtnName={'Supprimer'}
                 setEditContent={setEditPost}
                 editContent={editPost}
             />
