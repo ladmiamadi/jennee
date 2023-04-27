@@ -76,8 +76,19 @@ export const ROUTES = {
                     }
                 },
                 TEAM: {
+                    HEADER_ROOT: 'organization/team',
                     NAME: 'team',
-                    PATH: 'team'
+                    PATH: 'team',
+                    CHILDREN: {
+                        MEMBER_LIST: {
+                            NAME: 'member-list',
+                            PATH: ''
+                        },
+                        MEMBER_DETAILS: {
+                            NAME: 'member-details',
+                            PATH: 'details'
+                        }
+                    }
                 },
                 PARTNERSHIP: {
                     NAME: 'partnership',

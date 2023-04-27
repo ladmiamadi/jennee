@@ -24,9 +24,9 @@ const CommentAccordion = ({ comment, editPost }) => {
             ) : (
                 <div>
                     {isActive ? (
-                        <Button className={'accordion--close'} name={'Fermer'} onClick={() => setIsActive(!isActive)} />
+                        <Button className={'accordion--close'} name={'Fermer'} handleClick={() => setIsActive(!isActive)} />
                     ) : (
-                        <Button className={'accordion--open'} name={'Ouvrir'} onClick={() => setIsActive(!isActive)} />
+                        <Button className={'accordion--open'} name={'Ouvrir'} handleClick={() => setIsActive(!isActive)} />
                     )}
                 </div>
             )}

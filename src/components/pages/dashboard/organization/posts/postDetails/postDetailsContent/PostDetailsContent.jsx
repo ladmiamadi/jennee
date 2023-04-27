@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
  *
  * @param post {object} - the Post which is displayed
  * @param editPost {boolean} - the prop to enable editing post
- * @returns {JSX.Element} - The PostDetailsContent component
+ * @returns {JSX.Element} - The MemberDetailsContent component
  * @constructor
  */
 const PostDetailsContent = ({ post, editPost }) => {

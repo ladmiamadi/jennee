@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 /**
  * @param comment {object} - the comment object to be displayed with details
  * @param editPost {boolean} - the prop to enable editing post
- * @returns {JSX.Element} - The PostDetailsContentComments component
+ * @returns {JSX.Element} - The MemberDetailsContentPersonalInformations component
  * @constructor
  */
 const PostDetailsContentComments = ({ comment, editPost }) => {

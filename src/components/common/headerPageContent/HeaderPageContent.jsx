@@ -3,7 +3,7 @@ import { Box, Divider, Typography } from '@mui/material'
 import Button from '@common/button/Button'
 import PropTypes from 'prop-types'
 import InputSearch from '@common/input/InputSearch'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 /**
  A React functional component for rendering header page content with exemple: event, event passe =....
@@ -15,9 +15,14 @@ import { Link } from 'react-router-dom'
  @returns {JSX.Element} - An input element with the specified props.
  */
 
-const HeaderPageContent = ({ title, menuItems, handleClick, btnName }) => {
+const HeaderPageContent = ({ title, menuItems, handleClick }) => {
     const [filterSelect, setFilterSelect] = useState(0)
-    return (
+
+    const location = useLocation()
+
+    return location.pathname.includes('details') ? (
+        ''
+    ) : (
         <Box className="header-page-content">
             <div className={'header-page-content__container'}>
                 <div className="header-page-content__left">
@@ -43,7 +48,7 @@ const HeaderPageContent = ({ title, menuItems, handleClick, btnName }) => {
                 </div>
                 <div className="header-page-content__search-create">
                     <InputSearch placeholder="Recherche" handleChange={() => ''} value={''} onChange={() => ''} dataOnChange={{}} />
-                    <Button handleClick={handleClick} name={btnName} className="button__primary" />
+                    <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
                 </div>
             </div>
             <Divider component={'hr'} />
@@ -55,8 +60,7 @@ HeaderPageContent.propTypes = {
     title: PropTypes.string.isRequired,
     menuItems: PropTypes.arrayOf(Object).isRequired,
     handleOpen: PropTypes.func,
-    handleClick: PropTypes.func,
-    btnName: PropTypes.string.isRequired
+    handleClick: PropTypes.func
 }
 
 export default HeaderPageContent

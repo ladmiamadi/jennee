@@ -19,7 +19,7 @@ const PostCard = ({ post, loading }) => {
                 </Box>
             ) : (
                 <Card className="posts__card">
-                    <CardMedia image={post.picture} title={post.name} className={'posts-card__picture'} component="img" alt="post" />
+                    <CardMedia image={post.picture} title={post.name} className={'posts__card__picture'} component="img" alt="post" />
                     <div className={'posts__card__content'}>
                         <div className={'posts__card__content__title'}>
                             <Typography gutterBottom variant="h6" component="div" className={'posts__card__content__name'}>

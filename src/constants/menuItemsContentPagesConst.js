@@ -22,11 +22,14 @@ export const ORGANIZATION_MENU_ITEMS = [
     {
         id: 1,
         title: 'Posts',
-        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH
+        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
+        btnName: 'Publier un Post'
     },
     {
         id: 2,
-        title: 'Equipe'
+        title: 'Equipe',
+        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
+        btnName: 'Ajouter un membre'
     },
     {
         id: 5,
