@@ -8,7 +8,7 @@ import { ReactComponent as AccessTimeFilled } from '@assets/svg/ionic-time.svg'
 import { INPUT } from '@constants/inputConst'
 import AddIcon from '@mui/icons-material/Add'
 
-const ModalFifthStep = ({ setFormValue, formValue, handleChange, handleNext, handlePreClose, errors, handlePrev, step }) => {
+const ModalFifthStep = ({ data, handlePreClose, step, contentModalFifth, footerModal }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -24,7 +24,8 @@ const ModalFifthStep = ({ setFormValue, formValue, handleChange, handleNext, han
     return (
         <Box className="modal" sx={style}>
             <div className="modal__container">
-                <Typography variant={'h3'}>Etape 5 : Publication de l’&apos;évènement</Typography>
+                {/*             HEADER             */}
+                <Typography variant={'h3'}>{data.title}</Typography>
                 <div className={'modal__stepper'}>
                     <MobileStepper
                         variant="progress"
@@ -37,69 +38,22 @@ const ModalFifthStep = ({ setFormValue, formValue, handleChange, handleNext, han
                         <div className="modal__stepper-blank"></div>
                     </MobileStepper>
                 </div>
-                <div>
-                    <div className={'text-center mb-24'}>
-                        <h4>Sélectionner une date de publication de l’Event</h4>
-                    </div>
-                    <div>
-                        <div className={'d-flex justify-between'}>
-                            <div className={'w-full mr-40'}>
-                                <Input
-                                    classname={'modal__input-datetime'}
-                                    onChange={null}
-                                    type={'datetime-local'}
-                                    dataOnChange={{
-                                        state: formValue,
-                                        setState: setFormValue,
-                                        name: INPUT.MODAL.NEW_EVENT.PUBLICATION
-                                    }}
-                                    name={'publication'}
-                                    value={formValue.publication}
-                                />
-                                <p className={'mt-8'}>Date de publication</p>
-                            </div>
-                            <div className={'w-full'}>
-                                <Input
-                                    classname={'modal__input-datetime'}
-                                    onChange={null}
-                                    type={'datetime-local'}
-                                    dataOnChange={null}
-                                    name={''}
-                                    value={''}
-                                />
-                                <p className={'mt-8'}>Date et heure de fermeture</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={'modal__button-skip-step'}>
-                        <Button handleClick={handlePrev} className="button__secondary" name="Planifier la publication" />
-                    </div>
-                    <Divider>OU</Divider>
-                </div>
+                {/*             CONTENT             */}
+                {contentModalFifth}
             </div>
-            <div className={'d-flex justify-between'}>
-                <div className="modal__button mr-40">
-                    <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
-                </div>
-                <div className="modal__button">
-                    <Button handleClick={handleNext} className="button__primary" name="Publier l’évenement maintenant" />
-                </div>
-            </div>
+            {/*             FOOTER             */}
+            {footerModal}
             <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
 }
 
 ModalFifthStep.propTypes = {
-    formValue: PropTypes.object,
-    handleChange: PropTypes.func,
-    handleNext: PropTypes.func,
+    data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    setFormValue: PropTypes.func,
-    errors: PropTypes.object,
-    setErrors: PropTypes.func,
-    handlePrev: PropTypes.func,
-    step: PropTypes.number
+    step: PropTypes.number,
+    contentModalFifth: PropTypes.node,
+    footerModal: PropTypes.node
 }
 
 export default ModalFifthStep

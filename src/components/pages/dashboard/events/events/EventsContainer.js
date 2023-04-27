@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import EventsComponent from '@components/pages/dashboard/events/events/EventsComponent'
 import ModalEvent from '@common/modal/Modal'
+import EventModalFirstStep from '@common/events/modals/EventModalFirstStep'
+import EventModalSecondStep from '@common/events/modals/EventModalSecondStep'
+import EventModalThirdStep from '@common/events/modals/EventModalThirdStep'
+import EventModalFourthStep from '@common/events/modals/EventModalFourthStep'
+import EventModalFifthStep from '@common/events/modals/EventModalFifthStep'
+import EventModalFooter from '@common/events/modals/EventModalFooter'
 
 const EventsContainer = () => {
     const [open, setOpen] = React.useState(false)
     const [loading, setLoading] = React.useState(true)
     const [errors, setErrors] = useState({})
-    const [step, setStep] = useState(5)
+    const [step, setStep] = useState(1)
     const [lastStep, setLastStep] = useState(null)
     const [formValue, setFormValue] = useState({
         name: '',
@@ -111,8 +117,6 @@ const EventsContainer = () => {
     setTimeout(() => {
         setLoading(false)
     }, 2000)
-    console.log('laststep', lastStep)
-    console.log('ste', step)
     return (
         <>
             <EventsComponent
@@ -133,6 +137,39 @@ const EventsContainer = () => {
                 handlePrev={handlePrev}
             />
             <ModalEvent
+                data={{
+                    modalFirst: {
+                        title: 'Etape 1 : Informations générales'
+                    },
+                    modalSecond: {
+                        title: 'Etape 2 : Contenu à publier'
+                    },
+                    modalThird: {
+                        title: "Etape 3 : Billetterie de l';évènement"
+                    },
+                    modalFourth: {
+                        title: "Etape 4 : Billetterie de l';évènement"
+                    },
+                    modalFifth: {
+                        title: "Etape 5 : Publication de l';évènement"
+                    }
+                }}
+                contentModalFirst={
+                    <EventModalFirstStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
+                }
+                contentModalSecond={
+                    <EventModalSecondStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
+                }
+                contentModalThird={
+                    <EventModalThirdStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
+                }
+                contentModalFourth={
+                    <EventModalFourthStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
+                }
+                contentModalFifth={
+                    <EventModalFifthStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
+                }
+                footerModal={<EventModalFooter step={step} handlePrev={handlePrev} handleNext={handleNext} />}
                 open={open}
                 handleCloseDraft={handleCloseDraft}
                 handleClose={handleClose}
