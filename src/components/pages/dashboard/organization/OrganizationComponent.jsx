@@ -5,12 +5,7 @@ import { ORGANIZATION_MENU_ITEMS } from '@constants/menuItemsContentPagesConst'
 const OrganizationComponent = () => {
     return (
         <>
-            <HeaderPageContent
-                title={'Mon asso'}
-                menuItems={ORGANIZATION_MENU_ITEMS}
-                handleOpen={() => console.log('clicked')}
-                btnName={'Publier un post'}
-            />
+            <HeaderPageContent title={'Mon asso'} menuItems={ORGANIZATION_MENU_ITEMS} handleOpen={() => console.log('clicked')} />
             <Outlet />
         </>
     )

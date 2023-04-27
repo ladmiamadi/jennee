@@ -19,6 +19,7 @@ const OrganizationContainer = lazy(() => import('@components/pages/dashboard/org
 // render - dashboard / my organization / organization
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
 const PostsPageContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsPageContainer'))
+const MemberDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/team/teamDetails/MemberDetailsContainer'))
 
 // render - dashboard / my organization / posts / post-details
 const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))
@@ -84,6 +85,10 @@ const MainRoutes = {
                         {
                             path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH,
                             element: <TeamContainer />
+                        },
+                        {
+                            path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_DETAILS.PATH,
+                            element: <MemberDetailsContainer />
                         }
                     ]
                 }

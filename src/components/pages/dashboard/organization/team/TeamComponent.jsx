@@ -1,9 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'
-import { POSTS_LIST } from '@fixtures/postsList'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
-import PostCard from '@components/pages/dashboard/organization/posts/postsCard/PostCard'
 import Dropdown from '@shared/dropdown/Dropdown'
 import { FILTER_DROPDOWN_LIST_POST } from '@constants/filterDropDownList'
 import { Box } from '@mui/material'
@@ -23,7 +21,7 @@ const TeamComponent = ({ loading }) => {
             <Grid container spacing={6} sx={{ marginTop: '16px' }}>
                 {TEAM_LIST.map((member) => (
                     <Grid key={member.id} xs={'auto'}>
-                        <Link to={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH} state={{ data: member }}>
+                        <Link to={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_DETAILS.PATH} state={{ data: member }}>
                             <TeamCard member={member} loading={loading} />
                         </Link>
                     </Grid>

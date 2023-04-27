@@ -83,6 +83,10 @@ export const ROUTES = {
                         MEMBER_LIST: {
                             NAME: 'member-list',
                             PATH: ''
+                        },
+                        MEMBER_DETAILS: {
+                            NAME: 'member-details',
+                            PATH: 'details'
                         }
                     }
                 },
