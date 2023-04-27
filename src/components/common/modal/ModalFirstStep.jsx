@@ -16,7 +16,7 @@ import CloseIcon from '@mui/icons-material/Close'
  @property {JSX.Element} contentModalFirst - Function to handle form input change.
  @returns {JSX.Element} The Sign in component.
  */
-const ModalFirstStep = ({ data, handleNext, handlePreClose, step, contentModalFirst }) => {
+const ModalFirstStep = ({ data, handlePreClose, step, contentModalFirst, footerModal }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -50,9 +50,7 @@ const ModalFirstStep = ({ data, handleNext, handlePreClose, step, contentModalFi
                 {contentModalFirst}
             </div>
             {/*             FOOTER             */}
-            <div className="modal__button">
-                <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
-            </div>
+            {footerModal}
             <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
@@ -60,10 +58,10 @@ const ModalFirstStep = ({ data, handleNext, handlePreClose, step, contentModalFi
 
 ModalFirstStep.propTypes = {
     data: PropTypes.object,
-    handleNext: PropTypes.func,
     handlePreClose: PropTypes.func,
     step: PropTypes.number,
-    contentModalFirst: PropTypes.node
+    contentModalFirst: PropTypes.node,
+    footerModal: PropTypes.node
 }
 
 export default ModalFirstStep

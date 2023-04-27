@@ -4,9 +4,9 @@ import ModalEvent from '@common/modal/Modal'
 import EventModalFirstStep from '@common/events/modals/EventModalFirstStep'
 import EventModalSecondStep from '@common/events/modals/EventModalSecondStep'
 import EventModalThirdStep from '@common/events/modals/EventModalThirdStep'
-import EventModalFourStep from '@common/events/modals/EventModalFourthStep'
 import EventModalFourthStep from '@common/events/modals/EventModalFourthStep'
 import EventModalFifthStep from '@common/events/modals/EventModalFifthStep'
+import EventModalFooter from '@common/events/modals/EventModalFooter'
 
 const EventsContainer = () => {
     const [open, setOpen] = React.useState(false)
@@ -169,6 +169,7 @@ const EventsContainer = () => {
                 contentModalFifth={
                     <EventModalFifthStep formValue={formValue} errors={errors} setFormValue={setFormValue} handleChange={handleChange} />
                 }
+                footerModal={<EventModalFooter step={step} handlePrev={handlePrev} handleNext={handleNext} />}
                 open={open}
                 handleCloseDraft={handleCloseDraft}
                 handleClose={handleClose}

@@ -38,6 +38,7 @@ const ModalEvent = ({
     contentModalThird,
     contentModalFourth,
     contentModalFifth,
+    footerModal,
     data
 }) => {
     const stepModal = () => {
@@ -55,6 +56,7 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         step={step}
                         handleComeLastStep={handleComeLastStep}
+                        footerModal={footerModal}
                     />
                 )
             case 1:
@@ -70,6 +72,7 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         handlePreClose={handlePreClose}
                         step={step}
+                        footerModal={footerModal}
                     />
                 )
             case 2:
@@ -87,6 +90,7 @@ const ModalEvent = ({
                         handlePrev={handlePrev}
                         step={step}
                         data={data.modalSecond}
+                        footerModal={footerModal}
                     />
                 )
             case 3:
@@ -104,6 +108,7 @@ const ModalEvent = ({
                         handlePrev={handlePrev}
                         step={step}
                         data={data.modalThird}
+                        footerModal={footerModal}
                     />
                 )
             case 4:
@@ -121,6 +126,7 @@ const ModalEvent = ({
                         handlePrev={handlePrev}
                         step={step}
                         data={data.modalFourth}
+                        footerModal={footerModal}
                     />
                 )
             case 5:
@@ -138,6 +144,7 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         handlePrev={handlePrev}
                         step={step}
+                        footerModal={footerModal}
                     />
                 )
             default:
@@ -153,6 +160,7 @@ const ModalEvent = ({
                         setErrors={setErrors}
                         handleNext={handleNext}
                         data={data.modalFirst}
+                        footerModal={footerModal}
                     />
                 )
         }
@@ -191,6 +199,7 @@ ModalEvent.propTypes = {
     contentModalThird: PropTypes.node,
     contentModalFourth: PropTypes.node,
     contentModalFifth: PropTypes.node,
+    footerModal: PropTypes.node,
     data: PropTypes.object
 }
 

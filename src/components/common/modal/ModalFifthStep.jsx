@@ -8,7 +8,7 @@ import { ReactComponent as AccessTimeFilled } from '@assets/svg/ionic-time.svg'
 import { INPUT } from '@constants/inputConst'
 import AddIcon from '@mui/icons-material/Add'
 
-const ModalFifthStep = ({ data, handlePreClose, handlePrev, handleNext, step, contentModalFifth }) => {
+const ModalFifthStep = ({ data, handlePreClose, step, contentModalFifth, footerModal }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -42,18 +42,7 @@ const ModalFifthStep = ({ data, handlePreClose, handlePrev, handleNext, step, co
                 {contentModalFifth}
             </div>
             {/*             FOOTER             */}
-            <div className={'modal__button-skip-step'}>
-                <Button handleClick={handlePrev} className="button__secondary" name="Planifier la publication" />
-            </div>
-            <Divider>OU</Divider>
-            <div className={'d-flex justify-between'}>
-                <div className="modal__button mr-40">
-                    <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
-                </div>
-                <div className="modal__button">
-                    <Button handleClick={handleNext} className="button__primary" name="Publier l’évenement maintenant" />
-                </div>
-            </div>
+            {footerModal}
             <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
@@ -62,10 +51,9 @@ const ModalFifthStep = ({ data, handlePreClose, handlePrev, handleNext, step, co
 ModalFifthStep.propTypes = {
     data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    handlePrev: PropTypes.func,
-    handleNext: PropTypes.func,
     step: PropTypes.number,
-    contentModalFifth: PropTypes.node
+    contentModalFifth: PropTypes.node,
+    footerModal: PropTypes.node
 }
 
 export default ModalFifthStep

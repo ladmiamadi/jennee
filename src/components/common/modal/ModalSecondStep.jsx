@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import AddIcon from '@mui/icons-material/Add'
 import { INPUT } from '@constants/inputConst'
 
-const ModalSecondStep = ({ data, handlePreClose, handlePrev, handleNext, step, contentModalSecond }) => {
+const ModalSecondStep = ({ data, handlePreClose, step, contentModalSecond, footerModal }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -44,14 +44,7 @@ const ModalSecondStep = ({ data, handlePreClose, handlePrev, handleNext, step, c
             </div>
             {/*             FOOTER             */}
 
-            <div className={'d-flex justify-between'}>
-                <div className="modal__button mr-40">
-                    <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
-                </div>
-                <div className="modal__button">
-                    <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
-                </div>
-            </div>
+            {footerModal}
             <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
@@ -60,10 +53,9 @@ const ModalSecondStep = ({ data, handlePreClose, handlePrev, handleNext, step, c
 ModalSecondStep.propTypes = {
     data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    handlePrev: PropTypes.func,
-    handleNext: PropTypes.func,
     step: PropTypes.number,
-    contentModalSecond: PropTypes.node
+    contentModalSecond: PropTypes.node,
+    footerModal: PropTypes.node
 }
 
 export default ModalSecondStep

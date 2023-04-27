@@ -8,7 +8,7 @@ import { ReactComponent as AccessTimeFilled } from '@assets/svg/ionic-time.svg'
 import { INPUT } from '@constants/inputConst'
 import AddIcon from '@mui/icons-material/Add'
 
-const ModalThirdStep = ({ data, handlePreClose, handlePrev, handleNext, step, contentModalThird }) => {
+const ModalThirdStep = ({ data, handlePreClose, step, contentModalThird, footerModal }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -42,14 +42,7 @@ const ModalThirdStep = ({ data, handlePreClose, handlePrev, handleNext, step, co
                 {contentModalThird}
             </div>
             {/*             FOOTER             */}
-            <div className={'d-flex justify-between'}>
-                <div className="modal__button mr-40">
-                    <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
-                </div>
-                <div className="modal__button">
-                    <Button handleClick={handleNext} className="button__primary" name="Étape suivante" />
-                </div>
-            </div>
+            {footerModal}
             <CloseIcon onClick={() => handlePreClose()} className="modal__icon" />
         </Box>
     )
@@ -58,10 +51,9 @@ const ModalThirdStep = ({ data, handlePreClose, handlePrev, handleNext, step, co
 ModalThirdStep.propTypes = {
     data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    handlePrev: PropTypes.func,
-    handleNext: PropTypes.func,
     step: PropTypes.number,
-    contentModalThird: PropTypes.node
+    contentModalThird: PropTypes.node,
+    footerModal: PropTypes.node
 }
 
 export default ModalThirdStep
