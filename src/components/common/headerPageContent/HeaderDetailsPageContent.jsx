@@ -4,16 +4,16 @@ import Button from '@common/button/Button'
 import * as PropTypes from 'prop-types'
 import BackLink from '@common/link/BackLink'
 
-const HeaderPostDetailsContent = ({ handleClick, btnName, link, editPost, setEditPost }) => {
+const HeaderDetailsPageContent = ({ handleClick, btnName, backLink, editContent, setEditContent }) => {
     return (
         <Box className="header-page-content" marginTop={'64px'}>
             <div className={'header-page-content__container'}>
                 <div className="header-page-content__left">
-                    <BackLink title={'Retour'} link={link} className={'header-page-content__left__link__back'} />
+                    <BackLink title={'Retour'} link={backLink} className={'header-page-content__left__link__back'} />
                 </div>
                 <div className="header-page-content__search-create">
-                    {editPost && <Button handleClick={handleClick} name={'Supprimer'} className="button--danger" />}
-                    <Button handleClick={() => setEditPost(!editPost)} name={btnName} className="button__primary" />
+                    {editContent && <Button handleClick={handleClick} name={'Supprimer'} className="button--danger" />}
+                    <Button handleClick={() => setEditContent(!editContent)} name={btnName} className="button__primary" />
                 </div>
             </div>
             <Divider component={'hr'} />
@@ -21,12 +21,12 @@ const HeaderPostDetailsContent = ({ handleClick, btnName, link, editPost, setEdi
     )
 }
 
-HeaderPostDetailsContent.propTypes = {
-    link: PropTypes.string.isRequired,
+HeaderDetailsPageContent.propTypes = {
+    backLink: PropTypes.string.isRequired,
     handleClick: PropTypes.func,
     btnName: PropTypes.string.isRequired,
-    editPost: PropTypes.bool.isRequired,
-    setEditPost: PropTypes.func
+    editContent: PropTypes.bool.isRequired,
+    setEditContent: PropTypes.func
 }
 
-export default HeaderPostDetailsContent
+export default HeaderDetailsPageContent

@@ -5,7 +5,6 @@ import React, { lazy } from 'react'
 import MainLayout from '@components/layout/mainLayout'
 import { Navigate } from 'react-router-dom'
 import { ROUTES } from '@constants/routesConst'
-import MemberDetailsContainer from '@components/pages/dashboard/organization/team/teamDetails/MemberDetailsContainer'
 
 /*				ORGANIZATION				*/
 
@@ -20,6 +19,7 @@ const OrganizationContainer = lazy(() => import('@components/pages/dashboard/org
 // render - dashboard / my organization / organization
 const PostsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsContainer'))
 const PostsPageContainer = lazy(() => import('@components/pages/dashboard/organization/posts/PostsPageContainer'))
+const MemberDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/team/teamDetails/MemberDetailsContainer'))
 
 // render - dashboard / my organization / posts / post-details
 const PostDetailsContainer = lazy(() => import('@components/pages/dashboard/organization/posts/postDetails/PostDetailsContainer'))

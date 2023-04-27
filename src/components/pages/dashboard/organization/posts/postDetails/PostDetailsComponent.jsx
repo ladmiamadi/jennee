@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Box } from '@mui/material'
 import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'
-import HeaderPostDetailsContent from '@common/headerPageContent/HeaderPostDetailsContent'
+import HeaderDetailsPageContent from '@common/headerPageContent/HeaderDetailsPageContent'
 import PostDetailsCard from '@components/pages/dashboard/organization/posts/postsCard/PostDetailsCard'
 import PostDetailsContent from '@components/pages/dashboard/organization/posts/postDetails/postDetailsContent/PostDetailsContent'
 import PropTypes from 'prop-types'
@@ -13,7 +13,7 @@ import { ROUTES } from '@constants/routesConst'
  *
  * @param handleOpen {function} - The function to be executed when click on edit post
  * @param post {object} - The prop post to be displayed
- * @returns {JSX.Element} - the PostDetailsComponent  component
+ * @returns {JSX.Element} - the MemberDetailsComponent  component
  * @constructor
  */
 const PostDetailsComponent = ({ handleOpen, post }) => {
@@ -21,12 +21,12 @@ const PostDetailsComponent = ({ handleOpen, post }) => {
 
     return (
         <Box sx={{ marginBottom: '64px' }}>
-            <HeaderPostDetailsContent
+            <HeaderDetailsPageContent
                 btnName={editPost ? 'Modifier' : 'Modifier le Post'}
-                link={'/dashboard/organization/posts'}
+                backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH}
                 handleClick={handleOpen}
-                setEditPost={setEditPost}
-                editPost={editPost}
+                setEditContent={setEditPost}
+                editContent={editPost}
             />
             <Box sx={{ marginTop: '35px' }}>
                 <Grid container>

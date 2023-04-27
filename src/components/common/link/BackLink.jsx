@@ -5,7 +5,6 @@ import { Typography } from '@mui/material'
 import PropTypes from 'prop-types'
 
 const BackLink = ({ link, title, className }) => {
-    console.log('link, ', link)
     return (
         <Link to={link}>
             <div className={className}>
