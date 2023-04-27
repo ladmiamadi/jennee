@@ -8,7 +8,7 @@ import { ReactComponent as AccessTimeFilled } from '@assets/svg/ionic-time.svg'
 import { INPUT } from '@constants/inputConst'
 import AddIcon from '@mui/icons-material/Add'
 
-const ModalThirdStep = ({ setFormValue, formValue, handleChange, handleNext, handlePreClose, errors, handlePrev, step }) => {
+const ModalThirdStep = ({ data, handlePreClose, handlePrev, handleNext, step, contentModalThird }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -24,7 +24,8 @@ const ModalThirdStep = ({ setFormValue, formValue, handleChange, handleNext, han
     return (
         <Box className="modal" sx={style}>
             <div className="modal__container">
-                <Typography variant={'h3'}>Etape 3 : Billetterie de l&apos;évènement</Typography>
+                {/*             HEADER             */}
+                <Typography variant={'h3'}>{data.title}</Typography>
                 <div className={'modal__stepper'}>
                     <MobileStepper
                         variant="progress"
@@ -37,62 +38,10 @@ const ModalThirdStep = ({ setFormValue, formValue, handleChange, handleNext, han
                         <div className="modal__stepper-blank"></div>
                     </MobileStepper>
                 </div>
-                <div>
-                    <div className={'text-center mb-24'}>
-                        <h4>Nombre de places totales disponibles pour l’évènement</h4>
-                    </div>
-                    <div className={'d-flex'}>
-                        <div className={'w-full'}>
-                            <Input
-                                classname={'modal__input text-center'}
-                                name={'name'}
-                                type="number"
-                                placeholder="Nombre total de place"
-                                value={formValue.name}
-                                errors={errors.name}
-                                formValue={formValue.name}
-                                required={true}
-                                dataOnChange={{
-                                    state: formValue,
-                                    setState: setFormValue,
-                                    name: INPUT.MODAL.NEW_EVENT.NAME
-                                }}
-                                onChange={handleChange}
-                            />
-                            {formValue.name === '' ? <p>{errors.name}</p> : ''}
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div className={'text-center mb-24'}>
-                        <h4>Sélectionner les nouvelles dates d’ouverture et de fermeture de la billetterie de l’évènement :</h4>
-                    </div>
-                    <div className={'d-flex justify-between'}>
-                        <div className={'w-full mr-40'}>
-                            <Input
-                                classname={'modal__input-datetime'}
-                                onChange={null}
-                                type={'datetime-local'}
-                                dataOnChange={null}
-                                name={''}
-                                value={''}
-                            />
-                            <p className={'mt-8'}>Date et heure d’ouverture</p>
-                        </div>
-                        <div className={'w-full'}>
-                            <Input
-                                classname={'modal__input-datetime'}
-                                onChange={null}
-                                type={'datetime-local'}
-                                dataOnChange={null}
-                                name={''}
-                                value={''}
-                            />
-                            <p className={'mt-8'}>Date et heure de fermeture</p>
-                        </div>
-                    </div>
-                </div>
+                {/*             CONTENT             */}
+                {contentModalThird}
             </div>
+            {/*             FOOTER             */}
             <div className={'d-flex justify-between'}>
                 <div className="modal__button mr-40">
                     <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
@@ -107,15 +56,12 @@ const ModalThirdStep = ({ setFormValue, formValue, handleChange, handleNext, han
 }
 
 ModalThirdStep.propTypes = {
-    formValue: PropTypes.object,
-    handleChange: PropTypes.func,
-    handleNext: PropTypes.func,
+    data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    setFormValue: PropTypes.func,
-    errors: PropTypes.object,
-    setErrors: PropTypes.func,
     handlePrev: PropTypes.func,
-    step: PropTypes.number
+    handleNext: PropTypes.func,
+    step: PropTypes.number,
+    contentModalThird: PropTypes.node
 }
 
 export default ModalThirdStep

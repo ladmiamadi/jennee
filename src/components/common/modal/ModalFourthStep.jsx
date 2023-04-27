@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import { INPUT } from '@constants/inputConst'
 import AddIcon from '@mui/icons-material/Add'
 
-const ModalFourthStep = ({ handleNext, handlePreClose, handlePrev, step }) => {
+const ModalFourthStep = ({ data, handlePreClose, handlePrev, handleNext, step, contentModalFourth }) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -24,7 +24,8 @@ const ModalFourthStep = ({ handleNext, handlePreClose, handlePrev, step }) => {
     return (
         <Box className="modal" sx={style}>
             <div className="modal__container">
-                <Typography variant={'h3'}>Etape 4 : Billetterie de l&apos;évènement</Typography>
+                {/*             HEADER             */}
+                <Typography variant={'h3'}>{data.title}</Typography>
                 <div className={'modal__stepper'}>
                     <MobileStepper
                         variant="progress"
@@ -37,20 +38,14 @@ const ModalFourthStep = ({ handleNext, handlePreClose, handlePrev, step }) => {
                         <div className="modal__stepper-blank"></div>
                     </MobileStepper>
                 </div>
-                <div>
-                    <div className={'text-center mb-24'}>
-                        <h4>Créez une catégorie de billet</h4>
-                    </div>
-                    <div className={'modal__new-ticketing-category'}>
-                        <AddIcon />
-                        <p>Créer une nouvelle catégorie</p>
-                    </div>
-                    <div className={'modal__button-skip-step'}>
-                        <Button handleClick={handlePrev} className="button__secondary" name="Passer cette étape" />
-                    </div>
-                    <Divider>OU</Divider>
-                </div>
+                {/*             CONTENT             */}
+                {contentModalFourth}
             </div>
+            {/*             FOOTER             */}
+            <div className={'modal__button-skip-step'}>
+                <Button handleClick={handlePrev} className="button__secondary" name="Passer cette étape" />
+            </div>
+            <Divider>OU</Divider>
             <div className={'d-flex justify-between'}>
                 <div className="modal__button mr-40">
                     <Button handleClick={handlePrev} className="button__secondary" name="Étape précédente" />
@@ -65,16 +60,12 @@ const ModalFourthStep = ({ handleNext, handlePreClose, handlePrev, step }) => {
 }
 
 ModalFourthStep.propTypes = {
-    handleNext: PropTypes.func,
-    formValue: PropTypes.object,
-    handleChange: PropTypes.func,
-    handleSubmit: PropTypes.func,
+    data: PropTypes.object,
     handlePreClose: PropTypes.func,
-    setFormValue: PropTypes.func,
-    errors: PropTypes.object,
-    setErrors: PropTypes.func,
     handlePrev: PropTypes.func,
-    step: PropTypes.number
+    handleNext: PropTypes.func,
+    step: PropTypes.number,
+    contentModalFourth: PropTypes.node
 }
 
 export default ModalFourthStep

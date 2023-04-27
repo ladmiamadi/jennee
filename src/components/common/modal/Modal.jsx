@@ -8,6 +8,17 @@ import ModalFourthStep from '@common/modal/ModalFourthStep'
 import ModalFifthStep from '@common/modal/ModalFifthStep'
 import ModalExit from '@common/modal/modalExit'
 
+/**
+ The component for the modal
+ @typedef {Object} Props
+ @property {Function} setFormValue - Function to set the state to form value.
+ @property {Object} formValue - The current form value.
+ @property {Function} HandleSubmit - Function to handle form submission.
+ @property {Function} handleChange - Function to handle form input change.
+ @param {Props} props - The props object containing the component's input data.
+ @returns {JSX.Element} The Sign in component.
+ */
+
 const ModalEvent = ({
     open,
     handleClose,
@@ -21,7 +32,13 @@ const ModalEvent = ({
     handleNext,
     handlePrev,
     handlePreClose,
-    handleComeLastStep
+    handleComeLastStep,
+    contentModalFirst,
+    contentModalSecond,
+    contentModalThird,
+    contentModalFourth,
+    contentModalFifth,
+    data
 }) => {
     const stepModal = () => {
         switch (step) {
@@ -43,6 +60,8 @@ const ModalEvent = ({
             case 1:
                 return (
                     <ModalFirstStep
+                        data={data.modalFirst}
+                        contentModalFirst={contentModalFirst}
                         formValue={formValue}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
@@ -58,6 +77,7 @@ const ModalEvent = ({
                     <ModalSecondStep
                         handlePreClose={handlePreClose}
                         formValue={formValue}
+                        contentModalSecond={contentModalSecond}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
@@ -66,6 +86,7 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         handlePrev={handlePrev}
                         step={step}
+                        data={data.modalSecond}
                     />
                 )
             case 3:
@@ -73,6 +94,7 @@ const ModalEvent = ({
                     <ModalThirdStep
                         handlePreClose={handlePreClose}
                         formValue={formValue}
+                        contentModalThird={contentModalThird}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
@@ -81,6 +103,7 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         handlePrev={handlePrev}
                         step={step}
+                        data={data.modalThird}
                     />
                 )
             case 4:
@@ -88,6 +111,7 @@ const ModalEvent = ({
                     <ModalFourthStep
                         handlePreClose={handlePreClose}
                         formValue={formValue}
+                        contentModalFourth={contentModalFourth}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
@@ -96,13 +120,16 @@ const ModalEvent = ({
                         handleNext={handleNext}
                         handlePrev={handlePrev}
                         step={step}
+                        data={data.modalFourth}
                     />
                 )
             case 5:
                 return (
                     <ModalFifthStep
+                        data={data.modalFifth}
                         formValue={formValue}
                         handlePreClose={handlePreClose}
+                        contentModalFifth={contentModalFifth}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
@@ -117,6 +144,7 @@ const ModalEvent = ({
                 return (
                     <ModalFirstStep
                         formValue={formValue}
+                        contentModalFirst={contentModalFirst}
                         handlePreClose={handlePreClose}
                         setFormValue={setFormValue}
                         handleChange={handleChange}
@@ -124,7 +152,7 @@ const ModalEvent = ({
                         errors={errors}
                         setErrors={setErrors}
                         handleNext={handleNext}
-                        step={step}
+                        data={data.modalFirst}
                     />
                 )
         }
@@ -157,7 +185,13 @@ ModalEvent.propTypes = {
     handleNext: PropTypes.func,
     handlePreClose: PropTypes.func,
     handlePrev: PropTypes.func,
-    handleComeLastStep: PropTypes.func
+    handleComeLastStep: PropTypes.func,
+    contentModalFirst: PropTypes.node,
+    contentModalSecond: PropTypes.node,
+    contentModalThird: PropTypes.node,
+    contentModalFourth: PropTypes.node,
+    contentModalFifth: PropTypes.node,
+    data: PropTypes.object
 }
 
 export default ModalEvent
