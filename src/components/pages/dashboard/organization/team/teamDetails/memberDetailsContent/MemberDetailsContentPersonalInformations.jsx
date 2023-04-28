@@ -8,12 +8,11 @@ import Button from '@common/button/Button'
 
 /**
  * @param member {object} - the member object to be displayed with details
- * @param editMember {boolean} - the prop to enable editing member
  * @param handleClick {function} - The function to be executed when clicking on update button
  * @returns {JSX.Element} - The MemberDetailsContentPersonalInformations component
  * @constructor
  */
-const MemberDetailsContentPersonalInformations = ({ member, editMember, handleClick }) => {
+const MemberDetailsContentPersonalInformations = ({ member, handleClick }) => {
     return (
         <>
             <div className={'member__details__comment'}>
@@ -65,7 +64,6 @@ const MemberDetailsContentPersonalInformations = ({ member, editMember, handleCl
 
 MemberDetailsContentPersonalInformations.prototype = {
     member: PropTypes.object.isRequired,
-    editMember: PropTypes.bool.isRequired,
     handleClick: PropTypes.func
 }
 export default MemberDetailsContentPersonalInformations
