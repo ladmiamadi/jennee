@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 import PropTypes from 'prop-types'
 import MemberDetailsContentDescription from '@components/pages/dashboard/organization/team/teamDetails/memberDetailsContent/MemberDetailsContentDescription'
 import MemberDetailsContentPersonalInformations from '@components/pages/dashboard/organization/team/teamDetails/memberDetailsContent/MemberDetailsContentPersonalInformations'
+import MoreDetailsMembers from '@components/pages/dashboard/organization/team/teamDetails/memberDetailsContent/MoreDetailsMembers'
 
 /**
  *
@@ -15,7 +16,7 @@ const MemberDetailsContent = ({ member, editMember }) => {
     return (
         <Box className={'member__details'}>
             <MemberDetailsContentDescription member={member} editMember={editMember} />
-            <MemberDetailsContentPersonalInformations member={member} editMember={editMember} />
+            {editMember ? <MoreDetailsMembers /> : <MemberDetailsContentPersonalInformations member={member} />}
         </Box>
     )
 }
