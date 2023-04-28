@@ -85,38 +85,39 @@ const HeaderEventDetails = () => {
                     </div>
                 </div>
                 <div className={'events-details-container__header-infos__right-side__ticketing-details'}>
-                    <div className={'events-details-container__header-infos__right-side__ticketing-details__icon'}>
-                        <IconCash />
-                    </div>
-                    <Typography component={'h6'} gutterBottom>
-                        Détails
-                    </Typography>
-                    <div>
-                        <div></div>
-                        <div>
-                            <Typography>
-                                <span></span>Catégorie 1
-                            </Typography>
-                            <Typography>340 Tickets</Typography>
+                    <div className={'d-flex'}>
+                        <div className={'events-details-container__header-infos__right-side__ticketing-details__icon'}>
+                            <IconCash />
                         </div>
-                    </div>
-                    <div>
-                        <Typography>
-                            <span></span>Catégorie 1
+                        <Typography component={'h6'} gutterBottom>
+                            Détails
                         </Typography>
-                        <Typography>340 Tickets</Typography>
                     </div>
-                    <div>
-                        <Typography>
-                            <span></span>Catégorie 1
-                        </Typography>
-                        <Typography>340 Tickets</Typography>
-                    </div>
-                    <div>
-                        <Typography>
-                            <span></span>Catégorie 1
-                        </Typography>
-                        <Typography>340 Tickets</Typography>
+                    <div className={'d-flex'}>
+                        <div className={'events-details-container__header-infos__right-side__ticketing-details__icon hidden'}></div>
+                        {[0, 1, 2, 3].map((i) => (
+                            <div
+                                key={i}
+                                className={
+                                    'events-details-container__header-infos__right-side__ticketing-details__ticketing-category-container'
+                                }>
+                                <div
+                                    className={
+                                        'events-details-container__header-infos__right-side__ticketing-details__ticketing-category-container__bar'
+                                    }></div>
+                                <div
+                                    className={
+                                        'events-details-container__header-infos__right-side__ticketing-details__ticketing-category-container__title'
+                                    }>
+                                    <div>
+                                        <span></span>
+                                        <Typography>Catégorie 1</Typography>
+                                    </div>
+
+                                    <Typography>340 Tickets</Typography>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
