@@ -22,7 +22,9 @@ const HeaderDetailsPageContent = ({ handleClick, btnName, backLink, editContent,
                     <BackLink title={'Retour'} link={backLink} className={'header-page-content__left__link__back'} />
                 </div>
                 <div className="header-page-content__search-create">
-                    {editContent && <Button handleClick={handleClick} name={dangerBtnName} className="button--danger" />}
+                    {editContent && (
+                        <Button handleClick={() => setEditContent(!editContent)} name={dangerBtnName} className="button--danger" />
+                    )}
                     <Button handleClick={() => setEditContent(!editContent)} name={btnName} className="button__primary" />
                 </div>
             </div>
