@@ -124,6 +124,5 @@ const HeaderEventDetails = () => {
         </div>
     )
 }
-
 HeaderEventDetails.propTypes = {}
 export default HeaderEventDetails
