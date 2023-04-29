@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Box, Card, CardMedia, Divider, Skeleton, Typography } from '@mui/material'
-import PostStatusRoundedIcon from '@common/roundedIcon/PostStatusRoundedIcon'
 import Button from '@common/button/Button'
 import PropTypes from 'prop-types'
 import MemberStatusRoundedIcon from '@common/roundedIcon/MemberStatusRoundedIcon'
@@ -65,7 +64,7 @@ const MemberDetailsCard = ({ picture, name, status, role, loading, editMember })
     )
 }
 
-MemberDetailsCard.prototype = {
+MemberDetailsCard.propTypes = {
     picture: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,

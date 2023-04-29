@@ -18,7 +18,12 @@ import PropTypes from 'prop-types'
 const TeamComponent = ({ loading }) => {
     return (
         <Box sx={{ marginBottom: '64px' }}>
-            <Grid container spacing={6} sx={{ marginTop: '16px' }}>
+            <Grid
+                container
+                rowSpacing={6}
+                columns={{ xs: 6, sm: 12, md: 13, lg: 24 }}
+                columnSpacing={{ xs: 3, sm: 12 }}
+                sx={{ marginTop: '16px', justifyContent: 'center' }}>
                 {TEAM_LIST.map((member) => (
                     <Grid key={member.id} xs={'auto'}>
                         <Link to={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_DETAILS.PATH} state={{ data: member }}>
@@ -32,7 +37,7 @@ const TeamComponent = ({ loading }) => {
     )
 }
 
-TeamComponent.prototype = {
+TeamComponent.propTypes = {
     loading: PropTypes.bool
 }
 

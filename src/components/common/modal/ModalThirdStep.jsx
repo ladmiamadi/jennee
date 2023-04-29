@@ -1,12 +1,7 @@
 import * as React from 'react'
 import { Box, MobileStepper, Typography } from '@mui/material'
-import Input from '../input/Input'
-import Button from '../button/Button'
 import CloseIcon from '@mui/icons-material/Close'
 import PropTypes from 'prop-types'
-import { ReactComponent as AccessTimeFilled } from '@assets/svg/ionic-time.svg'
-import { INPUT } from '@constants/inputConst'
-import AddIcon from '@mui/icons-material/Add'
 
 const ModalThirdStep = ({ data, handlePreClose, step, contentModalThird, footerModal }) => {
     const style = {

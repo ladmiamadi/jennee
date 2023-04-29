@@ -20,7 +20,12 @@ import { ROUTES } from '@constants/routesConst'
 const PostsComponent = ({ loading }) => {
     return (
         <Box sx={{ marginBottom: '64px' }}>
-            <Grid container spacing={6} sx={{ marginTop: '16px' }}>
+            <Grid
+                container
+                rowSpacing={6}
+                columns={{ xs: 6, sm: 12, md: 13, lg: 24 }}
+                columnSpacing={{ xs: 3, sm: 12 }}
+                sx={{ marginTop: '16px', justifyContent: 'center' }}>
                 {POSTS_LIST.map((post) => (
                     <Grid key={post.id} xs={'auto'}>
                         <Link to={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.CHILDREN.POSTS_DETAILS.PATH} state={{ data: post }}>
@@ -34,7 +39,7 @@ const PostsComponent = ({ loading }) => {
     )
 }
 
-PostsComponent.prototype = {
+PostsComponent.propTypes = {
     loading: PropTypes.bool
 }
 

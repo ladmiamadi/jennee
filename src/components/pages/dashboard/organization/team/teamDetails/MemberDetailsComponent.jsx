@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
 import MemberDetailsCard from '@components/pages/dashboard/organization/team/teamCard/MemberDetailsCard'
 import MemberDetailsContent from '@components/pages/dashboard/organization/team/teamDetails/memberDetailsContent/MemberDetailsContent'
+import { BackSlashRoute } from '@utils/BackSlashRoute'
 
 /**
  *
@@ -24,7 +25,11 @@ const MemberDetailsComponent = ({ handleOpen, member }) => {
             <HeaderDetailsPageContent
                 btnName={editMember ? 'Enregistrer' : 'Modifier les informations'}
                 dangerBtnName={'Annuler'}
-                backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH}
+                backLink={BackSlashRoute([
+                    ROUTES.DASHBOARD.ROOT.PATH,
+                    ROUTES.DASHBOARD.ORGANIZATION.PATH,
+                    ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH
+                ])}
                 handleClick={handleOpen}
                 setEditContent={setEditMember}
                 editContent={editMember}
@@ -51,7 +56,7 @@ const MemberDetailsComponent = ({ handleOpen, member }) => {
     )
 }
 
-MemberDetailsComponent.prototype = {
+MemberDetailsComponent.propTypes = {
     member: PropTypes.object.isRequired,
     handleOpen: PropTypes.func
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Divider, Typography } from '@mui/material'
-import { COMMENTS_LIST } from '../../../../../../../fixtures/commentsList'
+import { COMMENTS_LIST } from '@fixtures/commentsList'
 import { ReactComponent as PostCommentAvatar } from '@assets/svg/post/post-comments-avatar.svg'
 import CommentAccordion from '@common/accordion/CommentAccordion'
 import PropTypes from 'prop-types'
@@ -50,7 +50,7 @@ const PostDetailsContentComments = ({ comment, editPost }) => {
     )
 }
 
-PostDetailsContentComments.prototype = {
+PostDetailsContentComments.propTypes = {
     comment: PropTypes.object.isRequired,
     editPost: PropTypes.bool.isRequired
 }

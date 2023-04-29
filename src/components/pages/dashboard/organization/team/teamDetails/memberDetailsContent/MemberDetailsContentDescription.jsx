@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
-import AddIcon from '@mui/icons-material/Add'
 import TextArea from '@common/input/TextArea'
 import PropTypes from 'prop-types'
 
@@ -76,10 +75,10 @@ const MemberDetailsContentDescription = ({ member, editMember, handleTextareaCha
     )
 }
 
-MemberDetailsContentDescription.prototype = {
+MemberDetailsContentDescription.propTypes = {
     member: PropTypes.object.isRequired,
     editMember: PropTypes.bool,
-    handleTextAreaChange: PropTypes.func,
+    handleTextareaChange: PropTypes.func,
     dataOnChange: PropTypes.object
 }
 

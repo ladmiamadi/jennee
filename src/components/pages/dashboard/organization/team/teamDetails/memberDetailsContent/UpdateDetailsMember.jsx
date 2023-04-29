@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextArea from '@common/input/TextArea'
 import { Divider, Typography } from '@mui/material'
-import Input from '@common/input/Input'
 
 /**
  *
  * @param member {object} - The member to update
  * @param handleTextareaChange {function}- The function to execute when textArea content is changed
  * @param {Object} dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
+ * @param onChangeInput
  * @returns {JSX.Element} - The UpdateDetailsMember component
  * @constructor
  */
@@ -57,9 +57,10 @@ const UpdateDetailsMember = ({ member, dataOnChange, handleTextareaChange, onCha
     )
 }
 
-UpdateDetailsMember.prototype = {
+UpdateDetailsMember.propTypes = {
     member: PropTypes.object,
     handleTextareaChange: PropTypes.func,
+    onChangeInput: PropTypes.func,
     dataOnChange: PropTypes.object
 }
 export default UpdateDetailsMember

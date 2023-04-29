@@ -27,6 +27,7 @@ const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange })
                         onChange={handleTextareaChange}
                         required={false}
                         isDisabled={!editPost}
+                        dataOnChange={null}
                     />
                 </div>
                 <Box sx={{ width: '40%' }}>
@@ -88,10 +89,10 @@ const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange })
     )
 }
 
-PostDetailsContentDescription.prototype = {
+PostDetailsContentDescription.propTypes = {
     post: PropTypes.object.isRequired,
     editPost: PropTypes.bool,
-    handleTextAreaChange: PropTypes.func
+    handleTextareaChange: PropTypes.func
 }
 
 export default PostDetailsContentDescription

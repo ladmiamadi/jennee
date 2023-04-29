@@ -27,9 +27,15 @@ const EventsComponent = ({ handleOpen, loading }) => {
                 handleClick={handleOpen}
                 btnName={'Créer un nouvel event'}
             />
-            <Grid container spacing={6} sx={{ marginTop: '16px' }}>
+            {/*<Grid container rowSpacing={6} columnSpacing={{ xs: 6, sm: 6, md: 13 }}*/}
+            <Grid
+                container
+                rowSpacing={6}
+                columns={{ xs: 6, sm: 12, md: 13, lg: 24 }}
+                columnSpacing={{ xs: 3, sm: 12 }}
+                sx={{ marginTop: '16px', justifyContent: 'center' }}>
                 {EVENTS_LIST.map((event) => (
-                    <Grid key={event.id} xs={'auto'}>
+                    <Grid key={event.id} item>
                         <Link to={ROUTES.DASHBOARD.EVENTS.CHILDREN.EVENTS_DETAILS.PATH}>
                             <Cards
                                 day={event.day}

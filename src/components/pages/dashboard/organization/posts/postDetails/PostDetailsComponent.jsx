@@ -8,6 +8,7 @@ import PostDetailsCard from '@components/pages/dashboard/organization/posts/post
 import PostDetailsContent from '@components/pages/dashboard/organization/posts/postDetails/postDetailsContent/PostDetailsContent'
 import PropTypes from 'prop-types'
 import { ROUTES } from '@constants/routesConst'
+import { BackSlashRoute } from '@utils/BackSlashRoute'
 
 /**
  *
@@ -18,12 +19,15 @@ import { ROUTES } from '@constants/routesConst'
  */
 const PostDetailsComponent = ({ handleOpen, post }) => {
     const [editPost, setEditPost] = useState(false)
-
     return (
         <Box sx={{ marginBottom: '64px' }}>
             <HeaderDetailsPageContent
                 btnName={editPost ? 'Modifier' : 'Modifier le Post'}
-                backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH}
+                backLink={BackSlashRoute([
+                    ROUTES.DASHBOARD.ROOT.PATH,
+                    ROUTES.DASHBOARD.ORGANIZATION.PATH,
+                    ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH
+                ])}
                 handleClick={handleOpen}
                 dangerBtnName={'Supprimer'}
                 setEditContent={setEditPost}
@@ -44,7 +48,7 @@ const PostDetailsComponent = ({ handleOpen, post }) => {
     )
 }
 
-PostDetailsComponent.prototype = {
+PostDetailsComponent.propTypes = {
     post: PropTypes.object.isRequired,
     handleOpen: PropTypes.func
 }

@@ -60,7 +60,7 @@ const PostDetailsCard = ({ picture, name, status, loading, editPost }) => {
     )
 }
 
-PostDetailsCard.prototype = {
+PostDetailsCard.propTypes = {
     picture: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,

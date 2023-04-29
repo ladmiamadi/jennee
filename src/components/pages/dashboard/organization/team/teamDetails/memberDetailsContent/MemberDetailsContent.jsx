@@ -30,7 +30,7 @@ const MemberDetailsContent = ({ member, editMember }) => {
     )
 }
 
-MemberDetailsContent.prototype = {
+MemberDetailsContent.propTypes = {
     member: PropTypes.object.isRequired,
     editMember: PropTypes.func
 }

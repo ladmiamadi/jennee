@@ -14,13 +14,13 @@ import PropTypes from 'prop-types'
 const PostDetailsContent = ({ post, editPost }) => {
     return (
         <Box className={'post__details'}>
-            <PostDetailsContentDescription post={post} editPost={editPost} />
+            <PostDetailsContentDescription post={post} editPost={editPost} handleTextareaChange={null} />
             <PostDetailsContentComments comment={post.comment} editPost={editPost} />
         </Box>
     )
 }
 
-PostDetailsContent.prototype = {
+PostDetailsContent.propTypes = {
     post: PropTypes.object.isRequired,
     editPost: PropTypes.func
 }

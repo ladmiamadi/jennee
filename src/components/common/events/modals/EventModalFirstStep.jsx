@@ -20,7 +20,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                 <p>Remplissez le champ de texte suivant, le nom choisi apparaitra notamment pour le différencier de vos évènements</p>
                 <Input
                     classname={'modal__input'}
-                    name={'name'}
+                    name={INPUT.MODAL.NEW_EVENT.NAME}
                     type="text"
                     placeholder="Ex : Soirée d'Halloween"
                     value={formValue.name}
@@ -52,7 +52,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                         }}
                         onChange={handleChange}
                         placeholder="Ex : Thème, lieu, occasion, …"
-                        name={'description'}
+                        name={INPUT.MODAL.NEW_EVENT.DESCRIPTION}
                     />
                 </div>
                 {formValue.description === '' ? <p>{errors.description}</p> : ''}
@@ -62,7 +62,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                     <h4>Thèmes & Ambiances</h4>
                     <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
                     <Select
-                        name="type"
+                        name={INPUT.MODAL.NEW_EVENT.TYPE}
                         className="select__primary"
                         options={eventTypeOptions}
                         value={formValue.type}
@@ -75,7 +75,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                     <h4>Type event</h4>
                     <p>Décrivez l&apos;évènement, l&apos;ambiance, le theme, les guests...</p>
                     <Select
-                        name="event"
+                        name={INPUT.MODAL.NEW_EVENT.EVENT}
                         className="select__primary"
                         options={eventType}
                         value={formValue.event}
@@ -89,7 +89,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                 <div className={'modal__row__items'}>
                     <h4>Type de lieu</h4>
                     <Select
-                        name="place"
+                        name={INPUT.MODAL.NEW_EVENT.PLACE}
                         className="select__primary"
                         options={eventLocationsOptions}
                         value={formValue.place}
@@ -101,7 +101,7 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                 <div className={'modal__row__items'}>
                     <h4>Autorisation d&apos;entrée</h4>
                     <Select
-                        name="authorisation"
+                        name={INPUT.MODAL.NEW_EVENT.AUTHORISATION}
                         className="select__primary"
                         options={eventOptionsVIP}
                         value={formValue.authorisation}
@@ -119,22 +119,30 @@ const EventModalFirstStep = ({ formValue, errors, setFormValue, handleChange }) 
                     <div className={'w-full mr-40'}>
                         <Input
                             classname={'modal__input-datetime'}
-                            onChange={null}
                             type={'datetime-local'}
-                            dataOnChange={null}
-                            name={''}
-                            value={''}
+                            name={INPUT.MODAL.NEW_EVENT.OPENING}
+                            value={formValue.opening}
+                            dataOnChange={{
+                                state: formValue,
+                                setState: setFormValue,
+                                name: INPUT.MODAL.NEW_EVENT.OPENING
+                            }}
+                            onChange={handleChange}
                         />
                         <p className={'mt-8'}>Date et heure d’ouverture</p>
                     </div>
                     <div className={'w-full'}>
                         <Input
                             classname={'modal__input-datetime'}
-                            onChange={null}
                             type={'datetime-local'}
-                            dataOnChange={null}
-                            name={''}
-                            value={''}
+                            name={INPUT.MODAL.NEW_EVENT.ENDING}
+                            value={formValue.ending}
+                            dataOnChange={{
+                                state: formValue,
+                                setState: setFormValue,
+                                name: INPUT.MODAL.NEW_EVENT.ENDING
+                            }}
+                            onChange={handleChange}
                         />
                         <p className={'mt-8'}>Date et heure de fermeture</p>
                     </div>

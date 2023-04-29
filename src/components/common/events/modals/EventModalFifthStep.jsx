@@ -1,10 +1,7 @@
 import React from 'react'
 import Input from '@common/input/Input'
 import { INPUT } from '@constants/inputConst'
-import Button from '@common/button/Button'
-import { Divider } from '@mui/material'
 import PropTypes from 'prop-types'
-import EventModalFourStep from '@common/events/modals/EventModalFourthStep'
 
 const EventModalFirthStep = ({ formValue, errors, setFormValue, handleChange }) => {
     return (

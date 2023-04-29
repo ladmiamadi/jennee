@@ -13,7 +13,7 @@ const PostStatusRoundedIcon = ({ className, status }) => {
     return <Brightness1RoundedIcon color={status === 'En ligne' ? 'success' : 'secondary'} fontSize={'small'} className={className} />
 }
 
-PostStatusRoundedIcon.prototype = {
+PostStatusRoundedIcon.propTypes = {
     className: PropTypes.string,
     status: PropTypes.string
 }

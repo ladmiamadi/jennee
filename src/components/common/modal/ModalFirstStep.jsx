@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material'
 
 import PropTypes from 'prop-types'
 import MobileStepper from '@mui/material/MobileStepper'
-import Button from '@common/button/Button'
 import CloseIcon from '@mui/icons-material/Close'
 
 /**

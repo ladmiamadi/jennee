@@ -1,8 +1,6 @@
 import React from 'react'
 import { Box, Divider, Typography } from '@mui/material'
-import { COMMENTS_LIST } from '../../../../../../../fixtures/commentsList'
 import { ReactComponent as PostCommentAvatar } from '@assets/svg/post/post-comments-avatar.svg'
-import CommentAccordion from '@common/accordion/CommentAccordion'
 import PropTypes from 'prop-types'
 import Button from '@common/button/Button'
 
@@ -62,7 +60,7 @@ const MemberDetailsContentPersonalInformations = ({ member, handleClick }) => {
     )
 }
 
-MemberDetailsContentPersonalInformations.prototype = {
+MemberDetailsContentPersonalInformations.propTypes = {
     member: PropTypes.object.isRequired,
     handleClick: PropTypes.func
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import { ReactComponent as JeneeLogo } from '@assets/svg/mainLayout/jenee-logo.svg'
 import { ReactComponent as JeneeAvatar } from '@assets/svg/mainLayout/jenee-avatar.svg'
