@@ -19,6 +19,10 @@
 			}
 		}
 		&__right-side {
+			display: flex;
+			flex-direction: column;
+			height: 360px;
+			justify-content: space-between;
 			&__maximum-revenues {
 				display: flex;
 				&__icon {
@@ -34,7 +38,6 @@
 				}
 			}
 			&__ticketing-details {
-				display: flex;
 				&__icon {
 					width: 63px;
 					height: 61px;
@@ -44,6 +47,29 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
+				}
+				&__ticketing-category-container {
+					margin-right: 8px;
+					&__bar {
+						border: 6px solid #ffacc8;
+						width: 150px;
+						height: 0;
+						border-radius: 100px;
+						margin-bottom: 8px;
+					}
+					&__title {
+						& > div {
+							display: flex;
+							align-items: center;
+							& > span {
+								margin-right: 8px;
+								width: 16px;
+								height: 16px;
+								background: #ffa7c9;
+								border-radius: 100px;
+							}
+						}
+					}
 				}
 			}
 		}
