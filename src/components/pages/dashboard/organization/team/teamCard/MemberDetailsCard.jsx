@@ -70,7 +70,7 @@ MemberDetailsCard.propTypes = {
     status: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
-    editMember: PropTypes.func
+    editMember: PropTypes.bool
 }
 
 export default MemberDetailsCard

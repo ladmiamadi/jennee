@@ -6,13 +6,14 @@ import { Divider, Typography } from '@mui/material'
 /**
  *
  * @param member {object} - The member to update
- * @param handleTextareaChange {function}- The function to execute when textArea content is changed
+ * @param onChange {function}- The function to execute when textArea content is changed
  * @param {Object} dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
- * @param onChangeInput
  * @returns {JSX.Element} - The UpdateDetailsMember component
- * @constructor
  */
-const UpdateDetailsMember = ({ member, dataOnChange, handleTextareaChange, onChangeInput }) => {
+const UpdateDetailsMember = ({ member, dataOnChange, onChange }) => {
+    const onChangeInput = (value) => {
+        console.log(value.target.value)
+    }
     return (
         <div className={'update-member__details'}>
             <div className={'update-member__details__informations'}>
@@ -20,9 +21,9 @@ const UpdateDetailsMember = ({ member, dataOnChange, handleTextareaChange, onCha
                     Informations personnels
                 </Typography>
                 <div className={'update-member__details__informations__content'}>
-                    <input onChange={onChangeInput} name={'name'} type={'text'} value={member.name} />
-                    <input onChange={onChangeInput} name={'email'} type={'text'} value={member.email} />
-                    <input onChange={onChangeInput} name={'userName'} type={'text'} value={member.userName} />
+                    <input onChange={(e) => onChangeInput(e.target.value)} name={'name'} type={'text'} value={member.name} />
+                    <input onChange={(e) => onChangeInput(e.target.value)} name={'email'} type={'text'} value={member.email} />
+                    <input onChange={(e) => onChangeInput(e.target.value)} name={'userName'} type={'text'} value={member.userName} />
                 </div>
             </div>
             <Divider orientation="vertical" flexItem sx={{ marginLeft: '30px', height: '120px', marginTop: '70px' }} />
@@ -45,7 +46,7 @@ const UpdateDetailsMember = ({ member, dataOnChange, handleTextareaChange, onCha
                             name={member.name}
                             className={''}
                             value={member.description}
-                            onChange={handleTextareaChange}
+                            onChange={onChange}
                             required={false}
                             isDisabled={false}
                             dataOnChange={dataOnChange}
@@ -59,7 +60,7 @@ const UpdateDetailsMember = ({ member, dataOnChange, handleTextareaChange, onCha
 
 UpdateDetailsMember.propTypes = {
     member: PropTypes.object,
-    handleTextareaChange: PropTypes.func,
+    onChange: PropTypes.func,
     onChangeInput: PropTypes.func,
     dataOnChange: PropTypes.object
 }

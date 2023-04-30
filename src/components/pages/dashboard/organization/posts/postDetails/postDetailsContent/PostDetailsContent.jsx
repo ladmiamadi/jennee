@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PostDetailsContentDescription from '@components/pages/dashboard/organization/posts/postDetails/postDetailsContent/PostDetailsContentDescription'
 import PostDetailsContentComments from '@components/pages/dashboard/organization/posts/postDetails/postDetailsContent/PostDetailsContentComments'
 import { Box } from '@mui/material'
@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 const PostDetailsContent = ({ post, editPost }) => {
     return (
         <Box className={'post__details'}>
-            <PostDetailsContentDescription post={post} editPost={editPost} handleTextareaChange={null} />
+            <PostDetailsContentDescription post={post} editPost={editPost} />
             <PostDetailsContentComments comment={post.comment} editPost={editPost} />
         </Box>
     )
@@ -22,7 +22,7 @@ const PostDetailsContent = ({ post, editPost }) => {
 
 PostDetailsContent.propTypes = {
     post: PropTypes.object.isRequired,
-    editPost: PropTypes.func
+    editPost: PropTypes.bool
 }
 
 export default PostDetailsContent

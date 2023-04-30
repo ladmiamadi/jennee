@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import TextArea from '@common/input/TextArea'
@@ -8,11 +8,16 @@ import PropTypes from 'prop-types'
  *
  * @param post {Object} - The post to be displayed with details
  * @param editPost {boolean} - The prop to enable editing post form
- * @param handleTextareaChange {function}- The function to execute when textArea content is changed
  * @returns {JSX.Element} - The postDetailsContentDescription component
  * @constructor
  */
-const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange }) => {
+const PostDetailsContentDescription = ({ post, editPost }) => {
+    const [editTextarea, setEditTextArea] = useState('')
+
+    const onChange = (state, setState, name, newValue, event) => {
+        setState(event.target.value)
+    }
+
     return (
         <div className={'post__details__description'}>
             <Typography variant="h6" gutterBottom>
@@ -24,10 +29,10 @@ const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange })
                         name={post.name}
                         className={''}
                         value={post.description}
-                        onChange={handleTextareaChange}
                         required={false}
                         isDisabled={!editPost}
-                        dataOnChange={null}
+                        onChange={onChange}
+                        dataOnChange={{ state: editTextarea, setState: setEditTextArea, name: 'description' }}
                     />
                 </div>
                 <Box sx={{ width: '40%' }}>
@@ -92,7 +97,8 @@ const PostDetailsContentDescription = ({ post, editPost, handleTextareaChange })
 PostDetailsContentDescription.propTypes = {
     post: PropTypes.object.isRequired,
     editPost: PropTypes.bool,
-    handleTextareaChange: PropTypes.func
+    onChange: PropTypes.func,
+    dataOnChange: PropTypes.object
 }
 
 export default PostDetailsContentDescription

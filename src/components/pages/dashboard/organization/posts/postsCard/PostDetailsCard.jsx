@@ -65,7 +65,7 @@ PostDetailsCard.propTypes = {
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
-    editPost: PropTypes.func
+    editPost: PropTypes.bool
 }
 
 export default PostDetailsCard

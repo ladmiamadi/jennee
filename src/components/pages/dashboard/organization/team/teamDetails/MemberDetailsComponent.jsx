@@ -19,7 +19,6 @@ import { BackSlashRoute } from '@utils/BackSlashRoute'
 const MemberDetailsComponent = ({ handleOpen, member }) => {
     const [editMember, setEditMember] = useState(false)
 
-    console.log(member)
     return (
         <Box sx={{ marginBottom: '64px' }}>
             <HeaderDetailsPageContent

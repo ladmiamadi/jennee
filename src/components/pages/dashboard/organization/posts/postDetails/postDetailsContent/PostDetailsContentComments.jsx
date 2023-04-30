@@ -6,7 +6,7 @@ import CommentAccordion from '@common/accordion/CommentAccordion'
 import PropTypes from 'prop-types'
 
 /**
- * @param comment {object} - the comment object to be displayed with details
+ * @param comment {number} - the comment object to be displayed with details
  * @param editPost {boolean} - the prop to enable editing post
  * @returns {JSX.Element} - The MemberDetailsContentPersonalInformations component
  * @constructor
@@ -51,7 +51,7 @@ const PostDetailsContentComments = ({ comment, editPost }) => {
 }
 
 PostDetailsContentComments.propTypes = {
-    comment: PropTypes.object.isRequired,
+    comment: PropTypes.number.isRequired,
     editPost: PropTypes.bool.isRequired
 }
 export default PostDetailsContentComments
