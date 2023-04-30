@@ -1,10 +1,7 @@
 import React from 'react'
-import { Box, Divider, MobileStepper, Typography } from '@mui/material'
-import Input from '@common/input/Input'
+import { Box } from '@mui/material'
 import Button from '@common/button/Button'
-import CloseIcon from '@mui/icons-material/Close'
 import PropTypes from 'prop-types'
-import ModalEvent from '@common/modal/Modal'
 
 const ModalExit = ({ handleComeLastStep, handleClose }) => {
     const style = {

@@ -1,11 +1,7 @@
 import * as React from 'react'
-import { Box, Divider, MobileStepper, Typography } from '@mui/material'
-import Input from '../input/Input'
-import Button from '../button/Button'
+import { Box, MobileStepper, Typography } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import PropTypes from 'prop-types'
-import { INPUT } from '@constants/inputConst'
-import AddIcon from '@mui/icons-material/Add'
 
 const ModalFourthStep = ({ data, handlePreClose, step, contentModalFourth, footerModal }) => {
     const style = {

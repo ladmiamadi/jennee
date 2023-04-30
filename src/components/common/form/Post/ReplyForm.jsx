@@ -31,7 +31,7 @@ const ReplyForm = ({ className, handleSubmit, user }) => {
     )
 }
 
-ReplyForm.prototype = {
+ReplyForm.propTypes = {
     className: PropTypes.string,
     handleSubmit: PropTypes.func,
     user: PropTypes.string

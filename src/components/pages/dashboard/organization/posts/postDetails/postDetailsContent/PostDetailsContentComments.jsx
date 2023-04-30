@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Divider, Typography } from '@mui/material'
-import { COMMENTS_LIST } from '../../../../../../../fixtures/commentsList'
+import { COMMENTS_LIST } from '@fixtures/commentsList'
 import { ReactComponent as PostCommentAvatar } from '@assets/svg/post/post-comments-avatar.svg'
 import CommentAccordion from '@common/accordion/CommentAccordion'
 import PropTypes from 'prop-types'
 
 /**
- * @param comment {object} - the comment object to be displayed with details
+ * @param comment {number} - the comment object to be displayed with details
  * @param editPost {boolean} - the prop to enable editing post
  * @returns {JSX.Element} - The MemberDetailsContentPersonalInformations component
  * @constructor
@@ -50,8 +50,8 @@ const PostDetailsContentComments = ({ comment, editPost }) => {
     )
 }
 
-PostDetailsContentComments.prototype = {
-    comment: PropTypes.object.isRequired,
+PostDetailsContentComments.propTypes = {
+    comment: PropTypes.number.isRequired,
     editPost: PropTypes.bool.isRequired
 }
 export default PostDetailsContentComments

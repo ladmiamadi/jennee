@@ -11,7 +11,7 @@ const MemberStatusRoundedIcon = ({ status, className }) => {
     return <Brightness1RoundedIcon color={status === 'En ligne' ? 'success' : 'disconnected'} fontSize={'small'} className={className} />
 }
 
-MemberStatusRoundedIcon.prototype = {
+MemberStatusRoundedIcon.propTypes = {
     status: PropTypes.string,
     className: PropTypes.string
 }

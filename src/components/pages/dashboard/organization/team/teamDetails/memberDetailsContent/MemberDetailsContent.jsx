@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box } from '@mui/material'
 import PropTypes from 'prop-types'
 import MemberDetailsContentDescription from '@components/pages/dashboard/organization/team/teamDetails/memberDetailsContent/MemberDetailsContentDescription'
@@ -13,16 +13,31 @@ import UpdateDetailsMember from '@components/pages/dashboard/organization/team/t
  * @constructor
  */
 const MemberDetailsContent = ({ member, editMember }) => {
+    const [editTextarea, setEditTextArea] = useState('')
+
+    const onChange = (state, setState, name, newValue, event) => {
+        setState(event.target.value)
+    }
+
     return (
         <Box className={'member__details'}>
             {editMember ? (
                 <>
-                    <UpdateDetailsMember member={member} />
+                    <UpdateDetailsMember
+                        member={member}
+                        dataOnChange={{ state: editTextarea, setState: setEditTextArea, name: 'description' }}
+                        onChange={onChange}
+                    />
                     <MoreDetailsMembers />
                 </>
             ) : (
                 <>
-                    <MemberDetailsContentDescription member={member} editMember={editMember} />
+                    <MemberDetailsContentDescription
+                        member={member}
+                        editMember={editMember}
+                        dataOnChange={{ state: editTextarea, setState: setEditTextArea, name: 'description' }}
+                        onChange={onChange}
+                    />
                     <MemberDetailsContentPersonalInformations member={member} />
                 </>
             )}
@@ -30,9 +45,9 @@ const MemberDetailsContent = ({ member, editMember }) => {
     )
 }
 
-MemberDetailsContent.prototype = {
+MemberDetailsContent.propTypes = {
     member: PropTypes.object.isRequired,
-    editMember: PropTypes.func
+    editMember: PropTypes.bool
 }
 
 export default MemberDetailsContent

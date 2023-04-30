@@ -1,11 +1,7 @@
 import * as React from 'react'
 import { Box, MobileStepper, Typography } from '@mui/material'
-import Input from '../input/Input'
-import Button from '../button/Button'
 import CloseIcon from '@mui/icons-material/Close'
 import PropTypes from 'prop-types'
-import AddIcon from '@mui/icons-material/Add'
-import { INPUT } from '@constants/inputConst'
 
 const ModalSecondStep = ({ data, handlePreClose, step, contentModalSecond, footerModal }) => {
     const style = {

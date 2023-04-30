@@ -1,19 +1,17 @@
 import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
-import AddIcon from '@mui/icons-material/Add'
 import TextArea from '@common/input/TextArea'
 import PropTypes from 'prop-types'
 
 /**
- *
  * @param member {Object} - The member to be displayed with details
  * @param editMember {boolean} - The prop to enable editing member form
- * @param handleTextareaChange {function}- The function to execute when textArea content is changed
+ * @param {function} onChange - The function to be called when the input value changes.
  * @param {Object} dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
  * @returns {JSX.Element} - The memberDetailsContentDescription component
  * @constructor
  */
-const MemberDetailsContentDescription = ({ member, editMember, handleTextareaChange, dataOnChange }) => {
+const MemberDetailsContentDescription = ({ member, editMember, onChange, dataOnChange }) => {
     return (
         <div className={'member__details__description'}>
             <Typography variant="h6" gutterBottom>
@@ -25,7 +23,7 @@ const MemberDetailsContentDescription = ({ member, editMember, handleTextareaCha
                         name={member.name}
                         className={''}
                         value={member.description}
-                        onChange={handleTextareaChange}
+                        onChange={onChange}
                         required={false}
                         isDisabled={!editMember}
                         dataOnChange={dataOnChange}
@@ -76,10 +74,10 @@ const MemberDetailsContentDescription = ({ member, editMember, handleTextareaCha
     )
 }
 
-MemberDetailsContentDescription.prototype = {
+MemberDetailsContentDescription.propTypes = {
     member: PropTypes.object.isRequired,
     editMember: PropTypes.bool,
-    handleTextAreaChange: PropTypes.func,
+    onChange: PropTypes.func,
     dataOnChange: PropTypes.object
 }
 

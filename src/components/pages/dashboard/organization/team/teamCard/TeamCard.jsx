@@ -48,7 +48,7 @@ const TeamCard = ({ loading, member }) => {
     )
 }
 
-TeamCard.prototype = {
+TeamCard.propTypes = {
     member: PropTypes.object.isRequired,
     loading: PropTypes.bool
 }

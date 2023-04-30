@@ -45,6 +45,7 @@ export const ROUTES = {
         EVENTS: {
             NAME: 'events',
             PATH: 'events',
+            HEADER_ROOT: 'dashboard/events',
             CHILDREN: {
                 EVENT: {
                     NAME: 'events',

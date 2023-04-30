@@ -2,7 +2,6 @@ import React from 'react'
 import Input from '@common/input/Input'
 import { INPUT } from '@constants/inputConst'
 import PropTypes from 'prop-types'
-import EventModalFirstStep from '@common/events/modals/EventModalFirstStep'
 
 const EventModalThirdStep = ({ formValue, errors, setFormValue, handleChange }) => {
     return (

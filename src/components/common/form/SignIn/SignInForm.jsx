@@ -62,7 +62,7 @@ const SignInForm = ({ formValue, setFormValue, handleChange, HandleSubmit, class
 
             </span>*/}
             {error.password ? <label className="card__error">{errorType.password}</label> : ''}
-            <Button className="card__form-submit" name="Se connecter"></Button>
+            <Button className="card__form-submit" name="Se connecter" handleClick={() => console.log('ok')} />
         </form>
     )
 }

@@ -49,7 +49,7 @@ const MoreMembersCard = ({ member, loading }) => {
     )
 }
 
-MoreMembersCard.prototype = {
+MoreMembersCard.propTypes = {
     member: PropTypes.object.isRequired,
     loading: PropTypes.bool
 }

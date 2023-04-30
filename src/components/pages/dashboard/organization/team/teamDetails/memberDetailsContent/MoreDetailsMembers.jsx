@@ -37,7 +37,7 @@ const MoreDetailsMembers = ({ loading }) => {
     )
 }
 
-MoreDetailsMembers.prototype = {
+MoreDetailsMembers.propTypes = {
     loading: PropTypes.bool
 }
 export default MoreDetailsMembers

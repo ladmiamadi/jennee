@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ReplyAllIcon from '@mui/icons-material/ReplyAll'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ReplyForm from '@common/form/Post/ReplyForm'
+import PropTypes from 'prop-types'
 
 /**
  *
@@ -81,5 +82,8 @@ const CommentAccordion = ({ comment, editPost }) => {
         </>
     )
 }
-
+CommentAccordion.propTypes = {
+    comment: PropTypes.object,
+    editPost: PropTypes.bool
+}
 export default CommentAccordion

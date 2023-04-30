@@ -47,7 +47,7 @@ const PostCard = ({ post, loading }) => {
     )
 }
 
-PostCard.prototype = {
+PostCard.propTypes = {
     post: PropTypes.object.isRequired,
     loading: PropTypes.bool
 }
