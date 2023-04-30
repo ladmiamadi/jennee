@@ -24,7 +24,7 @@ const MemberDetailsComponent = ({ handleOpen, member }) => {
             <HeaderDetailsPageContent
                 btnName={editMember ? 'Enregistrer' : 'Modifier les informations'}
                 dangerBtnName={'Annuler'}
-                backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.CHILDREN.MEMBER_LIST.PATH}
+                backLink={ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.HEADER_ROOT}
                 handleClick={handleOpen}
                 setEditContent={setEditMember}
                 editContent={editMember}
