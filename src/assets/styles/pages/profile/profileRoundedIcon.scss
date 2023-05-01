@@ -1,0 +1,27 @@
+.profile__rounded__icon {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	align-items: center;
+	margin-bottom: 5px;
+	&--passed {
+		color: #ffacc8;
+		font-size: 1rem !important;
+		margin-right: 10px;
+	}
+	&--current {
+		color: #4668e0;
+		font-size: 1rem !important;
+		margin-right: 10px;
+	}
+	&--received {
+		color: #27e043;
+		font-size: 1rem !important;
+		margin-right: 10px;
+	}
+	&--pending {
+		color: #b6b7bb;
+		font-size: 1rem !important;
+		margin-right: 10px;
+	}
+}

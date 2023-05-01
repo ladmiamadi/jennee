@@ -91,12 +91,12 @@ const MainRoutes = {
                             element: <MemberDetailsContainer />
                         }
                     ]
+                },
+                {
+                    path: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
+                    element: <ProfilContainer />
                 }
             ]
-        },
-        {
-            path: ROUTES.DASHBOARD.PROFIL.PATH,
-            element: <ProfilContainer />
         },
         {
             path: ROUTES.DASHBOARD.SETTINGS.PATH,

@@ -37,7 +37,9 @@ export const ORGANIZATION_MENU_ITEMS = [
     },
     {
         id: 5,
-        title: 'Profil'
+        title: 'Profil',
+        link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
+        btnName: 'Modifier les informations'
     }
 ]
 

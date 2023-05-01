@@ -94,12 +94,12 @@ export const ROUTES = {
                 PARTNERSHIP: {
                     NAME: 'partnership',
                     PATH: 'partnership'
+                },
+                PROFIL: {
+                    NAME: 'profil',
+                    PATH: 'profil'
                 }
             }
-        },
-        PROFIL: {
-            NAME: 'profil',
-            PATH: 'profil'
         },
         SETTINGS: {
             NAME: 'settings',

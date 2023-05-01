@@ -11,7 +11,6 @@ import MemberDetailsContent from '@components/pages/dashboard/organization/team/
 import { BackSlashRoute } from '@utils/BackSlashRoute'
 
 /**
- *
  * @param handleOpen {function} - The function to be executed when click on edit post
  * @param member {object} - The prop member to be displayed
  * @returns {JSX.Element} - the MemberDetailsComponent  component
