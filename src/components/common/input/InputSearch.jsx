@@ -7,9 +7,10 @@ import PropTypes from 'prop-types'
  @param {string} value - The value of the input element.
  @param {function} onChange - The function to be called when the input value changes.
  @param {Object} dataOnChange - An object containing the state and setState functions for updating the input's value and the name of the input element.
+ @param {boolean} display - The value to display the input search component or nor
  @returns {JSX.Element} - An input element with the specified props.
  */
-const InputSearch = ({ placeholder, value, onChange, dataOnChange }) => {
+const InputSearch = ({ placeholder, value, onChange, dataOnChange, display }) => {
     return (
         <div className={'input-search'}>
             <input
@@ -17,6 +18,7 @@ const InputSearch = ({ placeholder, value, onChange, dataOnChange }) => {
                 placeholder={placeholder}
                 value={value}
                 onChange={(e) => onChange(dataOnChange.state, dataOnChange.setState, dataOnChange.name, e.target.value)}
+                style={{ display: display ? 'block' : 'none' }}
             />
         </div>
     )
@@ -25,7 +27,8 @@ InputSearch.propTypes = {
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.string.isRequired,
-    dataOnChange: PropTypes.object.isRequired
+    dataOnChange: PropTypes.object.isRequired,
+    display: PropTypes.bool.isRequired
 }
 
 export default InputSearch

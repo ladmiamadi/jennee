@@ -62,6 +62,7 @@ const HeaderPageContent = ({ title, menuItems, handleClick }) => {
                                         value={''}
                                         onChange={() => ''}
                                         dataOnChange={{}}
+                                        display={menuItems[filterSelect].inputSearch}
                                     />
                                 )}
 
@@ -79,8 +80,13 @@ const HeaderPageContent = ({ title, menuItems, handleClick }) => {
                                     value={''}
                                     onChange={() => ''}
                                     dataOnChange={{}}
+                                    display={menuItems[filterSelect].inputSearch}
                                 />
-                                <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
+                                {menuItems[filterSelect].btnName ? (
+                                    <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
+                                ) : (
+                                    ''
+                                )}
                             </>
                         )}
                     </div>

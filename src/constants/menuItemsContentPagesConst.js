@@ -4,22 +4,26 @@ export const EVENT_MENU_ITEMS = [
     {
         id: 1,
         title: 'A venir',
-        btnName: 'Créer un nouvel event'
+        btnName: 'Créer un nouvel event',
+        inputSearch: true
     },
     {
         id: 2,
         title: 'Passés',
-        btnName: 'Créer un nouvel event'
+        btnName: 'Créer un nouvel event',
+        inputSearch: true
     },
     {
         id: 3,
         title: 'Brouillons',
-        btnName: 'Créer un nouvel event'
+        btnName: 'Créer un nouvel event',
+        inputSearch: true
     },
     {
         id: 4,
         title: 'Partagés',
-        btnName: 'Créer un nouvel event'
+        btnName: 'Créer un nouvel event',
+        inputSearch: true
     }
 ]
 export const ORGANIZATION_MENU_ITEMS = [
@@ -28,6 +32,7 @@ export const ORGANIZATION_MENU_ITEMS = [
         title: 'Posts',
         link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.POSTS.PATH,
         btnName: 'Publier un Post',
+        inputSearch: true,
         handleOpen: () => console.log('clicked')
     },
     {
@@ -35,32 +40,41 @@ export const ORGANIZATION_MENU_ITEMS = [
         title: 'Equipe',
         link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.TEAM.PATH,
         btnName: 'Ajouter un membre',
-        handleOpen: () => console.log('clicked')
+        handleOpen: () => console.log('clicked'),
+        inputSearch: true
     },
     {
         id: 5,
         title: 'Profil',
         link: ROUTES.DASHBOARD.ORGANIZATION.CHILDREN.PROFIL.PATH,
         btnName: 'Modifier les informations',
-        handleOpen: (setIsClicked, isClicked) => setIsClicked(!isClicked)
+        handleOpen: (setIsClicked, isClicked) => setIsClicked(!isClicked),
+        inputSearch: false
     }
 ]
 
 export const FINANCES_MENU_ITEMS = [
     {
         id: 1,
-        title: 'Global'
+        title: 'Global',
+        inputSearch: false
     },
     {
         id: 2,
-        title: 'Recettes'
+        title: 'Recettes',
+        inputSearch: false,
+        btnName: 'Ajouter une recette'
     },
     {
         id: 3,
-        title: 'Dépenses'
+        title: 'Dépenses',
+        inputSearch: false,
+        btnName: 'Ajouter une recette'
     },
     {
         id: 4,
-        title: 'Factures'
+        title: 'Factures',
+        inputSearch: false,
+        btnName: ''
     }
 ]

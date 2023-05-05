@@ -15,7 +15,6 @@ const ProfileProgressBar = ({ firstItem, secondItem, firstItemClassName, secondI
     const progressBarFirstItem = (firstItem / totalProgress) * 100 + '%'
     const progressBarSecondItem = (secondItem / totalProgress) * 100 + '%'
 
-    console.log(progressBarFirstItem)
     return (
         <div className="progress__bar">
             <div className={firstItemClassName} style={{ width: progressBarFirstItem }}></div>
