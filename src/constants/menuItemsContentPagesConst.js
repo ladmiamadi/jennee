@@ -4,26 +4,22 @@ export const EVENT_MENU_ITEMS = [
     {
         id: 1,
         title: 'A venir',
-        btnName: 'Créer un nouvel event',
-        handleOpen: () => console.log('clicked')
+        btnName: 'Créer un nouvel event'
     },
     {
         id: 2,
         title: 'Passés',
-        btnName: 'Créer un nouvel event',
-        handleOpen: () => console.log('clicked')
+        btnName: 'Créer un nouvel event'
     },
     {
         id: 3,
         title: 'Brouillons',
-        btnName: 'Créer un nouvel event',
-        handleOpen: () => console.log('clicked')
+        btnName: 'Créer un nouvel event'
     },
     {
         id: 4,
         title: 'Partagés',
-        btnName: 'Créer un nouvel event',
-        handleOpen: () => console.log('clicked')
+        btnName: 'Créer un nouvel event'
     }
 ]
 export const ORGANIZATION_MENU_ITEMS = [

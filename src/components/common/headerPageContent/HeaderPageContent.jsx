@@ -51,17 +51,38 @@ const HeaderPageContent = ({ title, menuItems, handleClick }) => {
                         </div>
                     </div>
                     <div className="header-page-content__search-create">
-                        {isClicked ? (
-                            <Button name={'Supprimer'} className={'btn--danger'} handleClick={() => setIsClicked(!isClicked)} />
-                        ) : (
-                            <InputSearch placeholder="Recherche" handleChange={() => ''} value={''} onChange={() => ''} dataOnChange={{}} />
-                        )}
+                        {location.pathname.includes('profil') ? (
+                            <>
+                                {isClicked ? (
+                                    <Button name={'Supprimer'} className={'btn--danger'} handleClick={() => setIsClicked(!isClicked)} />
+                                ) : (
+                                    <InputSearch
+                                        placeholder="Recherche"
+                                        handleChange={() => ''}
+                                        value={''}
+                                        onChange={() => ''}
+                                        dataOnChange={{}}
+                                    />
+                                )}
 
-                        <Button
-                            handleClick={() => menuItems[filterSelect].handleOpen(setIsClicked, isClicked)}
-                            name={isClicked ? 'Enregistrer' : menuItems[filterSelect].btnName}
-                            className="button__primary"
-                        />
+                                <Button
+                                    handleClick={() => menuItems[filterSelect].handleOpen(setIsClicked, isClicked)}
+                                    name={isClicked ? 'Enregistrer' : menuItems[filterSelect].btnName}
+                                    className="button__primary"
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <InputSearch
+                                    placeholder="Recherche"
+                                    handleChange={() => ''}
+                                    value={''}
+                                    onChange={() => ''}
+                                    dataOnChange={{}}
+                                />
+                                <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
+                            </>
+                        )}
                     </div>
                 </div>
                 <Divider component={'hr'} />
