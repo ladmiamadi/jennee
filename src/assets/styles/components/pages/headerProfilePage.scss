@@ -68,13 +68,24 @@
 		width: 650px;
 		border-left: 1px solid $jenee_white;
 		&__text {
-			padding: 20px 40px 10px 40px;
+			padding: 20px 40px 40px 40px;
 			height: 50%;
 			border-bottom: 1px solid $jenee_white;
 			font-size: 0.9rem;
 			line-height: 1.2rem;
 			color: #686867;
 			width: 100%;
+			&__textarea {
+				width: 100%;
+				height: 100%;
+				& > textarea {
+					border: none;
+					width: 100%;
+					height: 100%;
+					background: none;
+					resize: none;
+				}
+			}
 		}
 		&__details {
 			padding: 20px 0px 10px 40px;

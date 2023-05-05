@@ -1,10 +1,15 @@
 import AssoLogo from '@assets/svg/profile/logo-asso.svg'
+import Banner from '@assets/images/organization/profile/banner.png'
+import AvatarPink from '@assets/images/organization/profile/avatar1.png'
+import AvatarBlue from '@assets/images/organization/profile/avatar2.png'
 
 export const ORGANIZATIONS_LIST = [
     {
         id: 1,
         name: 'FE-DEV',
         picture: AssoLogo,
+        banner: Banner,
+        profilePicture: AssoLogo,
         interactions: '12,6 K',
         siretNumber: '552 178 639 00132',
         description:
@@ -16,6 +21,78 @@ export const ORGANIZATIONS_LIST = [
         currentEvents: 4,
         passedEvents: 22,
         receivedTransfers: 20645,
-        pendingTransfers: 10200
+        pendingTransfers: 10200,
+        city: 'Paris',
+        year: '2023 - 2024',
+        role: 'Fédération',
+        members: [
+            {
+                id: 1,
+                name: 'Jules Andrieux',
+                role: 'Communication',
+                avatar: AvatarPink
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarBlue
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarPink
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarBlue
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarPink
+            }
+        ],
+        admins: [
+            {
+                id: 1,
+                name: 'Jules Andrieux',
+                role: 'Communication',
+                avatar: AvatarPink
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarBlue
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarPink
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarBlue
+            },
+            {
+                id: 2,
+                name: 'Louka Perchais',
+                role: 'Partenariats',
+                avatar: AvatarPink
+            }
+        ],
+        bankingInformations: {
+            name: 'Roman Cavarec',
+            BIC: 'SG478-BC',
+            RIB: 'FR 7630 0010 0794 1234 5678 90185'
+        }
     }
 ]

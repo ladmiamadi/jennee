@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Typography } from '@mui/material'
 import VerifiedIcon from '@mui/icons-material/Verified'
 import UnlockIcon from '@assets/images/svg/profile/unlock.svg'
 import ProfileProgressBar from '@common/progressBar/ProfileProgressBar'
-import PostStatusRoundedIcon from '@common/roundedIcon/PostStatusRoundedIcon'
-import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded'
 import ProfileRoundedIcon from '@common/roundedIcon/ProfileRoundedIcon'
+import TextArea from '@common/input/TextArea'
 
 /**
  * @param {object} organizationProfile - The organization profile which is displayed
  * @returns {JSX.Element} - The HeaderProfilePage component
  */
-const HeaderProfilePage = ({ organizationProfile }) => {
+const HeaderProfilePage = ({ organizationProfile, isClicked }) => {
+    const [editTextArea, setEditTextArea] = useState(isClicked)
     return (
         <div className={'profile__header'}>
             <div className={'profile__header__icon'}>
@@ -53,7 +53,14 @@ const HeaderProfilePage = ({ organizationProfile }) => {
                             Description
                         </Typography>
                     </div>
-                    <div className={''}>{organizationProfile.description}</div>
+                    <div className={'profile__header__description__text__textarea'}>
+                        <TextArea
+                            onChange={() => console.log('changed')}
+                            dataOnChange={{ state: editTextArea, setState: setEditTextArea }}
+                            value={organizationProfile.description}
+                            isDisabled={!isClicked}
+                        />
+                    </div>
                 </div>
                 <div className={'profile__header__description__details'}>
                     <div className={'profile__header__statistics__title'}>

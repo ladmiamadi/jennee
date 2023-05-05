@@ -11,3 +11,17 @@
 		background-color: rgba(228, 240, 250, 0.75);
 	}
 }
+
+.btn--danger {
+	background-color: $button-danger;
+	width: 200px;
+	height: 44px;
+	border: none;
+	border-radius: 13px;
+	color: $text-danger;
+	cursor: pointer;
+	margin-right: 15px;
+	&:hover {
+		background-color: #fef2f29e;
+	}
+}
