@@ -109,6 +109,10 @@ export const ROUTES = {
             NAME: 'finance',
             PATH: 'finance',
             CHILDREN: {
+                GLOBAL: {
+                    NAME: 'global',
+                    PATH: 'global'
+                },
                 REVENUES: {
                     NAME: 'revenues',
                     PATH: 'revenues'

@@ -39,7 +39,8 @@ const RevenuesContainer = lazy(() => import('@components/pages/dashboard/finance
 const ExpensesContainer = lazy(() => import('@components/pages/dashboard/finance/expenses/ExpensesContainer'))
 // render - dashboard / finance / bills
 const BillsContainer = lazy(() => import('@components/pages/dashboard/finance/bills/BillsContainer'))
-
+// render - dashboard / finance / global
+const GlobalContainer = lazy(() => import('@components/pages/dashboard/finance/global/GlobalContainer'))
 // ==============================|| MAIN ROUTING ||============================== //
 let isAuthenticated = true
 const MainRoutes = {
@@ -106,6 +107,10 @@ const MainRoutes = {
             path: ROUTES.DASHBOARD.FINANCE.PATH,
             element: <FinanceContainer />,
             children: [
+                {
+                    path: ROUTES.DASHBOARD.FINANCE.CHILDREN.GLOBAL.PATH,
+                    element: <GlobalContainer />
+                },
                 {
                     path: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH,
                     element: <RevenuesContainer />

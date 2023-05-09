@@ -2,7 +2,7 @@ $red: #d44e49;
 $blue: #4f5eab;
 $grey: #716f6f;
 $light-grey: #fbfbfb;
-$button-danger: #fef2f2;
+$button-danger: #f9eced;
 $text-danger: #d66464;
 
 $light-blue: #e4f0fa;
@@ -56,6 +56,22 @@ $gradient_bottom: linear-gradient(
 
 $gradient_top: linear-gradient(
 	to top,
+	#ef3b39,
+	#e82b58,
+	#d82a73,
+	#c03588,
+	#a24297,
+	#9050a6,
+	#7b5cb1,
+	#6366b7,
+	#5377c6,
+	#4288d1,
+	#3198d9,
+	#26a7df
+);
+
+$gradient_left: linear-gradient(
+	to left,
 	#ef3b39,
 	#e82b58,
 	#d82a73,

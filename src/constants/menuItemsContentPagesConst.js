@@ -57,24 +57,28 @@ export const FINANCES_MENU_ITEMS = [
     {
         id: 1,
         title: 'Global',
-        inputSearch: false
+        inputSearch: false,
+        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.GLOBAL.PATH
     },
     {
         id: 2,
         title: 'Recettes',
         inputSearch: false,
-        btnName: 'Ajouter une recette'
+        btnName: 'Ajouter une recette',
+        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.REVENUES.PATH
     },
     {
         id: 3,
         title: 'Dépenses',
         inputSearch: false,
-        btnName: 'Ajouter une recette'
+        btnName: 'Ajouter une recette',
+        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.EXPENSES.PATH
     },
     {
         id: 4,
         title: 'Factures',
         inputSearch: false,
-        btnName: ''
+        btnName: '',
+        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH
     }
 ]

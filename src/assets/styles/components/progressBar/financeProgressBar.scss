@@ -1,0 +1,16 @@
+.finance__progressBar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 20px;
+	align-items: center;
+	&--circle {
+		display: flex;
+		flex-direction: column;
+		& > div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+}

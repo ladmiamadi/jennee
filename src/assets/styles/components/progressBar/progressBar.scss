@@ -1,23 +1,25 @@
 .progress__bar {
-	width: 90%;
+	width: 100%;
 	height: 10px;
 	border-radius: 25px;
 	overflow: hidden;
 	display: flex;
 	&__passedEvents {
 		background-color: #ffacc8;
-		height: 100%;
 	}
 	&__currentEvents {
 		background-color: #4668e0;
-		height: 100%;
 	}
 	&__receivedTransfers {
 		background-color: #27e043;
-		height: 100%;
 	}
 	&__pendingTransfers {
 		background-color: #b6b7bb;
-		height: 100%;
+	}
+	&__financeCurrentBalance {
+		background-color: #5992c6;
+	}
+	&__financeTotalBalance {
+		background-color: #f5f4f7;
 	}
 }

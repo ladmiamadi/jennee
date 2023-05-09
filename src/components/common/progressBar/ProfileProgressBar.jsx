@@ -11,14 +11,24 @@ import PropTypes from 'prop-types'
  * @constructor
  */
 const ProfileProgressBar = ({ firstItem, secondItem, firstItemClassName, secondItemClassName }) => {
-    const totalProgress = firstItem + secondItem
-    const progressBarFirstItem = (firstItem / totalProgress) * 100 + '%'
-    const progressBarSecondItem = (secondItem / totalProgress) * 100 + '%'
+    const maxItem = Math.max(firstItem, secondItem)
+    const minItem = Math.min(firstItem, secondItem)
+
+    let progressBarFirstItem = 0
+    let progressBarSecondItem = 0
+
+    if (firstItem <= minItem) {
+        progressBarFirstItem = (firstItem / secondItem) * 100 + '%'
+        progressBarSecondItem = (1 - firstItem / maxItem) * 100 + '%'
+    } else {
+        progressBarFirstItem = (1 - secondItem / maxItem) * 100 + '%'
+        progressBarSecondItem = (secondItem / firstItem) * 100 + '%'
+    }
 
     return (
         <div className="progress__bar">
-            <div className={firstItemClassName} style={{ width: progressBarFirstItem }}></div>
-            <div className={secondItemClassName} style={{ width: progressBarSecondItem }}></div>
+            <div className={firstItemClassName} style={{ width: progressBarFirstItem, height: '100%' }}></div>
+            <div className={secondItemClassName} style={{ width: progressBarSecondItem, height: '100%' }}></div>
         </div>
     )
 }
