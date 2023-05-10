@@ -51,5 +51,61 @@ export const FINANCE_LIST = {
         { name: 'Billetterie', percentage: 60, color: '#DCDFF8' },
         { name: 'Boisson', percentage: 30, color: '#F9ECED' },
         { name: 'Autres', percentage: 10, color: '#E8F4F0' }
+    ],
+    revenues: [
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            organizationLogo: Logo,
+            event: 'Saint Valentin Party',
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            organizationLogo: Logo,
+            event: 'Autre',
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            organizationLogo: Logo,
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            event: 'Saint Valentin Party',
+            organizationLogo: Logo,
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE NOURRITURE',
+            organizationLogo: Logo,
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            organizationLogo: Logo,
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        }
     ]
 }

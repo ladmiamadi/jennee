@@ -18,19 +18,17 @@ const FinanceProgressBar = ({ itemsList, className }) => {
                 })}
             </div>
             <div className={'finance__progressBar'}>
-                {itemsList.map((item, index) => {
+                {itemsList.map((item, key) => {
                     return (
-                        <>
-                            <div key={index} className={'finance__progressBar--circle'}>
-                                <div>
-                                    <CircleIcon sx={{ color: item.color, fontSize: '15px', marginRight: '10px' }} />
-                                    <Typography variant="caption" display="block" gutterBottom>
-                                        {item.name}
-                                    </Typography>
-                                </div>
-                                <div>{item.percentage} %</div>
+                        <div key={key} className={'finance__progressBar--circle'}>
+                            <div>
+                                <CircleIcon sx={{ color: item.color, fontSize: '15px', marginRight: '10px' }} />
+                                <Typography variant="caption" display="block" gutterBottom>
+                                    {item.name}
+                                </Typography>
                             </div>
-                        </>
+                            <div>{item.percentage} %</div>
+                        </div>
                     )
                 })}
             </div>

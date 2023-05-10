@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import { FINANCE_LIST } from '@fixtures/financeList'
 import GlobalBalance from '@components/pages/dashboard/finance/global/globalSections/GlobalBalance'
 import GlobalHistory from '@components/pages/dashboard/finance/global/globalSections/GlobalHistory'

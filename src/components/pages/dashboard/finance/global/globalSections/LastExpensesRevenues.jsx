@@ -33,33 +33,35 @@ const LastExpensesRevenues = ({ lastExpensesRevenues }) => {
                             <TableCell align="center">Montant</TableCell>
                         </TableRow>
                     </TableHead>
-                    {lastExpensesRevenues.map((row) => (
-                        <TableRow key={row.name} className={'global__expensesRevenues__table__row'}>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--icon'}>
-                                <div>
-                                    <NorthEastIcon />
-                                </div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--type'}>
-                                <div>{row.type}</div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--point'}>
-                                <div>.</div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--date'}>
-                                <div>{row.date}</div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--event'}>
-                                <div>{row.event}</div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--status'}>
-                                <div>{row.status}</div>
-                            </TableCell>
-                            <TableCell align="center" className={'global__expensesRevenues__table__row__col--amount'}>
-                                <div>{row.amount}</div>
-                            </TableCell>
-                        </TableRow>
-                    ))}
+                    <tbody>
+                        {lastExpensesRevenues.map((row, index) => (
+                            <TableRow key={index} className={'global__expensesRevenues__table__row'}>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--icon'}>
+                                    <div>
+                                        <NorthEastIcon />
+                                    </div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--type'}>
+                                    <div>{row.type}</div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--point'}>
+                                    <div>.</div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--date'}>
+                                    <div>{row.date}</div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--event'}>
+                                    <div>{row.event}</div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--status'}>
+                                    <div>{row.status}</div>
+                                </TableCell>
+                                <TableCell align="center" className={'global__expensesRevenues__table__row__col--amount'}>
+                                    <div>{row.amount}</div>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </tbody>
                 </Table>
             </div>
         </div>
