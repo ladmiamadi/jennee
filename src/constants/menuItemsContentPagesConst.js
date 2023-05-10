@@ -78,7 +78,11 @@ export const FINANCES_MENU_ITEMS = [
         id: 4,
         title: 'Factures',
         inputSearch: false,
-        btnName: '',
-        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH
+        btnName: 'Importer un dossier',
+        link: ROUTES.DASHBOARD.FINANCE.CHILDREN.BILLS.PATH,
+        handleOpen: () => console.log('clicked'),
+        options: 'Créer un dossier',
+        classNameOptions: 'btn--edit',
+        handleClickOption: () => console.log('clicked')
     }
 ]

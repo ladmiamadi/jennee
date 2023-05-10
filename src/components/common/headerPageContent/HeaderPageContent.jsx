@@ -82,6 +82,15 @@ const HeaderPageContent = ({ title, menuItems, handleClick }) => {
                                     dataOnChange={{}}
                                     display={menuItems[filterSelect].inputSearch}
                                 />
+                                {menuItems[filterSelect].options ? (
+                                    <Button
+                                        handleClick={menuItems[filterSelect].handleClickOption}
+                                        name={menuItems[filterSelect].options}
+                                        className={menuItems[filterSelect].classNameOptions}
+                                    />
+                                ) : (
+                                    ''
+                                )}
                                 {menuItems[filterSelect].btnName ? (
                                     <Button handleClick={handleClick} name={menuItems[filterSelect].btnName} className="button__primary" />
                                 ) : (
