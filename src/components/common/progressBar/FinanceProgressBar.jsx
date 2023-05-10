@@ -1,7 +1,14 @@
 import React from 'react'
 import CircleIcon from '@mui/icons-material/Circle'
 import Typography from '@mui/material/Typography'
+import PropTypes from 'prop-types'
 
+/**
+ *
+ * @param  {Array<Object>} itemsList - The list of items to be displayed on the progress bar
+ * @param className - The className of tne progressBar
+ * @returns {JSX.Element} - The progress Bar
+ */
 const FinanceProgressBar = ({ itemsList, className }) => {
     return (
         <>
@@ -29,6 +36,11 @@ const FinanceProgressBar = ({ itemsList, className }) => {
             </div>
         </>
     )
+}
+
+FinanceProgressBar.prototype = {
+    className: PropTypes.string,
+    itemsList: PropTypes.array
 }
 
 export default FinanceProgressBar

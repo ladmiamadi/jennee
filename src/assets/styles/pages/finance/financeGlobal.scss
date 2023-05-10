@@ -1,3 +1,21 @@
+.global__container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	&--left {
+		width: 34%;
+		& > div {
+			margin-bottom: 30px;
+		}
+	}
+	&--right {
+		width: 62%;
+		& > div {
+			margin-bottom: 20px;
+		}
+	}
+}
 .global__balance {
 	display: flex;
 	flex-direction: column;
@@ -212,5 +230,108 @@
 .totalExpenses {
 	&__image {
 		background-color: #f9eced !important;
+	}
+}
+
+.global__expensesRevenues {
+	border: 1px solid #5992c6;
+	border-radius: 20px;
+	padding: 20px 40px;
+	&__header {
+		color: #686867;
+	}
+	&__table {
+		margin-top: 20px;
+		&__header {
+			margin-bottom: 10px;
+			color: #686867;
+			opacity: 0.7;
+		}
+		&__row {
+			&__col {
+				&--icon {
+					padding-right: 0 !important;
+					& > div {
+						background-color: #f7f7f7;
+						width: 100%;
+						border-bottom-left-radius: 10px;
+						border-top-left-radius: 10px;
+						height: 30px;
+						font-size: 18px;
+						color: #373737;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				&--point {
+					padding-left: 0 !important;
+					padding-right: 0 !important;
+					padding-top: 16px !important;
+					& > div {
+						width: 100%;
+						background-color: #f7f7f7;
+						height: 30px;
+						font-size: 18px;
+						color: $blue;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				&--type {
+					padding-left: 0 !important;
+					padding-right: 0 !important;
+					padding-top: 16px !important;
+					& > div {
+						width: 100%;
+						background-color: #f7f7f7;
+						height: 30px;
+						color: #373737;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				&--date {
+					padding-left: 0 !important;
+					& > div {
+						width: 100%;
+						background-color: #f7f7f7;
+						height: 30px;
+						color: $blue;
+						border-bottom-right-radius: 10px;
+						border-top-right-radius: 10px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				&--event {
+					& > div {
+						width: 100%;
+						background-color: #f4f6fa;
+						height: 30px;
+						color: $blue;
+						border-radius: 10px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				&--status {
+					& > div {
+						width: 100%;
+						background-color: #f7fef8;
+						height: 30px;
+						color: #76a46e;
+						border-radius: 10px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+			}
+		}
 	}
 }

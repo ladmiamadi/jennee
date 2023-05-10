@@ -7,13 +7,14 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SearchIcon from '@mui/icons-material/Search'
 import FinanceProgressBar from '@common/progressBar/FinanceProgressBar'
+import PropTypes from 'prop-types'
 
 /**
  *
- * @param {string} totalRevenues
- * @param {string} totalExpenses
- * @param {string} averageRevenuesPerEvent
- * @param {object} detailsRevenues
+ * @param {string} totalRevenues - The total revenues of the organization
+ * @param {string} totalExpenses - The total expenses of the organization
+ * @param {string} averageRevenuesPerEvent - the average revenues per event for the organization
+ * @param {object} detailsRevenues- the list of revenues for the organization
  * @returns {JSX.Element} - The GlobalRevenues component
  */
 const GlobalRevenues = ({ totalRevenues, totalExpenses, averageRevenuesPerEvent, detailsRevenues }) => {
@@ -109,4 +110,10 @@ const GlobalRevenues = ({ totalRevenues, totalExpenses, averageRevenuesPerEvent,
     )
 }
 
+GlobalRevenues.prototype = {
+    totalRevenues: PropTypes.string,
+    totalExpenses: PropTypes.string,
+    averageRevenuesPerEvent: PropTypes.string,
+    detailsRevenues: PropTypes.object
+}
 export default GlobalRevenues

@@ -4,36 +4,33 @@ import { FINANCE_LIST } from '@fixtures/financeList'
 import GlobalBalance from '@components/pages/dashboard/finance/global/globalSections/GlobalBalance'
 import GlobalHistory from '@components/pages/dashboard/finance/global/globalSections/GlobalHistory'
 import GlobalRevenues from '@components/pages/dashboard/finance/global/globalSections/GlobalRevenues'
+import LastExpensesRevenues from '@components/pages/dashboard/finance/global/globalSections/LastExpensesRevenues'
 
 const GlobalComponent = () => {
     const financeDetails = FINANCE_LIST
 
     return (
         <Box sx={{ flexGrow: 1, marginTop: '64px' }}>
-            <Grid container spacing={4}>
-                <Grid item xs={3.5}>
+            <div className={'global__container'}>
+                <div className={'global__container--left'}>
                     <GlobalBalance
                         logo={financeDetails.logo}
                         accountBalance={financeDetails.accountBalance}
                         accountNumber={financeDetails.accountNumber}
                         organizationName={financeDetails.organizationName}
                     />
-                </Grid>
-                <Grid item xs={8.5}>
+                    <GlobalHistory history={financeDetails.history} />
+                </div>
+                <div className={'global__container--right'}>
                     <GlobalRevenues
                         totalRevenues={financeDetails.totalRevenues}
                         totalExpenses={financeDetails.totalExpenses}
                         averageRevenuesPerEvent={financeDetails.averageRevenuesPerEvent}
                         detailsRevenues={financeDetails.detailsRevenues}
                     />
-                </Grid>
-                <Grid item xs={3.5}>
-                    <GlobalHistory history={financeDetails.history} />
-                </Grid>
-                <Grid item xs={8.5}>
-                    section4
-                </Grid>
-            </Grid>
+                    <LastExpensesRevenues lastExpensesRevenues={financeDetails.lastExpensesAndRevenues} />
+                </div>
+            </div>
         </Box>
     )
 }
