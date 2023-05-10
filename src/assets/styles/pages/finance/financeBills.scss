@@ -1,4 +1,4 @@
-.revenues {
+.bills {
 	&__header {
 		color: #686867;
 	}
@@ -14,45 +14,44 @@
 				&--icon {
 					border-bottom: none !important;
 					padding-right: 0 !important;
-					width: 10%;
+					width: 60px !important;
 					& > div {
 						background-color: #f7f7f7;
-						width: 100%;
 						border-bottom-left-radius: 10px;
 						border-top-left-radius: 10px;
-						height: 60px;
+						height: 50px;
 						font-size: 18px;
 						color: #373737;
 						display: flex;
 						align-items: center;
 						justify-content: flex-start;
-						& > div {
-							width: 54px;
-							height: 50px;
-							background: $gradient-right;
-							border-radius: 17px;
-							position: relative;
+						& > svg {
+							font-size: 40px;
+							color: #0ea5e9;
+							opacity: 0.7;
 							margin-left: 20px;
-							& > img {
-								position: absolute;
-								width: 27px;
-								top: 50%;
-								left: 50%;
-								transform: translate(-50%, -50%);
-							}
+						}
+					}
+				}
+				&--private {
+					border-bottom: none !important;
+					padding-left: 0 !important;
+					& > div {
+						height: 50px;
+						background-color: #f7f7f7;
+						border-bottom-right-radius: 10px;
+						border-top-right-radius: 10px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						& > svg {
+							color: #e6e4e4;
 						}
 					}
 				}
 				&--point {
 					border-bottom: none !important;
-					padding-left: 0 !important;
-					padding-right: 0 !important;
-					padding-top: 16px !important;
 					& > div {
-						width: 100%;
-						background-color: #f7f7f7;
-						height: 60px;
-						font-size: 18px;
 						color: $blue;
 						display: flex;
 						align-items: center;
@@ -60,58 +59,24 @@
 					}
 				}
 				&--type {
-					width: 10%;
 					border-bottom: none !important;
 					padding-left: 0 !important;
 					padding-right: 0 !important;
 					padding-top: 16px !important;
 					& > div {
-						width: 100%;
 						background-color: #f7f7f7;
-						height: 60px;
+						height: 50px;
 						color: #373737;
 						display: flex;
 						align-items: center;
-						justify-content: center;
+						justify-content: flex-start;
 					}
 				}
 				&--date {
 					border-bottom: none !important;
 					padding-left: 0 !important;
 					& > div {
-						width: 100%;
-						background-color: #f7f7f7;
-						height: 60px;
 						color: $blue;
-						border-bottom-right-radius: 10px;
-						border-top-right-radius: 10px;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
-				}
-				&--event {
-					border-bottom: none !important;
-					& > div {
-						width: 100%;
-						background-color: #f4f6fa;
-						height: 30px;
-						color: $blue;
-						border-radius: 10px;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
-				}
-				&--statusExpenses {
-					border-bottom: none !important;
-					width: 10%;
-					& > div {
-						width: 100%;
-						background-color: $button-danger;
-						height: 30px;
-						color: $text-danger;
-						border-radius: 10px;
 						display: flex;
 						align-items: center;
 						justify-content: center;
@@ -119,23 +84,35 @@
 				}
 				&--status {
 					border-bottom: none !important;
-					width: 10%;
 					& > div {
-						width: 100%;
-						background-color: #f7fef8;
-						height: 30px;
-						color: #76a46e;
+						background-color: #f4f6fa;
+						color: #7b838e;
+						padding: 5px;
 						border-radius: 10px;
 						display: flex;
 						align-items: center;
 						justify-content: center;
 					}
 				}
-				&--amount {
-					border-bottom: none !important;
-				}
 				&--action {
 					border-bottom: none !important;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					& > div {
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						& > svg {
+							color: #7b838e;
+							cursor: pointer;
+						}
+					}
+				}
+				&--space {
+					border-bottom: none !important;
+					width: 100px;
 				}
 			}
 		}

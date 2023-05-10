@@ -107,5 +107,88 @@ export const FINANCE_LIST = {
             status: 'RÉGLÉ',
             amount: '25 €'
         }
+    ],
+    expenses: [
+        {
+            name: 'Jenee',
+            type: 'LOCATION',
+            date: '21/11/2022',
+            organizationLogo: Logo,
+            event: 'Saint Valentin Party',
+            status: 'PAYÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'ADMINISTRATIF',
+            date: '21/11/2022',
+            organizationLogo: Logo,
+            event: 'Autre',
+            status: 'PAYÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'BOISSON',
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            organizationLogo: Logo,
+            status: 'EN ATTENTE',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            event: 'Saint Valentin Party',
+            organizationLogo: Logo,
+            status: 'SYNCHRONISATION',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'GOODIES',
+            organizationLogo: Logo,
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        },
+        {
+            name: 'Jenee',
+            type: 'VENTE DE BILLET',
+            date: '21/11/2022',
+            event: 'CB Halloween',
+            organizationLogo: Logo,
+            status: 'RÉGLÉ',
+            amount: '25 €'
+        }
+    ],
+    bills: [
+        {
+            name: 'FRAIS DE REPRÉSENTATION',
+            date: '21/11/2022',
+            createdBy: 'ADMINISTRATEUR'
+        },
+        {
+            name: 'BOISSONS',
+            date: '21/11/2022',
+            createdBy: 'MEMBRE'
+        },
+        {
+            name: 'FRAIS DE REPRÉSENTATION',
+            date: '21/11/2022',
+            createdBy: 'ADMINISTRATEUR'
+        },
+        {
+            name: 'FRAIS DE REPRÉSENTATION',
+            date: '21/11/2022',
+            createdBy: 'ADMINISTRATEUR'
+        },
+        {
+            name: 'FRAIS DE REPRÉSENTATION',
+            date: '21/11/2022',
+            createdBy: 'ADMINISTRATEUR'
+        }
     ]
 }

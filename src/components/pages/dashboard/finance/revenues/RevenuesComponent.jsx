@@ -7,7 +7,7 @@ import { FINANCE_LIST } from '@fixtures/financeList'
 import InputSearch from '@common/input/InputSearch'
 
 const RevenuesComponent = () => {
-    const expenses = FINANCE_LIST.revenues
+    const revenues = FINANCE_LIST.revenues
     return (
         <div className={'revenues__table'}>
             <Table>
@@ -33,7 +33,7 @@ const RevenuesComponent = () => {
                     </TableRow>
                 </TableHead>
                 <tbody>
-                    {expenses.map((row, index) => (
+                    {revenues.map((row, index) => (
                         <TableRow key={index} className={'revenues__table__row'}>
                             <TableCell align="center" className={'revenues__table__row__col--icon'}>
                                 <div>
